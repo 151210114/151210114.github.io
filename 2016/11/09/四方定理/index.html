@@ -10,23 +10,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="描述：
 所谓的四方定理，就是说任意的一个自然数都可以最多用四个数的平方和表示出来
-四方定理的代码描述：
-12345678910111213141516171819#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;stdlib.h&amp;gt;#include&amp;lt;math.h&amp;gt;int  main()&amp;#123;    int number,i,j,k,l;    printf">
+四方定理的代码描述：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="四方定理 2013蓝桥杯">
 <meta property="og:url" content="http://cmmdc.top/2016/11/09/四方定理/index.html">
 <meta property="og:site_name" content="梦">
 <meta property="og:description" content="描述：
 所谓的四方定理，就是说任意的一个自然数都可以最多用四个数的平方和表示出来
-四方定理的代码描述：
-12345678910111213141516171819#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;stdlib.h&amp;gt;#include&amp;lt;math.h&amp;gt;int  main()&amp;#123;    int number,i,j,k,l;    printf">
-<meta property="og:updated_time" content="2016-11-09T11:03:05.759Z">
+四方定理的代码描述：">
+<meta property="og:updated_time" content="2016-11-09T11:05:08.476Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="四方定理 2013蓝桥杯">
 <meta name="twitter:description" content="描述：
 所谓的四方定理，就是说任意的一个自然数都可以最多用四个数的平方和表示出来
-四方定理的代码描述：
-12345678910111213141516171819#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;stdlib.h&amp;gt;#include&amp;lt;math.h&amp;gt;int  main()&amp;#123;    int number,i,j,k,l;    printf">
+四方定理的代码描述：">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -155,6 +152,7 @@
         <p><strong>描述：</strong></p>
 <p>所谓的四方定理，就是说任意的一个自然数都可以最多用四个数的平方和表示出来</p>
 <p>四方定理的代码描述：</p>
+<a id="more"></a>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span>  <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> number,i,j,k,l;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Please enter a number="</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;number); <span class="comment">//输入整数</span></div><div class="line">    number = (<span class="keyword">int</span>)<span class="built_in">abs</span>(number);</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=number; i++) <span class="comment">//利用穷举法遍历大于1的自然数</span></div><div class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;=i; j++)</div><div class="line">            <span class="keyword">for</span>(k=<span class="number">0</span>; k&lt;=j; k++)</div><div class="line">                <span class="keyword">for</span>(l=<span class="number">0</span>; l&lt;=k; l++)</div><div class="line">                    <span class="keyword">if</span>(number==i*i+j*j+k*k+l*l) <span class="comment">//若满足要求则输出结果</span></div><div class="line">                    &#123;</div><div class="line">                        <span class="built_in">printf</span>(<span class="string">" %d=%d*%d+%d*%d+%d*%d+%d*%d\n"</span>,number,i,i,j,j,k,k,l,l);</div><div class="line">                        <span class="built_in">exit</span>(<span class="number">0</span>);</div><div class="line">                    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p> <strong>蓝桥杯题目</strong></p>
 <p> <a href="http://www.milkcu.com/blog/archives/1366349160.html" target="_blank" rel="external">题目链接</a></p>
