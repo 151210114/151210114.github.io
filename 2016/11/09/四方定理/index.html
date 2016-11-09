@@ -6,21 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cmmdc.top">
-  <title>分治算法 用于求解任意两个数之间的所有数据中0~9存在的个数 | 梦</title>
+  <title>四方定理 2013蓝桥杯 | 梦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="算法描述
-也就是相当于求一组数据中某个数字存在的个数，并不一定要以这个数字开始或者结束，只要某个位数上是这个数字就要把累加和加1.">
+  <meta name="description" content="描述：
+所谓的四方定理，就是说任意的一个自然数都可以最多用四个数的平方和表示出来
+四方定理的代码描述：
+12345678910111213141516171819#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;stdlib.h&amp;gt;#include&amp;lt;math.h&amp;gt;int  main()&amp;#123;    int number,i,j,k,l;    printf">
 <meta property="og:type" content="article">
-<meta property="og:title" content="分治算法 用于求解任意两个数之间的所有数据中0~9存在的个数">
-<meta property="og:url" content="http://cmmdc.top/2016/11/09/分治算法/index.html">
+<meta property="og:title" content="四方定理 2013蓝桥杯">
+<meta property="og:url" content="http://cmmdc.top/2016/11/09/四方定理/index.html">
 <meta property="og:site_name" content="梦">
-<meta property="og:description" content="算法描述
-也就是相当于求一组数据中某个数字存在的个数，并不一定要以这个数字开始或者结束，只要某个位数上是这个数字就要把累加和加1.">
-<meta property="og:updated_time" content="2016-11-09T09:12:31.684Z">
+<meta property="og:description" content="描述：
+所谓的四方定理，就是说任意的一个自然数都可以最多用四个数的平方和表示出来
+四方定理的代码描述：
+12345678910111213141516171819#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;stdlib.h&amp;gt;#include&amp;lt;math.h&amp;gt;int  main()&amp;#123;    int number,i,j,k,l;    printf">
+<meta property="og:updated_time" content="2016-11-09T11:03:05.759Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="分治算法 用于求解任意两个数之间的所有数据中0~9存在的个数">
-<meta name="twitter:description" content="算法描述
-也就是相当于求一组数据中某个数字存在的个数，并不一定要以这个数字开始或者结束，只要某个位数上是这个数字就要把累加和加1.">
+<meta name="twitter:title" content="四方定理 2013蓝桥杯">
+<meta name="twitter:description" content="描述：
+所谓的四方定理，就是说任意的一个自然数都可以最多用四个数的平方和表示出来
+四方定理的代码描述：
+12345678910111213141516171819#include&amp;lt;stdio.h&amp;gt;#include&amp;lt;stdlib.h&amp;gt;#include&amp;lt;math.h&amp;gt;int  main()&amp;#123;    int number,i,j,k,l;    printf">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -128,7 +134,7 @@
 </nav>
 
       <div class="body-wrap">
-        <article id="post-分治算法" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-四方定理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <input type="hidden" class="isFancy" />
@@ -138,7 +144,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      分治算法 用于求解任意两个数之间的所有数据中0~9存在的个数
+      四方定理 2013蓝桥杯
     </h1>
   
 
@@ -146,17 +152,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><em>算法描述</em></p>
-<p>也就是相当于求一组数据中某个数字存在的个数，并不一定要以这个数字开始或者结束，只要某个位数上是这个数字就要把累加和加1.</p>
-<a id="more"></a>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">handlex</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> n[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(x &gt; <span class="number">9</span>)</div><div class="line">    &#123;</div><div class="line">        n[x % <span class="number">10</span>] += <span class="number">1</span>;</div><div class="line">        handlex(x / <span class="number">10</span>, n);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        n[x] += <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">handle</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y, <span class="keyword">int</span> n[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&lt;=y;i++)</div><div class="line">    &#123;</div><div class="line">        handlex(i, n);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> a,i,t,b;</div><div class="line">    <span class="keyword">int</span> na[<span class="number">10</span>];</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">    &#123;</div><div class="line">        na[i] = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);</div><div class="line">    <span class="keyword">if</span>(a &gt; b)                     <span class="comment">//将a，b的值互换，确保a&lt;b</span></div><div class="line">    &#123;</div><div class="line">        t=a;</div><div class="line">        a=b;</div><div class="line">        b=t;</div><div class="line">    &#125;</div><div class="line">    handle(a,b,na);</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d出现%d次\n"</span>, i,na[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <p><strong>描述：</strong></p>
+<p>所谓的四方定理，就是说任意的一个自然数都可以最多用四个数的平方和表示出来</p>
+<p>四方定理的代码描述：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span>  <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> number,i,j,k,l;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Please enter a number="</span>);</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;number); <span class="comment">//输入整数</span></div><div class="line">    number = (<span class="keyword">int</span>)<span class="built_in">abs</span>(number);</div><div class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>; i&lt;=number; i++) <span class="comment">//利用穷举法遍历大于1的自然数</span></div><div class="line">        <span class="keyword">for</span>(j=<span class="number">0</span>; j&lt;=i; j++)</div><div class="line">            <span class="keyword">for</span>(k=<span class="number">0</span>; k&lt;=j; k++)</div><div class="line">                <span class="keyword">for</span>(l=<span class="number">0</span>; l&lt;=k; l++)</div><div class="line">                    <span class="keyword">if</span>(number==i*i+j*j+k*k+l*l) <span class="comment">//若满足要求则输出结果</span></div><div class="line">                    &#123;</div><div class="line">                        <span class="built_in">printf</span>(<span class="string">" %d=%d*%d+%d*%d+%d*%d+%d*%d\n"</span>,number,i,i,j,j,k,k,l,l);</div><div class="line">                        <span class="built_in">exit</span>(<span class="number">0</span>);</div><div class="line">                    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> <strong>蓝桥杯题目</strong></p>
+<p> <a href="http://www.milkcu.com/blog/archives/1366349160.html" target="_blank" rel="external">题目链接</a></p>
+<p>标题：四方定理<br>数论中有著名的四方定理：所有自然数至多只要用四个数的平方和就可以表示。<br>我们可以通过计算机验证其在有限范围的正确性。<br>对于大数，简单的循环嵌套是不适宜的。下面的代码给出了一种分解方案。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">f</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> a[], <span class="keyword">int</span> idx)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">if</span>(n==<span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span>(idx==<span class="number">4</span>)  <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line"> </div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=(<span class="keyword">int</span>)<span class="built_in">sqrt</span>(n); i&gt;=<span class="number">1</span>; i--)</div><div class="line">	&#123;</div><div class="line">		a[idx] = i;</div><div class="line"> </div><div class="line">		<span class="keyword">if</span>(_______________________)  <span class="keyword">return</span> <span class="number">1</span>;  <span class="comment">// 填空</span></div><div class="line">                                <span class="comment">//i * i == n || f(n - i * i, a, idx + 1)</span></div><div class="line">	&#125;</div><div class="line"> </div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">for</span>(;;)</div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> number;</div><div class="line">		<span class="built_in">printf</span>(<span class="string">"输入整数(1~10亿)："</span>);</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;number);</div><div class="line">		</div><div class="line">		<span class="keyword">int</span> a[] = &#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;</div><div class="line"> </div><div class="line">		<span class="keyword">int</span> r = f(number, a, <span class="number">0</span>);</div><div class="line"> </div><div class="line">		<span class="built_in">printf</span>(<span class="string">"%d: %d %d %d %d\n"</span>, r, a[<span class="number">0</span>], a[<span class="number">1</span>], a[<span class="number">2</span>], a[<span class="number">3</span>]);</div><div class="line">		</div><div class="line">	&#125;</div><div class="line"> </div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>请分析代码逻辑，并推测划线处的代码。<br>仅把缺少的代码作为答案，通过网页提交。<br>千万不要填写多余的代码、符号或说明文字！！</p>
+<p>​    </p>
 
       
     </div>
     <div class="article-info article-info-index">
       
-      <a href="/2016/11/09/分治算法/" class="archive-article-date">
-  	<time datetime="2016-11-09T09:00:15.920Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-09</time>
+      <a href="/2016/11/09/四方定理/" class="archive-article-date">
+  	<time datetime="2016-11-09T09:51:31.520Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-09</time>
 </a>
       
 	<div class="article-tag tagcloud">
@@ -174,18 +186,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2016/11/09/四方定理/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          四方定理 2013蓝桥杯
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/11/08/Card Trick/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Card Trick 杭电 2319</div>
+    <a href="/2016/11/09/分治算法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">分治算法 用于求解任意两个数之间的所有数据中0~9存在的个数</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -219,7 +222,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="分治算法" data-title="分治算法 用于求解任意两个数之间的所有数据中0~9存在的个数" data-url="http://cmmdc.top/2016/11/09/分治算法/"></div>
+	<div class="ds-thread" data-thread-key="四方定理" data-title="四方定理 2013蓝桥杯" data-url="http://cmmdc.top/2016/11/09/四方定理/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
