@@ -8,19 +8,22 @@
   <link rel="dns-prefetch" href="http://cmmdc.top">
   <title>分治算法 用于求解任意两个数之间的所有数据中0~9存在的个数 | 梦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="算法描述
-也就是相当于求一组数据中某个数字存在的个数，并不一定要以这个数字开始或者结束，只要某个位数上是这个数字就要把累加和加1.">
+  <meta name="description" content="分治算法
+1.思想：将原问题分解为几个规模较小但是类似与原问题的子问题，递归的求解这些子问题，然后再合并这些自问题的解来建立原问题的解。
+2.归并排序算法完全遵循归并模式，操作有分解、解决、合并。合并为算法的关键。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="分治算法 用于求解任意两个数之间的所有数据中0~9存在的个数">
 <meta property="og:url" content="http://cmmdc.top/2016/11/09/分治算法/index.html">
 <meta property="og:site_name" content="梦">
-<meta property="og:description" content="算法描述
-也就是相当于求一组数据中某个数字存在的个数，并不一定要以这个数字开始或者结束，只要某个位数上是这个数字就要把累加和加1.">
-<meta property="og:updated_time" content="2016-11-09T09:12:31.684Z">
+<meta property="og:description" content="分治算法
+1.思想：将原问题分解为几个规模较小但是类似与原问题的子问题，递归的求解这些子问题，然后再合并这些自问题的解来建立原问题的解。
+2.归并排序算法完全遵循归并模式，操作有分解、解决、合并。合并为算法的关键。">
+<meta property="og:updated_time" content="2016-11-27T09:14:21.926Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="分治算法 用于求解任意两个数之间的所有数据中0~9存在的个数">
-<meta name="twitter:description" content="算法描述
-也就是相当于求一组数据中某个数字存在的个数，并不一定要以这个数字开始或者结束，只要某个位数上是这个数字就要把累加和加1.">
+<meta name="twitter:description" content="分治算法
+1.思想：将原问题分解为几个规模较小但是类似与原问题的子问题，递归的求解这些子问题，然后再合并这些自问题的解来建立原问题的解。
+2.归并排序算法完全遵循归并模式，操作有分解、解决、合并。合并为算法的关键。">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -146,9 +149,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><em>算法描述</em></p>
-<p>也就是相当于求一组数据中某个数字存在的个数，并不一定要以这个数字开始或者结束，只要某个位数上是这个数字就要把累加和加1.</p>
+        <p><strong>分治算法</strong></p>
+<p>1.思想：将原问题分解为几个规模较小但是类似与原问题的子问题，递归的求解这些子问题，然后再合并这些自问题的解来建立原问题的解。</p>
+<p>2.归并排序算法完全遵循归并模式，操作有分解、解决、合并。合并为算法的关键。</p>
 <a id="more"></a>
+<p><em>应用</em></p>
+<p>也就是相当于求一组数据中某个数字存在的个数，并不一定要以这个数字开始或者结束，只要某个位数上是这个数字就要把累加和加1.</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">handlex</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> n[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span>(x &gt; <span class="number">9</span>)</div><div class="line">    &#123;</div><div class="line">        n[x % <span class="number">10</span>] += <span class="number">1</span>;</div><div class="line">        handlex(x / <span class="number">10</span>, n);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        n[x] += <span class="number">1</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">handle</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y, <span class="keyword">int</span> n[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=x;i&lt;=y;i++)</div><div class="line">    &#123;</div><div class="line">        handlex(i, n);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> a,i,t,b;</div><div class="line">    <span class="keyword">int</span> na[<span class="number">10</span>];</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">    &#123;</div><div class="line">        na[i] = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>, &amp;a, &amp;b);</div><div class="line">    <span class="keyword">if</span>(a &gt; b)                     <span class="comment">//将a，b的值互换，确保a&lt;b</span></div><div class="line">    &#123;</div><div class="line">        t=a;</div><div class="line">        a=b;</div><div class="line">        b=t;</div><div class="line">    &#125;</div><div class="line">    handle(a,b,na);</div><div class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d出现%d次\n"</span>, i,na[i]);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       
