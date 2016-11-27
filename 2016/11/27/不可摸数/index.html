@@ -12,9 +12,7 @@
 题目分析：
 首先要弄明白不可摸数的概念：任何数m，s(m)都不等于n,则称n为不可摸数
 ​                                                      而s(m)表示的是数m的真因子之和
-然后还要烤炉到一点就是说即使当前的数m的值很大，但是m的真因子之和也有可能很小，所以求值时m的值要比实际要求大很多。
-这个是完全正确的代码
-12345678">
+然后还要烤炉到一点就是说即使当前的数m的值很大，但是m的真因子之和也有可能很小，所以求值时m的值要比实际要求大很多。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="不可摸数 杭电 1999">
 <meta property="og:url" content="http://cmmdc.top/2016/11/27/不可摸数/index.html">
@@ -23,19 +21,15 @@
 题目分析：
 首先要弄明白不可摸数的概念：任何数m，s(m)都不等于n,则称n为不可摸数
 ​                                                      而s(m)表示的是数m的真因子之和
-然后还要烤炉到一点就是说即使当前的数m的值很大，但是m的真因子之和也有可能很小，所以求值时m的值要比实际要求大很多。
-这个是完全正确的代码
-12345678">
-<meta property="og:updated_time" content="2016-11-27T02:18:52.627Z">
+然后还要烤炉到一点就是说即使当前的数m的值很大，但是m的真因子之和也有可能很小，所以求值时m的值要比实际要求大很多。">
+<meta property="og:updated_time" content="2016-11-27T02:20:59.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="不可摸数 杭电 1999">
 <meta name="twitter:description" content="题目链接
 题目分析：
 首先要弄明白不可摸数的概念：任何数m，s(m)都不等于n,则称n为不可摸数
 ​                                                      而s(m)表示的是数m的真因子之和
-然后还要烤炉到一点就是说即使当前的数m的值很大，但是m的真因子之和也有可能很小，所以求值时m的值要比实际要求大很多。
-这个是完全正确的代码
-12345678">
+然后还要烤炉到一点就是说即使当前的数m的值很大，但是m的真因子之和也有可能很小，所以求值时m的值要比实际要求大很多。">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -166,6 +160,7 @@
 <p>首先要弄明白不可摸数的概念：任何数m，s(m)都不等于n,则称n为不可摸数</p>
 <p>​                                                      而s(m)表示的是数m的真因子之和</p>
 <p>然后还要烤炉到一点就是说即使当前的数m的值很大，但是m的真因子之和也有可能很小，所以求值时m的值要比实际要求大很多。</p>
+<a id="more"></a>
 <p><strong>这个是完全正确的代码</strong></p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="keyword">int</span> M= <span class="number">500050</span>;</div><div class="line"><span class="keyword">int</span> moshu[<span class="number">1010</span>];</div><div class="line"><span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> a[<span class="number">500050</span>];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">qiumoShu</span><span class="params">()</span><span class="comment">//函数用于求不可摸数</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i,j,m;</div><div class="line">    m = M/<span class="number">2</span>;<span class="comment">//虽然要求的m的值小于1000就好，但是即使m很大相对应的s(m)的值可能很小</span></div><div class="line">    <span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=m; ++i)</div><div class="line">        <span class="keyword">for</span> (j=i+i; j&lt;M; j+=i)</div><div class="line">            a[j] += i;<span class="comment">//每个只要是当前i的倍数的值都要加上i</span></div><div class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>; i&lt;M; i++) <span class="comment">//吧小于1000的不可摸数都标记出来</span></div><div class="line">        <span class="keyword">if</span> (a[i]&lt;=<span class="number">1000</span>)</div><div class="line">            moshu[a[i]] = <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> a, i, N;</div><div class="line">    <span class="built_in">scanf</span> (<span class="string">"%d"</span>, &amp;N);</div><div class="line">    qiumoShu();</div><div class="line">    <span class="keyword">while</span> (N --)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">scanf</span> (<span class="string">"%d"</span>, &amp;a);</div><div class="line">        <span class="keyword">if</span> (moshu[a])</div><div class="line">            <span class="built_in">printf</span> (<span class="string">"no\n"</span>);</div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="built_in">printf</span> (<span class="string">"yes\n"</span>);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>这个代码错误，明显的思路就解释不通，就是那个标记点的问题，还有就是数组范围太小了开大也肯定会超时的，但是可能是测试数据太弱啦，竟然提交也能过，希望注意一下：**</p>
