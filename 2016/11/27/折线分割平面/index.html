@@ -6,14 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cmmdc.top">
-  <title>Tag: 深搜 | 梦</title>
+  <title>折线分割平面 杭电 2050 | 梦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="梦">
-<meta property="og:url" content="http://cmmdc.top/tags/深搜/index.html">
+  <meta name="description" content="题目链接
+题目分析：
+用折线来分割平面，看n条折线最多能够将平面分割成几部分，一条折线能够将平面分成两部分，两条折线能够将平面分割成7部分。具体分割情况如下所示：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="折线分割平面 杭电 2050">
+<meta property="og:url" content="http://cmmdc.top/2016/11/27/折线分割平面/index.html">
 <meta property="og:site_name" content="梦">
+<meta property="og:description" content="题目链接
+题目分析：
+用折线来分割平面，看n条折线最多能够将平面分割成几部分，一条折线能够将平面分成两部分，两条折线能够将平面分割成7部分。具体分割情况如下所示：">
+<meta property="og:image" content="http://ogbkru1bq.bkt.clouddn.com/hhh.png">
+<meta property="og:updated_time" content="2016-11-27T03:19:19.783Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梦">
+<meta name="twitter:title" content="折线分割平面 杭电 2050">
+<meta name="twitter:description" content="题目链接
+题目分析：
+用折线来分割平面，看n条折线最多能够将平面分割成几部分，一条折线能够将平面分成两部分，两条折线能够将平面分割成7部分。具体分割情况如下所示：">
+<meta name="twitter:image" content="http://ogbkru1bq.bkt.clouddn.com/hhh.png">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -121,54 +133,123 @@
 </nav>
 
       <div class="body-wrap">
+        <article id="post-折线分割平面" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
         
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/11/26/A计划/" class="archive-article-date">
-  	<time datetime="2016-11-26T12:32:59.742Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-26</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/11/26/A计划/">A计划  杭电 2102</a>
+    <h1 class="article-title" itemprop="name">
+      折线分割平面 杭电 2050
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2050" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p><strong>题目分析：</strong></p>
+<p>用折线来分割平面，看n条折线最多能够将平面分割成几部分，一条折线能够将平面分成两部分，两条折线能够将平面分割成7部分。具体分割情况如下所示：</p>
+<p><img src="http://ogbkru1bq.bkt.clouddn.com/hhh.png" alt=""></p>
+<a id="more"></a>
+<p>首先我们来考虑一下这个问题：</p>
+<p>1.当N条直线相交时最多把平面分割成几部分</p>
+<p>​     当添加第N条直线时，为了使分割成的平面尽可能的多，则第N条直线要与前面的N-1条直线都相交，并且没有任何的三条直线交与一点。</p>
+<p>​    则第N条直线先添加了N-1个交点。有因为每当增加N个交点时就会增加N+1个平面，则此时增加了N  个平面，按照这个规律往下递推。</p>
+<p>​    得到用N条直线啦分割平面，最多的平面数为：1+1+2+3+···+n=1+n*(n+1)/2;</p>
+<p>2.当每次增加两条相互平行的直线最多把平面分割成几部分</p>
+<p>  当第N次添加时，已经存在2<em>N-2条直线，所以第N次添加时，第2</em>N-1条直线和第2<em>N条直线都能够增加2</em>N-2+1=2<em>N-1个平面,所以第N次添加的平面个数为4</em>N-2,</p>
+<p>   递推可得，每次增加两条相互平行的直线分割平面总数为：1+2+6+10+···+4<em>N-2=2</em>N*N+1</p>
+<ol>
+<li><p>如果把每次加进来的平行边让它们一头相交</p>
+<p>在平行直线相交的基础上，若每组直线想交后就会少一个平面，总共会少N个平面</p>
+<p>每次增加两条相交的直线分割平面总数为：1+2+6+10+···+4<em>N-2-N=2</em>N*N+1-N</p>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> T,n;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</div><div class="line">    <span class="keyword">while</span>(T--)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,<span class="number">2</span>*n*n-n+<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/11/27/折线分割平面/" class="archive-article-date">
+  	<time datetime="2016-11-27T02:30:07.364Z" itemprop="datePublished"><i class="icon-clock"></i>2016-11-27</time>
+</a>
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/acm/">acm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/深搜/">深搜</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/数学/">数学</a></li></ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
-    
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/11/27/不可摸数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">不可摸数 杭电 1999</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="折线分割平面" data-title="折线分割平面 杭电 2050" data-url="http://cmmdc.top/2016/11/27/折线分割平面/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"151210114"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
 
 
       </div>
@@ -203,9 +284,9 @@
 		mathjax: false,
 		animate: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		root: "/",
