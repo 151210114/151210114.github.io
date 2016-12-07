@@ -141,78 +141,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1521" target="_blank" rel="external"><em>题目链接</em></a></p>
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1521"><em>题目链接</em></a></p>
 <p><em>首先补充一下母函数的基本知识：</em></p>
 <p>​      对于某个数列的母函数是一种形式幂级数，其每一项的系数可以提供关于这个序列的信息。母函数主要应用于求解组合数、排列数、递推关系通项公式等。</p>
-<p>​      对于这个多项式乘法：</p>
-<p><img src="http://a2.qpic.cn/psb?/V12a4hGR1z1f7H/39nGDdwIeLXG1gXJB.BtkL**0NNq1oiwRVnrly5pH5Y!/b/dHgBAAAAAAAA&amp;bo=XQJ9AAAAAAADBwA!&amp;rf=viewer_4" alt=""></p>
-<p>​       可以得出的结论有：</p>
-<ol>
-<li><p><em>x的系数是**的系数是a1,a2,…an的单个组合的全体</em></p>
-</li>
-<li><p><em>x^2的系数是a1,a2,…a2的两个组合的全体</em></p>
-</li>
-<li><p>·······</p>
-<p>n .<em>x^n的系数是a1,a2,….an的n个组合的全体（只有1个）</em></p>
-</li>
-</ol>
-<p>   进一步可以得到：</p>
-<p>   <img src="http://a1.qpic.cn/psb?/V12a4hGR1z1f7H/7LcRqXt9SxEctdEBTskcm*.vh0JWjYjotvcfwK3EHxM!/b/dN4AAAAAAAAA&amp;bo=gAJoAAAAAAADB8g!&amp;rf=viewer_4" alt=""></p>
-<p>   我们定义母函数</p>
-<p>   对于序列a0，a1，a2，…构造一函数：<img src="http://a3.qpic.cn/psb?/V12a4hGR1z1f7H/AUQEHqm9ilhvot2siR6hzi0J7DbJ4HRFhkFVl.sGY64!/b/dAoBAAAAAAAA&amp;bo=gAJaAAAAAAADB*o!&amp;rf=viewer_4" alt=""></p>
-<p>   称函数G(x)是序列a0，a1，a2，…的母函数。</p>
-<p>   ​</p>
-<p>   <strong>第一种例子分析：</strong></p>
-<p>   有1克、2克、3克、4克的砝码各<strong>一枚</strong>，能称出哪几种重量？每种重量各有几种可能方案？</p>
-<p>   考虑用母函数来解决这个问题：</p>
-<p>   我们假设x表示砝码，x的<strong>指数</strong>表示砝码的重量，这样：</p>
-<p>   1个1克的砝码可以用函数<strong>1+1*x^1</strong>表示，</p>
-<p>   1个2克的砝码可以用函数<strong>1+1*x^2</strong>表示，</p>
-<p>   1个3克的砝码可以用函数<strong>1+1*x^3</strong>表示，</p>
-<p>   1个4克的砝码可以用函数<strong>1+1*x^4</strong>表示，</p>
-   <font color="read"><br><br>   我们拿1+x^2来说，前面已经说过，x表示砝码，x的指数表示砝码的重量！初始状态时，这里就有一个质量为2的砝码。<br><br>   那么前面的<strong>1</strong>表示什么？按照上面的理解，1其实应该写为：1<em>x^0,即1代表重量为2的砝码数量为0个。<br><br>   所以这里1+1</em>x^2 = 1<em>x^0 + 1</em>x^2，即表示2克的砝码有两种状态，不取或取，不取则为1<em>x^0，取则为1</em>x^2<br><br>   </font>
-
-<pre><code>**把组合问题的加法法则和幂级数的乘幂对应起来**
-</code></pre><p>   ​</p>
-<p>   对于1+x^2,讨论x前面的系数的意义？</p>
-   <font color="red"><br><br>   这里的系数表示<strong>状态数</strong>(<strong>方案数</strong>)<br><br>   </font>
-
-<p>   1+x^2，也就是1<em>x^0 + 1</em>x^2，也就是上面说的不取2克砝码，此时有1种状态；或者取2克砝码，此时也有1种状态。(分析！)</p>
-<p>   所以，前面说的那句话的意义大家可以理解了吧？</p>
-<p>   几种砝码的组合可以称重的情况，可以用以上几个函数的乘积表示：</p>
-<p>   (1+x)(1+x^2)(1+x^3)(1+x^4)</p>
-<p>   =(1+x+x^2+x^4)(1+x^3+^4+x^7)</p>
-<p>   =1 + x + x^2 + 2<em>x^3 + 2</em>x^4 + 2<em>x^5+ 2</em>x^6 + 2*x^7 + x^8 + x^9 + x^10</p>
-<p>   从上面的函数知道：可称出从1克到10克，<strong>系数便是方案数。</strong>（！！！经典！！！）</p>
-<p>   例如右端有2^x^5 项，即称出5克的方案有2种：5=3+2=4+1；同样，6=1+2+3=4+2；10=1+2+3+4。</p>
-<p>   故称出6克的方案数有2种，称出10克的方案数有1种 。</p>
-<p>   ​</p>
-<p>   ​</p>
-<p>   <strong>第二种例子分析</strong></p>
-<p>   求用1分、2分、3分的邮票贴出不同数值的方案数：</p>
-<p>   大家把这种情况和第一种比较有何区别？第一种每种是<strong>一个</strong>，而这里每种是<strong>无限</strong>的。                          <img src="http://a2.qpic.cn/psb?/V12a4hGR1z1f7H/E05Cp2ZhRQ5jCEVzVV4w4sk*cd88IwiYc2VV*ygjF7k!/b/dAkBAAAAAAAA&amp;bo=gAKJAAAAAAADByk!&amp;rf=viewer_4" alt=""> </p>
-<p>   以展开后的x^4为例，其系数为4，即4拆分成1、2、3之和的拆分方案数为4；</p>
-<p>   即 ：4=1+1+1+1=1+1+2=1+3=2+2</p>
-<p>   这里再引出两个概念”整数拆分”和”拆分数”：</p>
-<p>   所谓<strong>整数拆分</strong>即把整数分解成若干整数的和（相当于把n个无区别的球放到n个无标志的盒子，盒子允许空，也允许放多于一个球）。</p>
-<p>   整数拆分成若干整数的和，办法不一，不同拆分法的总数叫做<strong>拆分数</strong>。</p>
-<p>   ​</p>
-<p>   <strong>下面是指数型母函数的定义：</strong></p>
-<p>   <a href="http://wutianqi-blog.b0.upaiyun.com/2011/06/zhishumuhanshu2.png" target="_blank" rel="external"><img src="http://wutianqi-blog.b0.upaiyun.com/2011/06/zhishumuhanshu2.png" alt="zhishumuhanshu2"></a></p>
-<p>   <img src="http://wutianqi-blog.b0.upaiyun.com/2011/06/zhishumuhanshu3.png" alt="zhishumuhanshu3"></p>
-<p>   对于上面的问题“假设有8个元素，其中a1重复3次，a2重复2次，a3重复3次。从中取r个组合，求其组合数。”：</p>
-<p>   （感谢 3Dnn 同学指出，下图的 28/3! 应该改为 26/3!）</p>
-<p>   <a href="http://wutianqi-blog.b0.upaiyun.com/2011/06/zhishumuhanshu4.png" target="_blank" rel="external"><img src="http://wutianqi-blog.b0.upaiyun.com/2011/06/zhishumuhanshu4.png" alt="zhishumuhanshu4"></a></p>
-<p>   本题就是指数型母函数的代表</p>
-<p>   <strong>题目分析</strong></p>
-<p>   对于给出的n<strong>中</strong>物品，每种物品的个数给出，求从中取出m<strong>件</strong>物品构成的排列数</p>
-   <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="keyword">int</span> jc[<span class="number">11</span>]= &#123;<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">6</span>,<span class="number">24</span>,<span class="number">120</span>,<span class="number">720</span>,<span class="number">5040</span>,<span class="number">40320</span>,<span class="number">326880</span>,<span class="number">3268800</span>&#125;;</div><div class="line">           <span class="comment">///数组用于存储从0到10的阶乘</span></div><div class="line"><span class="keyword">int</span> num[<span class="number">12</span>];</div><div class="line"><span class="keyword">double</span> c1[<span class="number">110</span>],c2[<span class="number">110</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> n,m;</div><div class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m))</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">memset</span>(c1,<span class="number">0</span>,<span class="keyword">sizeof</span>(c1));</div><div class="line">        <span class="built_in">memset</span>(c2,<span class="number">0</span>,<span class="keyword">sizeof</span>(c2));</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num[i]);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=num[<span class="number">1</span>]; i++)</div><div class="line">        &#123;</div><div class="line">            c1[i]=<span class="number">1.0</span>/jc[i];<span class="comment">///计算第一种物品存在不同个数的组合数</span></div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>; i&lt;=n; i++)<span class="comment">///下面从第二种物品开始</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;=m; j++)<span class="comment">///目前已经存在的物品数，肯定小于m</span></div><div class="line">            &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>; k&lt;=num[i]&amp;&amp;k&lt;=m; k++)<span class="comment">///要从当前的第i种物品中取出来的个数</span></div><div class="line">                    c2[j+k]+=c1[j]/jc[k];<span class="comment">///最终形成的一个排列数</span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;=m; j++)</div><div class="line">            &#123;</div><div class="line">                c1[j]=c2[j];<span class="comment">///c1存储的是最终的确定值，c2在刷新计算</span></div><div class="line">                c2[j]=<span class="number">0</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%.0lf\n"</span>,jc[m]*<span class="number">1.0</span>*c1[m]);</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>   ​</p>
-<p>   ​</p>
-<p>   ​</p>
-<p>   ​</p>
-<p>   ​</p>
-
+        <p class="article-more-link">
+          <a class="article-more-a"  href="/2016/12/07/排列组合/#more">more >></a>
+        </p>
       
     </div>
     <div class="article-info article-info-index">
