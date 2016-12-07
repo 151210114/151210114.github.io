@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://cmmdc.top">
+  <title>找单词 杭电 2082 (普通母函数) | 梦</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="题目链接
+题目分析：
+   默认从A到Z这26个英文字母的权重为1到26，依次输入26个数字，分别代表从A到Z这26个字母的个数。从这些子母中找出一些组成单词，一个单词的权重为其中每个单词的权重之和，但是组成的单词与排列顺序无关，要求组成单词的权重不大于50.
+   这就是一个普通的母函数的应用，关于母函数的知识可以具体见上一篇博客。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="找单词 杭电 2082 (普通母函数)">
+<meta property="og:url" content="http://cmmdc.top/2016/12/07/找单词/index.html">
+<meta property="og:site_name" content="梦">
+<meta property="og:description" content="题目链接
+题目分析：
+   默认从A到Z这26个英文字母的权重为1到26，依次输入26个数字，分别代表从A到Z这26个字母的个数。从这些子母中找出一些组成单词，一个单词的权重为其中每个单词的权重之和，但是组成的单词与排列顺序无关，要求组成单词的权重不大于50.
+   这就是一个普通的母函数的应用，关于母函数的知识可以具体见上一篇博客。">
+<meta property="og:updated_time" content="2016-12-07T13:41:19.378Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="找单词 杭电 2082 (普通母函数)">
+<meta name="twitter:description" content="题目链接
+题目分析：
+   默认从A到Z这26个英文字母的权重为1到26，依次输入26个数字，分别代表从A到Z这26个字母的个数。从这些子母中找出一些组成单词，一个单词的权重为其中每个单词的权重之和，但是组成的单词与排列顺序无关，要求组成单词的权重不大于50.
+   这就是一个普通的母函数的应用，关于母函数的知识可以具体见上一篇博客。">
+  
+  
+    <link rel="icon" href="photos/favicon.ico">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+  
+  
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://ogbkru1bq.bkt.clouddn.com/favicon.ico" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">梦</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不努力,永远不知道自己可以做的更好。</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">dc</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">梦</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://ogbkru1bq.bkt.clouddn.com/favicon.ico" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">梦</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不努力,永远不知道自己可以做的更好。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-找单词" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      找单词 杭电 2082 (普通母函数)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2082" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p><strong>题目分析：</strong></p>
+<p>   默认从A到Z这26个英文字母的权重为1到26，依次输入26个数字，分别代表从A到Z这26个字母的个数。从这些子母中找出一些组成单词，一个单词的权重为其中每个单词的权重之和，但是组成的单词与排列顺序无关，要求组成单词的权重不大于50.</p>
+<p>   这就是一个普通的母函数的应用，关于母函数的知识可以具体见上一篇博客。</p>
+<a id="more"></a>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> c1[<span class="number">100</span>],c2[<span class="number">100</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; num;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; qz;</div><div class="line">    <span class="keyword">int</span> T;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</div><div class="line">    <span class="keyword">while</span>(T--)</div><div class="line">    &#123;</div><div class="line">        num.clear();</div><div class="line">        qz.clear();</div><div class="line">        <span class="built_in">memset</span>(c1,<span class="number">0</span>,<span class="keyword">sizeof</span>(c1));</div><div class="line">        <span class="built_in">memset</span>(c2,<span class="number">0</span>,<span class="keyword">sizeof</span>(c2));</div><div class="line">        <span class="keyword">int</span> temp;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=<span class="number">26</span>; i++)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;temp);</div><div class="line">            <span class="keyword">if</span>(temp!=<span class="number">0</span>)</div><div class="line">            &#123;</div><div class="line">                num.push_back(temp);<span class="comment">///当前的个数不为0时，就把当前这个字母对应的权重和个数分别存下</span></div><div class="line">                qz.push_back(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> n=num.size();</div><div class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>)          <span class="comment">///当前所有的字母个数都为0的话，就没有计算的必要了，直接输出0</span></div><div class="line">            <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=<span class="number">50</span>&amp;&amp;i&lt;=num[<span class="number">0</span>]*qz[<span class="number">0</span>]; i+=qz[<span class="number">0</span>])<span class="comment">/*第一个字母，关键在于i的控制，i表示的是权重的累加和</span></div><div class="line">                                                            不仅要小于要求50，还得小于当前字母个数的总权重</div><div class="line">                                                        */</div><div class="line">                c1[i]=<span class="number">1</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;n; i++)      <span class="comment">///从第二个字母开始循环</span></div><div class="line">            &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;=<span class="number">50</span>; j++)  <span class="comment">///表示当前已经拥有的权重</span></div><div class="line">                &#123;</div><div class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>; k&lt;=<span class="number">50</span>&amp;&amp;k&lt;=num[i]*qz[i]; k+=qz[i])<span class="comment">///在该字母上可以取得的权重，满足条件和第一个字母一样</span></div><div class="line">                        c2[k+j]+=c1[j];     <span class="comment">///该权重下的个数刷新</span></div><div class="line">                &#125;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> p=<span class="number">0</span>; p&lt;=<span class="number">50</span>; p++)<span class="comment">///每一个字母找玩后都要保存并c2初始化</span></div><div class="line">                &#123;</div><div class="line">                    c1[p]=c2[p];</div><div class="line">                    c2[p]=<span class="number">0</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">int</span> sum1=<span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=<span class="number">50</span>; i++)</div><div class="line">                sum1+=c1[i];</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum1);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/12/07/找单词/" class="archive-article-date">
+  	<time datetime="2016-12-07T13:28:53.557Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-07</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/acm/">acm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/母函数/">母函数</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/07/排列组合/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">排列组合 杭电 1521</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="找单词" data-title="找单词 杭电 2082 (普通母函数)" data-url="http://cmmdc.top/2016/12/07/找单词/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"151210114"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 梦
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+<!--给网站加上人次数以及访问人数-->
+ <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+<span id="busuanzi_container_site_pv">
+    <br>本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/acm/" style="font-size: 20px;">acm</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/kmp/" style="font-size: 10px;">kmp</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/剪枝/" style="font-size: 10px;">剪枝</a> <a href="/tags/好玩/" style="font-size: 10px;">好玩</a> <a href="/tags/广搜/" style="font-size: 10px;">广搜</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/母函数/" style="font-size: 15px;">母函数</a> <a href="/tags/深搜/" style="font-size: 10px;">深搜</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://dccmm.top">dc</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+  
+   <script type="text/javascript" src="/js/src/particle.js"></script>
+
+</body>
+</html>
