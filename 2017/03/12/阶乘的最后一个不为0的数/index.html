@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://cmmdc.top">
+  <title>阶乘的最后一个不为0的数 蓝桥杯 | 梦</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="题目链接
+具体问题
+​                                                             1122: 算法训练 阶乘题目描述一个整数n的阶乘可以写成n!，它表示从1到n这n个整数的乘积。阶乘的增长速度非常快，例如，13!就已经比较大了，已经无法存放在一个整型变量 中；而35!就更大了，它已经无法存放在一个浮点型变量中。因此，当n比较大时，去计算">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阶乘的最后一个不为0的数 蓝桥杯">
+<meta property="og:url" content="http://cmmdc.top/2017/03/12/阶乘的最后一个不为0的数/index.html">
+<meta property="og:site_name" content="梦">
+<meta property="og:description" content="题目链接
+具体问题
+​                                                             1122: 算法训练 阶乘题目描述一个整数n的阶乘可以写成n!，它表示从1到n这n个整数的乘积。阶乘的增长速度非常快，例如，13!就已经比较大了，已经无法存放在一个整型变量 中；而35!就更大了，它已经无法存放在一个浮点型变量中。因此，当n比较大时，去计算">
+<meta property="og:updated_time" content="2017-03-12T07:19:15.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="阶乘的最后一个不为0的数 蓝桥杯">
+<meta name="twitter:description" content="题目链接
+具体问题
+​                                                             1122: 算法训练 阶乘题目描述一个整数n的阶乘可以写成n!，它表示从1到n这n个整数的乘积。阶乘的增长速度非常快，例如，13!就已经比较大了，已经无法存放在一个整型变量 中；而35!就更大了，它已经无法存放在一个浮点型变量中。因此，当n比较大时，去计算">
+  
+  
+    <link rel="icon" href="photos/favicon.ico">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+  
+  
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://ogbkru1bq.bkt.clouddn.com/favicon.ico" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">梦</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不努力,永远不知道自己可以做的更好。</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">dc</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">梦</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://ogbkru1bq.bkt.clouddn.com/favicon.ico" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">梦</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不努力,永远不知道自己可以做的更好。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-阶乘的最后一个不为0的数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      阶乘的最后一个不为0的数 蓝桥杯
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://115.159.67.147/problem.php?id=1122" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p><strong>具体问题</strong></p>
+<p>​                                                             1122: 算法训练 阶乘<br>题目描述一个整数n的阶乘可以写成n!，它表示从1到n这n个整数的乘积。阶乘的增长速度非常快，例如，13!就已经比较大了，已经无法存放在一个整型变量 中；而35!就更大了，它已经无法存放在一个浮点型变量中。因此，当n比较大时，去计算n!是非常困难的。幸运的是，在本题中，我们的任务不是去计算 n!，而是去计算n!最右边的那个非0的数字是多少。例如，5! = 1<em>2</em>3<em>4</em>5 = 120，因此5!最右边的那个非0的数字是2。再如：7! = 5040，因此7!最右边的那个非0的数字是4。请编写一个程序，输入一个整数n(n&lt;=100)，然后输出n! 最右边的那个非0的数字是多少。</p>
+<a id="more"></a>
+<p>输入输入只有一个整数n。</p>
+<p>输出输出只有一个整数，即n! 最右边的那个非0的数字。</p>
+<p>样例输入</p>
+<p><code>6</code></p>
+<p>样例输出</p>
+<p><code>2</code></p>
+<p><strong>题目分析</strong></p>
+<p>首先求一个数的阶乘，有关阶乘的求法就不在解释了，但是我们应该注意到的一点就是，如果当前的这个数比较大的话，呢么他的阶乘肯定就是int 甚至long long int都存不下的。</p>
+<p>但是这道题我们并不需要具体求出来这个数的阶乘是多少，我们需要做的就只是要求出来这个阶乘的从后往前数第一个不为0的数字。以前写过求一个数的阶乘的后三位的，我们只需要把每次阶乘乘上后对1000取余即可。这是因为，如果要求后面三位的话，我们只需要知道每次的后三位是什么就可以了，前面的数字不管如何，都对最后三位没有影响。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">jieCheng</span><span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> jie=<span class="number">1</span>;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">	&#123;</div><div class="line">		sum*=n;</div><div class="line">		sum=sum%<span class="number">1000</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> sum;	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是这道题并不能单纯的求出后几位然后找，因为可能后面好几位的全部都是0，我们不能够确定要求的是后几位。所以我们可以把每次计算出来的数先把最后的0全部去掉，再取余，我们虽然是要求的最后一位部位0的，也不能仅仅对于10 取余，因为如果下次乘上求得的数的最后一位为0，且需要进位的话，进位后的数字就不正确了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span>  </span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> a[<span class="number">100002</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">int</span> n,sum=<span class="number">1</span>;</div><div class="line">  <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</div><div class="line">  &#123;</div><div class="line">  	sum=sum*i;<span class="comment">//阶乘从1乘到n </span></div><div class="line">  	<span class="keyword">while</span>(sum)</div><div class="line">  	&#123;</div><div class="line">  		<span class="keyword">if</span>(sum%<span class="number">10</span>==<span class="number">0</span>)</div><div class="line">  		sum=sum/<span class="number">10</span>;<span class="comment">//每次计算出来的数，将最后的0都去掉 </span></div><div class="line">  		<span class="keyword">else</span></div><div class="line">  		&#123;</div><div class="line">  			sum=sum%<span class="number">1000</span>;<span class="comment">//取余德时候应该取大点，防止进位时出现差错 </span></div><div class="line">  			<span class="keyword">break</span>;</div><div class="line">  		&#125;</div><div class="line">  	&#125;</div><div class="line">  &#125; </div><div class="line">   <span class="keyword">while</span>(sum)</div><div class="line">  	&#123;</div><div class="line">  		<span class="keyword">if</span>(sum%<span class="number">10</span>==<span class="number">0</span>)</div><div class="line">  		sum=sum/<span class="number">10</span>;<span class="comment">//还是将最后的0都去掉 </span></div><div class="line">  		<span class="keyword">else</span></div><div class="line">  		&#123;</div><div class="line">  			 <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum%<span class="number">10</span>);<span class="comment">//然后直接取个余数，即为所求 </span></div><div class="line">  			<span class="keyword">break</span>;</div><div class="line">  		&#125;</div><div class="line">  	&#125; </div><div class="line"> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/03/12/阶乘的最后一个不为0的数/" class="archive-article-date">
+  	<time datetime="2017-03-12T06:13:32.305Z" itemprop="datePublished"><i class="icon-clock"></i>2017-03-12</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/acm/">acm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/蓝桥杯/">蓝桥杯</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/07/找单词/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">找单词 杭电 2082 (普通母函数)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="阶乘的最后一个不为0的数" data-title="阶乘的最后一个不为0的数 蓝桥杯" data-url="http://cmmdc.top/2017/03/12/阶乘的最后一个不为0的数/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"151210114"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 梦
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+<!--给网站加上人次数以及访问人数-->
+ <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+<span id="busuanzi_container_site_pv">
+    <br>本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/acm/" style="font-size: 20px;">acm</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/kmp/" style="font-size: 10px;">kmp</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/剪枝/" style="font-size: 10px;">剪枝</a> <a href="/tags/好玩/" style="font-size: 10px;">好玩</a> <a href="/tags/广搜/" style="font-size: 10px;">广搜</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/母函数/" style="font-size: 15px;">母函数</a> <a href="/tags/深搜/" style="font-size: 10px;">深搜</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/蓝桥杯/" style="font-size: 10px;">蓝桥杯</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://dccmm.top">dc</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+  
+   <script type="text/javascript" src="/js/src/particle.js"></script>
+
+</body>
+</html>
