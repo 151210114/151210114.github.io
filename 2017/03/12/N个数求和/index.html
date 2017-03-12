@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://cmmdc.top">
+  <title>N个数求和 天梯赛 L1-009 | 梦</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="题目链接
+本题的要求很简单，就是求N个数字的和。麻烦的是，这些数字是以有理数“分子/分母”的形式给出的，你输出的和也必须是有理数的形式。
+输入格式：
+输入第一行给出一个正整数N（&amp;lt;=100）。随后一行按格式“a1/b1 a2/b2 …”给出N个有理数。题目保证所有分子和分母都在长整型范围内。另外，负数的符号一定出现在分子前面。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="N个数求和 天梯赛 L1-009">
+<meta property="og:url" content="http://cmmdc.top/2017/03/12/N个数求和/index.html">
+<meta property="og:site_name" content="梦">
+<meta property="og:description" content="题目链接
+本题的要求很简单，就是求N个数字的和。麻烦的是，这些数字是以有理数“分子/分母”的形式给出的，你输出的和也必须是有理数的形式。
+输入格式：
+输入第一行给出一个正整数N（&amp;lt;=100）。随后一行按格式“a1/b1 a2/b2 …”给出N个有理数。题目保证所有分子和分母都在长整型范围内。另外，负数的符号一定出现在分子前面。">
+<meta property="og:updated_time" content="2017-03-12T09:35:53.766Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="N个数求和 天梯赛 L1-009">
+<meta name="twitter:description" content="题目链接
+本题的要求很简单，就是求N个数字的和。麻烦的是，这些数字是以有理数“分子/分母”的形式给出的，你输出的和也必须是有理数的形式。
+输入格式：
+输入第一行给出一个正整数N（&amp;lt;=100）。随后一行按格式“a1/b1 a2/b2 …”给出N个有理数。题目保证所有分子和分母都在长整型范围内。另外，负数的符号一定出现在分子前面。">
+  
+  
+    <link rel="icon" href="photos/favicon.ico">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+  
+  
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://ogbkru1bq.bkt.clouddn.com/favicon.ico" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">梦</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不努力,永远不知道自己可以做的更好。</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">dc</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">梦</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://ogbkru1bq.bkt.clouddn.com/favicon.ico" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">梦</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不努力,永远不知道自己可以做的更好。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-N个数求和" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      N个数求和 天梯赛 L1-009
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.patest.cn/contests/gplt/L1-009" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>本题的要求很简单，就是求N个数字的和。麻烦的是，这些数字是以有理数“分子/分母”的形式给出的，你输出的和也必须是有理数的形式。</p>
+<p><strong>输入格式：</strong></p>
+<p>输入第一行给出一个正整数N（&lt;=100）。随后一行按格式“a1/b1 a2/b2 …”给出N个有理数。题目保证所有分子和分母都在长整型范围内。另外，负数的符号一定出现在分子前面。</p>
+ <a id="more"></a>
+<p><strong>输出格式：</strong></p>
+<p>输出上述数字和的最简形式 —— 即将结果写成“整数部分 分数部分”，其中分数部分写成“分子/分母”，要求分子小于分母，且它们没有公因子。如果结果的整数部分为0，则只输出分数部分。</p>
+<p>输入样例1：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">5</span></div><div class="line"><span class="number">2</span>/<span class="number">5</span> <span class="number">4</span>/<span class="number">15</span> <span class="number">1</span>/<span class="number">30</span> <span class="number">-2</span>/<span class="number">60</span> <span class="number">8</span>/<span class="number">3</span></div></pre></td></tr></table></figure>
+<p>输出样例1：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">3 </span><span class="number">1</span>/<span class="number">3</span></div></pre></td></tr></table></figure>
+<p>输入样例2：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span></div><div class="line"><span class="number">4</span>/<span class="number">3</span> <span class="number">2</span>/<span class="number">3</span></div></pre></td></tr></table></figure>
+<p>输出样例2：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">2</span></div></pre></td></tr></table></figure>
+<p>输入样例3：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span></div><div class="line"><span class="number">1</span>/<span class="number">3</span> <span class="number">-1</span>/<span class="number">6</span> <span class="number">1</span>/<span class="number">8</span></div></pre></td></tr></table></figure>
+<p>输出样例3：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">7</span>/<span class="number">24</span></div></pre></td></tr></table></figure>
+<p><strong>题目分析：</strong></p>
+<p>对于分数求和，我们首先要注意道德一点就是分数必须是同分母的分数才能够进行求和运算，所以我们要求出所有分母的最小公倍数。两个数的最小公倍数可以通过他们的最大公约数求得（最小公倍数=连个数的乘积/最大公约数），然后根据每一个分数的分母扩大的比例，将分子也扩大相同的倍数求和。但是这样得到的分数并不一定是最简形式，还要将分数进行通分，分子分母同时除以最大公约数。这样求得的分数如果是假分数的话还要转化为相应的真分数形式。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="comment">//gcd()函数，作用主要为求两个数的最大公约数</span></div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> <span class="title">gcd</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> m,<span class="keyword">long</span> <span class="keyword">long</span>  <span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">long</span> <span class="keyword">long</span>	<span class="keyword">int</span> r=m%n;</div><div class="line">	<span class="keyword">while</span>(r)</div><div class="line">	&#123;</div><div class="line">		m=n;</div><div class="line">		n=r;</div><div class="line">		r=m%n;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> n;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;	 </div><div class="line">    <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> n;</div><div class="line">      <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> x[<span class="number">103</span>];</div><div class="line">     <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> y[<span class="number">103</span>];</div><div class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%lld"</span>,&amp;n))</div><div class="line">    &#123;</div><div class="line">    	<span class="keyword">if</span>(n==<span class="number">0</span>)<span class="comment">//如果输入的分数的个数为0的话，最后输出的结果也肯定为0 </span></div><div class="line">    	&#123;</div><div class="line">    		<span class="built_in">printf</span>(<span class="string">"0\n"</span>);</div><div class="line">    	&#125;</div><div class="line">    	<span class="keyword">else</span></div><div class="line">    	&#123;</div><div class="line">         <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> max1=<span class="number">0</span>;</div><div class="line">		 <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> op=<span class="number">1</span>;<span class="comment">//因为要求所有坟墓的最小公倍数，所以让1与第一个分母求公约数 </span></div><div class="line">		 <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> po;</div><div class="line">    	<span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</div><div class="line">    	&#123;</div><div class="line">		<span class="built_in">scanf</span>(<span class="string">"%lld/%lld"</span>,&amp;x[i],&amp;y[i]);</div><div class="line">		      po=gcd(op,y[i]);<span class="comment">//两个数的最大公约数 </span></div><div class="line">    			 max1=op*y[i]/po;<span class="comment">//两个数的最小公倍数 </span></div><div class="line">    			 op=max1;<span class="comment">//op表示的是与当前值求公约数的另一个，初始值为1 </span></div><div class="line">    	&#125; 		 </div><div class="line">    </div><div class="line">    	<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> m=<span class="number">0</span>,sum=<span class="number">0</span>,sum1=<span class="number">0</span>;</div><div class="line">    	<span class="keyword">for</span>(<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</div><div class="line">    	&#123;</div><div class="line">    		m=max1/y[i];<span class="comment">//分母扩大的倍数 </span></div><div class="line">    		sum+=x[i]*m;<span class="comment">//分子和 </span></div><div class="line">    	&#125;</div><div class="line">    	sum1=max1;  </div><div class="line">		<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> gong=gcd(sum,sum1);<span class="comment">//最终的分数要约分 </span></div><div class="line">		sum=sum/gong;</div><div class="line">		sum1=sum1/gong;</div><div class="line">		<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> Zheng =sum/sum1;<span class="comment">//分数的整数部分 </span></div><div class="line">		<span class="keyword">if</span>(sum-sum1*Zheng==<span class="number">0</span>)</div><div class="line">			<span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,Zheng);<span class="comment">//分数只有整数部分的话，直接把整数部分输出来就行 </span></div><div class="line">			<span class="keyword">else</span></div><div class="line">			&#123;</div><div class="line">				<span class="keyword">if</span>(Zheng==<span class="number">0</span>)</div><div class="line">				&#123;</div><div class="line">					<span class="built_in">printf</span>(<span class="string">"%lld/%lld\n"</span>,sum,sum1);</div><div class="line">				&#125;</div><div class="line">				<span class="keyword">else</span></div><div class="line">				<span class="built_in">printf</span>(<span class="string">"%lld %lld/%lld\n"</span>,Zheng,sum-Zheng*sum1,sum1);</div><div class="line">			&#125;</div><div class="line">		&#125;	  	</div><div class="line">   &#125;</div><div class="line">     <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/03/12/N个数求和/" class="archive-article-date">
+  	<time datetime="2017-03-12T08:59:45.898Z" itemprop="datePublished"><i class="icon-clock"></i>2017-03-12</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/12/小兔的棋盘/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">小兔的棋盘 杭电 2067</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="N个数求和" data-title="N个数求和 天梯赛 L1-009" data-url="http://cmmdc.top/2017/03/12/N个数求和/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"151210114"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 梦
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+<!--给网站加上人次数以及访问人数-->
+ <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+<span id="busuanzi_container_site_pv">
+    <br>本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/acm/" style="font-size: 20px;">acm</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/kmp/" style="font-size: 10px;">kmp</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/剪枝/" style="font-size: 10px;">剪枝</a> <a href="/tags/好玩/" style="font-size: 10px;">好玩</a> <a href="/tags/广搜/" style="font-size: 10px;">广搜</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/母函数/" style="font-size: 15px;">母函数</a> <a href="/tags/深搜/" style="font-size: 10px;">深搜</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/蓝桥杯/" style="font-size: 10px;">蓝桥杯</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://dccmm.top">dc</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+  
+   <script type="text/javascript" src="/js/src/particle.js"></script>
+
+</body>
+</html>
