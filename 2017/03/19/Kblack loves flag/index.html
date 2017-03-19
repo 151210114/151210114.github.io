@@ -20,7 +20,7 @@ One day, Kblack is given an  chessboard and he decides to plant flags on the che
 Problem Description
 Kblack loves flags, so he has infinite flags in his pocket.
 One day, Kblack is given an  chessboard and he decides to plant flags on the chessboard where the position of each">
-<meta property="og:updated_time" content="2017-03-19T04:55:54.905Z">
+<meta property="og:updated_time" content="2017-03-19T05:03:51.270Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kblack loves flag 杭电5995">
 <meta name="twitter:description" content="题目链接
@@ -167,10 +167,7 @@ One day, Kblack is given an  chessboard and he decides to plant flags on the che
 <p>Then,you need to generate the  flags’ coordinates.</p>
 <p>For ,firstly generate a random number in the range of .Then generate a random number in the range of .</p>
 <p>You can also copy the following code and run “Init” to generate the x[],y[] (only for C++ players).</p>
-<p>const int _K=50268147,_B=6082187,_P=100000007;<br>int _X;<br>inline int get_rand(int _l,int _r){<br>  _X=((long long)_K*_X+_B)%_P;<br>  return _X%(_r-_l+1)+_l;<br>}<br>int n,m,k,seed;<br>int x[1000001],y[1000001];<br>void Init(){<br>  scanf(“%d%d%d%d”,&amp;n,&amp;m,&amp;k,&amp;seed);<br>  _X=seed;<br>  for (int i=1;i&lt;=k;++i)</p>
-<pre><code>x[i]=get_rand(1,n),
-y[i]=get_rand(1,m);
-</code></pre><p>}</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> K=<span class="number">50268147</span>,B=<span class="number">6082187</span>,_P=<span class="number">100000007</span>;</div><div class="line"><span class="keyword">int</span> _X;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">get_rand</span><span class="params">(<span class="keyword">int</span> _l,<span class="keyword">int</span> _r)</span></span></div><div class="line">&#123;</div><div class="line">  X=((<span class="keyword">long</span> <span class="keyword">long</span>)K*X+B)%_P;</div><div class="line">  <span class="keyword">return</span> X%(r-l+<span class="number">1</span>)+l;</div><div class="line">&#125;</div><div class="line"><span class="keyword">int</span> n,m,k,seed;</div><div class="line"><span class="keyword">int</span> x[<span class="number">1000001</span>],y[<span class="number">1000001</span>];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;n,&amp;m,&amp;k,&amp;seed);</div><div class="line">  _X=seed;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;++i)</div><div class="line">    x[i]=get_rand(<span class="number">1</span>,n),</div><div class="line">    y[i]=get_rand(<span class="number">1</span>,m);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p> (1≤T≤7),(1≤n,m≤1000000),(0≤k≤1000000),(0≤seed&lt;100000007)</p>
 <p>Output</p>
 <p>For each testcase,print a single line contained two integers,which respectively represent the number of lines and rows that have no flags planted.</p>
