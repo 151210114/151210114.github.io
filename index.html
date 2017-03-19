@@ -123,6 +123,159 @@
       <div class="body-wrap">
         
   
+    <article id="post-Kblack loves flag" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/19/Kblack loves flag/">Kblack loves flag 杭电5995</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=5995" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>Problem Description</p>
+<p>Kblack loves flags, so he has infinite flags in his pocket.</p>
+<p>One day, Kblack is given an  chessboard and he decides to plant flags on the chessboard where the position of each flag is described as a coordinate , which means that the flag is planted at the th line of the th row.</p>
+<p>After planting the flags, Kblack feels sorry for those lines and rows that have no flags planted on, so he would like to know that how many lines and rows there are that have no flags planted on.</p>
+<p>Well, Kblack, unlike you, has a date tonight, so he leaves the problem to you. please resolve the problem for him.</p>
+<p>Input</p>
+<p>You should generate the input data in your programme.</p>
+<p>We have a private variable  in the generation,which equals to  initially.When you call for a random number ranged from ,the generation will trans  into .And then,it will return .</p>
+<p>The first line contains a single integer  refers to the number of testcases.</p>
+<p>For each testcase,there is a single line contains 4 integers .</p>
+<p>Then,you need to generate the  flags’ coordinates.</p>
+<p>For ,firstly generate a random number in the range of .Then generate a random number in the range of .</p>
+<p>You can also copy the following code and run “Init” to generate the x[],y[] (only for C++ players).</p>
+<pre>
+
+
+const int _K=50268147,_B=6082187,_P=100000007;
+int _X;
+inline int get_rand(int _l,int _r){
+  _X=((long long)_K*_X+_B)%_P;
+  return _X%(_r-_l+1)+_l;
+}
+int n,m,k,seed;
+int x[1000001],y[1000001];
+void Init(){
+  scanf("%d%d%d%d",&n,&m,&k,&seed);
+  _X=seed;
+  for (int i=1;i<=k;++i) x[i]="get_rand(1,n)," y[i]="get_rand(1,m);" }="" <="" pre="">
+
+<p> (1≤T≤7),(1≤n,m≤1000000),(0≤k≤1000000),(0≤seed&lt;100000007)</p>
+<p>Output</p>
+<p>For each testcase,print a single line contained two integers,which respectively represent the number of lines and rows that have no flags planted.</p>
+<p>Sample Input</p>
+<p>2<br>4 2 3 233<br>3 4 4 2333</p>
+<p>Sample Output</p>
+<p>2 1<br>1 0</p>
+<p>Hint</p>
+<p>the flags in the first case:$\left(4,2\right)$,$\left(1,2\right)$,$\left(1,2\right)$</p>
+<p>the flags in the second case:$\left(2,1 \right)$,$\left(2,3\right)$,$\left(3,4\right)$,$\left(3,2\right)$</p>
+<p><strong>分析：</strong></p>
+<p> 给你一个n*m的棋盘，然后在上面放置棋子，但是这些妻子的位置并不是要你自己输入的，而是随机产生的，然后根据题目中已经给出的函数计算出来的，我们要计算的就是该棋盘中有几行和几列没有放棋子。</p>
+<p>看懂题觉得很简单，然而竟然一开始压根就没有看懂题目啥意思，感觉智商不够用了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> _K=<span class="number">50268147</span>,_B=<span class="number">6082187</span>,_P=<span class="number">100000007</span>;</div><div class="line"><span class="keyword">int</span> _X;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">get_rand</span><span class="params">(<span class="keyword">int</span> _l,<span class="keyword">int</span> _r)</span><span class="comment">//生成随机数的函数 ,题目已经给出</span></span></div><div class="line">&#123;</div><div class="line">  _X=((<span class="keyword">long</span> <span class="keyword">long</span>)_K*_X+_B)%_P;</div><div class="line">  <span class="keyword">return</span> _X%(_r-_l+<span class="number">1</span>)+_l;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">int</span> numr=<span class="number">0</span>,numl=<span class="number">0</span>;</div><div class="line"><span class="keyword">bool</span> row[<span class="number">1000001</span>],line[<span class="number">1000001</span>]; </div><div class="line"><span class="keyword">int</span> n,m,k,seed;</div><div class="line"><span class="keyword">int</span> x[<span class="number">1000001</span>],y[<span class="number">1000001</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;n,&amp;m,&amp;k,&amp;seed);</div><div class="line">  <span class="built_in">memset</span>(row,<span class="literal">false</span>,<span class="keyword">sizeof</span>(row));</div><div class="line">  <span class="built_in">memset</span>(line,<span class="literal">false</span>,<span class="keyword">sizeof</span>(line));</div><div class="line">  numr=<span class="number">0</span>;</div><div class="line">  numl=<span class="number">0</span>;</div><div class="line">  _X=seed;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;++i)</div><div class="line">  &#123; </div><div class="line">    x[i]=get_rand(<span class="number">1</span>,n);<span class="comment">//生成的行坐标 </span></div><div class="line">    y[i]=get_rand(<span class="number">1</span>,m);<span class="comment">//列坐标 </span></div><div class="line">    <span class="keyword">if</span>(row[x[i]]==<span class="literal">false</span>)<span class="comment">//该行没有放过的话，就放一个，并且标记为已放过 </span></div><div class="line">    &#123;</div><div class="line">    	numr++;</div><div class="line">    	row[x[i]]=<span class="literal">true</span>;  	</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(line[y[i]]==<span class="literal">false</span>)<span class="comment">//该列没有放过的话，就放一个，并且标记为已放过 </span></div><div class="line">    &#123;</div><div class="line">    	numl++;</div><div class="line">    	line[y[i]]=<span class="literal">true</span>;</div><div class="line">    	</div><div class="line">    &#125;</div><div class="line">  &#125; </div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> N;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;N);</div><div class="line">	<span class="keyword">while</span>(N--)</div><div class="line">	&#123;</div><div class="line">	 Init();</div><div class="line">     <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,n-numr,m-numl);</div><div class="line">	&#125; </div><div class="line"> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</=k;++i)></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/03/19/Kblack loves flag/" class="archive-article-date">
+  	<time datetime="2017-03-19T01:48:00.756Z" itemprop="datePublished"><i class="icon-clock"></i>2017-03-19</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Fire Net" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/03/19/Fire Net/">Fire Net 杭电1045</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1045" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>Problem </p>
+<p>DescriptionSuppose that we have a square city with straight streets. A map of a city is a square board with n rows and n columns, each representing a street or a piece of wall. </p>
+<p>A blockhouse is a small castle that has four openings through which to shoot. The four openings are facing North, East, South, and West, respectively. There will be one machine gun shooting through each opening. </p>
+<p>Here we assume that a bullet is so powerful that it can run across any distance and destroy a blockhouse on its way. On the other hand, a wall is so strongly built that can stop the bullets. </p>
+<p>The goal is to place as many blockhouses in a city as possible so that no two can destroy each other. A configuration of blockhouses is legal provided that no two blockhouses are on the same horizontal row or vertical column in a map unless there is at least one wall separating them. In this problem we will consider small square cities (at most 4x4) that contain walls through which bullets cannot run through. </p>
+<p>The following image shows five pictures of the same board. The first picture is the empty board, the second and third pictures show legal configurations, and the fourth and fifth pictures show illegal configurations. For this board, the maximum number of blockhouses in a legal configuration is 5; the second picture shows one way to do it, but there are several other ways. </p>
+<p><img src="http://acm.hdu.edu.cn/data/images/1045-1.jpg" alt="img"></p>
+<p>Your task is to write a program that, given a description of a map, calculates the maximum number of blockhouses that can be placed in the city in a legal configuration. </p>
+<p>Input</p>
+<p>The input file contains one or more map descriptions, followed by a line containing the number 0 that signals the end of the file. Each map description begins with a line containing a positive integer n that is the size of the city; n will be at most 4. The next n lines each describe one row of the map, with a ‘.’ indicating an open space and an uppercase ‘X’ indicating a wall. There are no spaces in the input file. </p>
+<p>Output</p>
+<p>For each test case, output one line containing the maximum number of blockhouses that can be placed in the city in a legal configuration.</p>
+<p>Sample Input`</p>
+<p>4<br>.X..<br>….<br>XX..<br>….<br>2<br>XX<br>.X<br>3<br>.X.<br>X.X<br>.X.<br>3<br>…<br>.XX<br>.XX<br>4<br>….<br>….<br>….<br>….<br>0` </p>
+<p>Sample Output`</p>
+<p>5<br>1<br>5<br>2<br>4`</p>
+<p><strong>分析：</strong></p>
+<p>如题目上的图片所示，圆代表的是枪，方格代表的是墙。在同一行或者同一列的枪之间可以相互射击，因此枪不可以放在同一行或者同一列，但是如果他们之间有墙阻隔的话，就认为是不能够被射击到的，这样的话就可以放在同一行或者同一列。</p>
+<p>类似于n皇后的问题，我们从第一个点开始找，每次在找的时候只看它所在行的左边和所在列的上边，看能不能够放置枪，能的话就把枪的数目加1，再往后找，不能的话直接往后找。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> <span class="keyword">int</span> n,Min=<span class="number">0</span>;</div><div class="line"> <span class="keyword">char</span> tu[<span class="number">5</span>][<span class="number">5</span>];</div><div class="line"> <span class="function"><span class="keyword">bool</span> <span class="title">ZhangAi</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span><span class="comment">//判断(x,y)这个点能不能够放枪 </span></span></div><div class="line"> &#123;</div><div class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=x<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)<span class="comment">//在该列的上方寻找 </span></div><div class="line">     &#123;</div><div class="line">         <span class="keyword">if</span>(tu[i][y]==<span class="string">'*'</span>)<span class="comment">//如果该列放过枪了，就肯定不能够放了 </span></div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">         <span class="keyword">if</span>(tu[i][y]==<span class="string">'X'</span>)<span class="comment">//如果该列有墙，也就意味着能够放，不用再往上寻找了 </span></div><div class="line">            <span class="keyword">break</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=y<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</div><div class="line">     &#123;</div><div class="line">         <span class="keyword">if</span>(tu[x][i]==<span class="string">'*'</span>)<span class="comment">//如果该行放过枪了，就肯定不能够放了 </span></div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">         <span class="keyword">if</span>(tu[x][i]==<span class="string">'X'</span>)<span class="comment">//如果该行有墙，也就意味着能够放，不用再往左寻找了 </span></div><div class="line">            <span class="keyword">break</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> <span class="literal">true</span>;<span class="comment">//返回true是该行的左边，列的上边，都没有放过枪或者遇到了墙 </span></div><div class="line"> &#125;</div><div class="line"></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> cur,<span class="keyword">int</span> s)</span></span></div><div class="line"> &#123;</div><div class="line">     <span class="keyword">if</span>(cur==n*n)<span class="comment">//当前的放个访问的第cur个放个， </span></div><div class="line">     &#123;</div><div class="line">         <span class="keyword">if</span>(s&gt;Min)</div><div class="line">            Min=s;</div><div class="line">         <span class="keyword">return</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="comment">//当前的放个访问的第cur个方格，除以列数就是所在的行，对列数取余，就是所在的列 </span></div><div class="line">     <span class="keyword">int</span> x=cur/n;</div><div class="line">     <span class="keyword">int</span> y=cur%n;</div><div class="line">     <span class="keyword">if</span>(tu[x][y]==<span class="string">'.'</span>&amp;&amp;ZhangAi(x,y))<span class="comment">//判断这个点能不能放枪 </span></div><div class="line">     &#123;</div><div class="line">         tu[x][y]=<span class="string">'*'</span>;</div><div class="line">         dfs(cur+<span class="number">1</span>,s+<span class="number">1</span>);</div><div class="line">         tu[x][y]=<span class="string">'.'</span>;<span class="comment">//因为递归调用，要标记后再把标记释放掉 </span></div><div class="line">     &#125;</div><div class="line">     dfs(cur+<span class="number">1</span>,s);</div><div class="line"> &#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"> <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)&amp;&amp;n)</div><div class="line"> &#123;</div><div class="line">   Min=<span class="number">0</span>;</div><div class="line">   <span class="built_in">memset</span>(tu,<span class="string">'.'</span>,<span class="keyword">sizeof</span>(tu));</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</div><div class="line">   &#123;</div><div class="line">       <span class="built_in">scanf</span>(<span class="string">" %s"</span>,tu[i]);</div><div class="line">   &#125;</div><div class="line">   dfs(<span class="number">0</span>,<span class="number">0</span>);</div><div class="line">   <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,Min);</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/03/19/Fire Net/" class="archive-article-date">
+  	<time datetime="2017-03-19T00:30:59.367Z" itemprop="datePublished"><i class="icon-clock"></i>2017-03-19</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-WisKey的眼神" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -515,115 +668,6 @@
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags"></i>
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/acm/">acm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/蓝桥杯/">蓝桥杯</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-找单词" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/07/找单词/">找单词 杭电 2082 (普通母函数)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2082"><em>题目链接</em></a></p>
-<p><strong>题目分析：</strong></p>
-<p>   默认从A到Z这26个英文字母的权重为1到26，依次输入26个数字，分别代表从A到Z这26个字母的个数。从这些子母中找出一些组成单词，一个单词的权重为其中每个单词的权重之和，但是组成的单词与排列顺序无关，要求组成单词的权重不大于50.</p>
-<p>   这就是一个普通的母函数的应用，关于母函数的知识可以具体见上一篇博客。</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2016/12/07/找单词/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/12/07/找单词/" class="archive-article-date">
-  	<time datetime="2016-12-07T13:28:53.557Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-07</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/acm/">acm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/母函数/">母函数</a></li></ul>
-	</div>
-
-      
-
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-排列组合" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/07/排列组合/">排列组合 杭电 1521</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1521"><em>题目链接</em></a></p>
-<p><em>首先补充一下母函数的基本知识：</em></p>
-<p>​      对于某个数列的母函数是一种形式幂级数，其每一项的系数可以提供关于这个序列的信息。母函数主要应用于求解组合数、排列数、递推关系通项公式等。</p>
-        <p class="article-more-link">
-          <a class="article-more-a"  href="/2016/12/07/排列组合/#more">more >></a>
-        </p>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      <a href="/2016/12/07/排列组合/" class="archive-article-date">
-  	<time datetime="2016-12-07T09:33:27.288Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-07</time>
-</a>
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags"></i>
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/acm/">acm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/母函数/">母函数</a></li></ul>
 	</div>
 
       

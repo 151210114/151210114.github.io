@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://cmmdc.top">
+  <title>Fire Net 杭电1045 | 梦</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="题目链接
+Problem 
+DescriptionSuppose that we have a square city with straight streets. A map of a city is a square board with n rows and n columns, each representing a street or a piece of wall. 
+A blockh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fire Net 杭电1045">
+<meta property="og:url" content="http://cmmdc.top/2017/03/19/Fire Net/index.html">
+<meta property="og:site_name" content="梦">
+<meta property="og:description" content="题目链接
+Problem 
+DescriptionSuppose that we have a square city with straight streets. A map of a city is a square board with n rows and n columns, each representing a street or a piece of wall. 
+A blockh">
+<meta property="og:image" content="http://acm.hdu.edu.cn/data/images/1045-1.jpg">
+<meta property="og:updated_time" content="2017-03-19T01:22:26.392Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Fire Net 杭电1045">
+<meta name="twitter:description" content="题目链接
+Problem 
+DescriptionSuppose that we have a square city with straight streets. A map of a city is a square board with n rows and n columns, each representing a street or a piece of wall. 
+A blockh">
+<meta name="twitter:image" content="http://acm.hdu.edu.cn/data/images/1045-1.jpg">
+  
+  
+    <link rel="icon" href="photos/favicon.ico">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+  
+  
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://ogbkru1bq.bkt.clouddn.com/favicon.ico" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">梦</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不努力,永远不知道自己可以做的更好。</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">dc</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">梦</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://ogbkru1bq.bkt.clouddn.com/favicon.ico" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">梦</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不努力,永远不知道自己可以做的更好。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-Fire Net" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Fire Net 杭电1045
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1045" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>Problem </p>
+<p>DescriptionSuppose that we have a square city with straight streets. A map of a city is a square board with n rows and n columns, each representing a street or a piece of wall. </p>
+<p>A blockhouse is a small castle that has four openings through which to shoot. The four openings are facing North, East, South, and West, respectively. There will be one machine gun shooting through each opening. </p>
+<p>Here we assume that a bullet is so powerful that it can run across any distance and destroy a blockhouse on its way. On the other hand, a wall is so strongly built that can stop the bullets. </p>
+<p>The goal is to place as many blockhouses in a city as possible so that no two can destroy each other. A configuration of blockhouses is legal provided that no two blockhouses are on the same horizontal row or vertical column in a map unless there is at least one wall separating them. In this problem we will consider small square cities (at most 4x4) that contain walls through which bullets cannot run through. </p>
+<p>The following image shows five pictures of the same board. The first picture is the empty board, the second and third pictures show legal configurations, and the fourth and fifth pictures show illegal configurations. For this board, the maximum number of blockhouses in a legal configuration is 5; the second picture shows one way to do it, but there are several other ways. </p>
+<p><img src="http://acm.hdu.edu.cn/data/images/1045-1.jpg" alt="img"></p>
+<p>Your task is to write a program that, given a description of a map, calculates the maximum number of blockhouses that can be placed in the city in a legal configuration. </p>
+<p>Input</p>
+<p>The input file contains one or more map descriptions, followed by a line containing the number 0 that signals the end of the file. Each map description begins with a line containing a positive integer n that is the size of the city; n will be at most 4. The next n lines each describe one row of the map, with a ‘.’ indicating an open space and an uppercase ‘X’ indicating a wall. There are no spaces in the input file. </p>
+<p>Output</p>
+<p>For each test case, output one line containing the maximum number of blockhouses that can be placed in the city in a legal configuration.</p>
+<p>Sample Input`</p>
+<p>4<br>.X..<br>….<br>XX..<br>….<br>2<br>XX<br>.X<br>3<br>.X.<br>X.X<br>.X.<br>3<br>…<br>.XX<br>.XX<br>4<br>….<br>….<br>….<br>….<br>0` </p>
+<p>Sample Output`</p>
+<p>5<br>1<br>5<br>2<br>4`</p>
+<p><strong>分析：</strong></p>
+<p>如题目上的图片所示，圆代表的是枪，方格代表的是墙。在同一行或者同一列的枪之间可以相互射击，因此枪不可以放在同一行或者同一列，但是如果他们之间有墙阻隔的话，就认为是不能够被射击到的，这样的话就可以放在同一行或者同一列。</p>
+<p>类似于n皇后的问题，我们从第一个点开始找，每次在找的时候只看它所在行的左边和所在列的上边，看能不能够放置枪，能的话就把枪的数目加1，再往后找，不能的话直接往后找。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"> <span class="keyword">int</span> n,Min=<span class="number">0</span>;</div><div class="line"> <span class="keyword">char</span> tu[<span class="number">5</span>][<span class="number">5</span>];</div><div class="line"> <span class="function"><span class="keyword">bool</span> <span class="title">ZhangAi</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span><span class="comment">//判断(x,y)这个点能不能够放枪 </span></span></div><div class="line"> &#123;</div><div class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=x<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)<span class="comment">//在该列的上方寻找 </span></div><div class="line">     &#123;</div><div class="line">         <span class="keyword">if</span>(tu[i][y]==<span class="string">'*'</span>)<span class="comment">//如果该列放过枪了，就肯定不能够放了 </span></div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">         <span class="keyword">if</span>(tu[i][y]==<span class="string">'X'</span>)<span class="comment">//如果该列有墙，也就意味着能够放，不用再往上寻找了 </span></div><div class="line">            <span class="keyword">break</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">for</span>(<span class="keyword">int</span> i=y<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</div><div class="line">     &#123;</div><div class="line">         <span class="keyword">if</span>(tu[x][i]==<span class="string">'*'</span>)<span class="comment">//如果该行放过枪了，就肯定不能够放了 </span></div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">         <span class="keyword">if</span>(tu[x][i]==<span class="string">'X'</span>)<span class="comment">//如果该行有墙，也就意味着能够放，不用再往左寻找了 </span></div><div class="line">            <span class="keyword">break</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="keyword">return</span> <span class="literal">true</span>;<span class="comment">//返回true是该行的左边，列的上边，都没有放过枪或者遇到了墙 </span></div><div class="line"> &#125;</div><div class="line"></div><div class="line"> <span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> cur,<span class="keyword">int</span> s)</span></span></div><div class="line"> &#123;</div><div class="line">     <span class="keyword">if</span>(cur==n*n)<span class="comment">//当前的放个访问的第cur个放个， </span></div><div class="line">     &#123;</div><div class="line">         <span class="keyword">if</span>(s&gt;Min)</div><div class="line">            Min=s;</div><div class="line">         <span class="keyword">return</span>;</div><div class="line">     &#125;</div><div class="line">     <span class="comment">//当前的放个访问的第cur个方格，除以列数就是所在的行，对列数取余，就是所在的列 </span></div><div class="line">     <span class="keyword">int</span> x=cur/n;</div><div class="line">     <span class="keyword">int</span> y=cur%n;</div><div class="line">     <span class="keyword">if</span>(tu[x][y]==<span class="string">'.'</span>&amp;&amp;ZhangAi(x,y))<span class="comment">//判断这个点能不能放枪 </span></div><div class="line">     &#123;</div><div class="line">         tu[x][y]=<span class="string">'*'</span>;</div><div class="line">         dfs(cur+<span class="number">1</span>,s+<span class="number">1</span>);</div><div class="line">         tu[x][y]=<span class="string">'.'</span>;<span class="comment">//因为递归调用，要标记后再把标记释放掉 </span></div><div class="line">     &#125;</div><div class="line">     dfs(cur+<span class="number">1</span>,s);</div><div class="line"> &#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"> <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)&amp;&amp;n)</div><div class="line"> &#123;</div><div class="line">   Min=<span class="number">0</span>;</div><div class="line">   <span class="built_in">memset</span>(tu,<span class="string">'.'</span>,<span class="keyword">sizeof</span>(tu));</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</div><div class="line">   &#123;</div><div class="line">       <span class="built_in">scanf</span>(<span class="string">" %s"</span>,tu[i]);</div><div class="line">   &#125;</div><div class="line">   dfs(<span class="number">0</span>,<span class="number">0</span>);</div><div class="line">   <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,Min);</div><div class="line"> &#125;</div><div class="line"> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/03/19/Fire Net/" class="archive-article-date">
+  	<time datetime="2017-03-19T00:30:59.367Z" itemprop="datePublished"><i class="icon-clock"></i>2017-03-19</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/03/19/Kblack loves flag/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Kblack loves flag 杭电5995
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/03/19/WisKey的眼神/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">WisKey的眼神 杭电1577</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Fire Net" data-title="Fire Net 杭电1045" data-url="http://cmmdc.top/2017/03/19/Fire Net/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"151210114"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 梦
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+<!--给网站加上人次数以及访问人数-->
+ <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+<span id="busuanzi_container_site_pv">
+    <br>本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/acm/" style="font-size: 20px;">acm</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/kmp/" style="font-size: 10px;">kmp</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/剪枝/" style="font-size: 10px;">剪枝</a> <a href="/tags/天梯赛/" style="font-size: 10px;">天梯赛</a> <a href="/tags/好玩/" style="font-size: 10px;">好玩</a> <a href="/tags/广搜/" style="font-size: 10px;">广搜</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/母函数/" style="font-size: 15px;">母函数</a> <a href="/tags/深搜/" style="font-size: 10px;">深搜</a> <a href="/tags/算法/" style="font-size: 15px;">算法</a> <a href="/tags/蓝桥杯/" style="font-size: 10px;">蓝桥杯</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://dccmm.top">dc</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+  
+   <script type="text/javascript" src="/js/src/particle.js"></script>
+
+</body>
+</html>
