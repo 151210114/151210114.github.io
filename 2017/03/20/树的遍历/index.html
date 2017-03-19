@@ -13,9 +13,7 @@
 输入格式：
 输入第一行给出一个正整数N（&amp;lt;=30），是二叉树中结点的个数。第二行给出其后序遍历序列。第三行给出其中序遍历序列。数字间以空格分隔。
 输出格式：
-在一行中输出该树的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。
-输入样例：
-12372 3 1 5 7 6 41">
+在一行中输出该树的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树的遍历 天梯赛L2-006">
 <meta property="og:url" content="http://cmmdc.top/2017/03/20/树的遍历/index.html">
@@ -25,10 +23,8 @@
 输入格式：
 输入第一行给出一个正整数N（&amp;lt;=30），是二叉树中结点的个数。第二行给出其后序遍历序列。第三行给出其中序遍历序列。数字间以空格分隔。
 输出格式：
-在一行中输出该树的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。
-输入样例：
-12372 3 1 5 7 6 41">
-<meta property="og:updated_time" content="2017-03-19T23:05:49.735Z">
+在一行中输出该树的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。">
+<meta property="og:updated_time" content="2017-03-19T23:11:14.160Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="树的遍历 天梯赛L2-006">
 <meta name="twitter:description" content="题目链接
@@ -36,9 +32,7 @@
 输入格式：
 输入第一行给出一个正整数N（&amp;lt;=30），是二叉树中结点的个数。第二行给出其后序遍历序列。第三行给出其中序遍历序列。数字间以空格分隔。
 输出格式：
-在一行中输出该树的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。
-输入样例：
-12372 3 1 5 7 6 41">
+在一行中输出该树的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -170,10 +164,11 @@
 <p>输入第一行给出一个正整数N（&lt;=30），是二叉树中结点的个数。第二行给出其后序遍历序列。第三行给出其中序遍历序列。数字间以空格分隔。</p>
 <p><strong>输出格式：</strong></p>
 <p>在一行中输出该树的层序遍历的序列。数字间以1个空格分隔，行首尾不得有多余空格。</p>
+<a id="more"></a>
 <p>输入样例：</p>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">7</span></div><div class="line"><span class="symbol">2 </span><span class="number">3</span> <span class="number">1</span> <span class="number">5</span> <span class="number">7</span> <span class="number">6</span> <span class="number">4</span></div><div class="line"><span class="symbol">1 </span><span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span></div></pre></td></tr></table></figure>
+<p>7<br>2 3 1 5 7 6 4<br>1 2 3 4 5 6 7</p>
 <p>输出样例：</p>
-<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">4 </span><span class="number">1</span> <span class="number">6</span> <span class="number">3</span> <span class="number">5</span> <span class="number">7</span> <span class="number">2</span></div></pre></td></tr></table></figure>
+<p>4 1 6 3 5 7 2</p>
 <p><strong>分析：</strong></p>
 <p>我们应该知道可以由一棵二叉树的中序序列和后序序列，或则中序序列和先序序列来唯一的确定一棵二叉树。</p>
 <p>因为后续序列的遍历顺序是先遍历左子树再遍历右子树左后遍历根节点，所以后序的最后一个肯定是当前数的根节点，然后从中序中找到根节点，根节点之前的肯定就是当前的树的左子树，根节点之后的就是当前树的右子树，然后分别递归左子树，右子树。</p>
