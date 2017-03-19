@@ -20,7 +20,7 @@ One day, Kblack is given an  chessboard and he decides to plant flags on the che
 Problem Description
 Kblack loves flags, so he has infinite flags in his pocket.
 One day, Kblack is given an  chessboard and he decides to plant flags on the chessboard where the position of each">
-<meta property="og:updated_time" content="2017-03-19T04:31:07.792Z">
+<meta property="og:updated_time" content="2017-03-19T04:55:54.905Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Kblack loves flag 杭电5995">
 <meta name="twitter:description" content="题目链接
@@ -167,22 +167,10 @@ One day, Kblack is given an  chessboard and he decides to plant flags on the che
 <p>Then,you need to generate the  flags’ coordinates.</p>
 <p>For ,firstly generate a random number in the range of .Then generate a random number in the range of .</p>
 <p>You can also copy the following code and run “Init” to generate the x[],y[] (only for C++ players).</p>
-<pre>
-
-
-const int _K=50268147,_B=6082187,_P=100000007;
-int _X;
-inline int get_rand(int _l,int _r){
-  _X=((long long)_K*_X+_B)%_P;
-  return _X%(_r-_l+1)+_l;
-}
-int n,m,k,seed;
-int x[1000001],y[1000001];
-void Init(){
-  scanf("%d%d%d%d",&n,&m,&k,&seed);
-  _X=seed;
-  for (int i=1;i<=k;++i) x[i]="get_rand(1,n)," y[i]="get_rand(1,m);" }="" <="" pre="">
-
+<p>const int _K=50268147,_B=6082187,_P=100000007;<br>int _X;<br>inline int get_rand(int _l,int _r){<br>  _X=((long long)_K*_X+_B)%_P;<br>  return _X%(_r-_l+1)+_l;<br>}<br>int n,m,k,seed;<br>int x[1000001],y[1000001];<br>void Init(){<br>  scanf(“%d%d%d%d”,&amp;n,&amp;m,&amp;k,&amp;seed);<br>  _X=seed;<br>  for (int i=1;i&lt;=k;++i)</p>
+<pre><code>x[i]=get_rand(1,n),
+y[i]=get_rand(1,m);
+</code></pre><p>}</p>
 <p> (1≤T≤7),(1≤n,m≤1000000),(0≤k≤1000000),(0≤seed&lt;100000007)</p>
 <p>Output</p>
 <p>For each testcase,print a single line contained two integers,which respectively represent the number of lines and rows that have no flags planted.</p>
@@ -197,7 +185,7 @@ void Init(){
 <p> 给你一个n*m的棋盘，然后在上面放置棋子，但是这些妻子的位置并不是要你自己输入的，而是随机产生的，然后根据题目中已经给出的函数计算出来的，我们要计算的就是该棋盘中有几行和几列没有放棋子。</p>
 <p>看懂题觉得很简单，然而竟然一开始压根就没有看懂题目啥意思，感觉智商不够用了。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> _K=<span class="number">50268147</span>,_B=<span class="number">6082187</span>,_P=<span class="number">100000007</span>;</div><div class="line"><span class="keyword">int</span> _X;</div><div class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">get_rand</span><span class="params">(<span class="keyword">int</span> _l,<span class="keyword">int</span> _r)</span><span class="comment">//生成随机数的函数 ,题目已经给出</span></span></div><div class="line">&#123;</div><div class="line">  _X=((<span class="keyword">long</span> <span class="keyword">long</span>)_K*_X+_B)%_P;</div><div class="line">  <span class="keyword">return</span> _X%(_r-_l+<span class="number">1</span>)+_l;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">int</span> numr=<span class="number">0</span>,numl=<span class="number">0</span>;</div><div class="line"><span class="keyword">bool</span> row[<span class="number">1000001</span>],line[<span class="number">1000001</span>]; </div><div class="line"><span class="keyword">int</span> n,m,k,seed;</div><div class="line"><span class="keyword">int</span> x[<span class="number">1000001</span>],y[<span class="number">1000001</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Init</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;n,&amp;m,&amp;k,&amp;seed);</div><div class="line">  <span class="built_in">memset</span>(row,<span class="literal">false</span>,<span class="keyword">sizeof</span>(row));</div><div class="line">  <span class="built_in">memset</span>(line,<span class="literal">false</span>,<span class="keyword">sizeof</span>(line));</div><div class="line">  numr=<span class="number">0</span>;</div><div class="line">  numl=<span class="number">0</span>;</div><div class="line">  _X=seed;</div><div class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;++i)</div><div class="line">  &#123; </div><div class="line">    x[i]=get_rand(<span class="number">1</span>,n);<span class="comment">//生成的行坐标 </span></div><div class="line">    y[i]=get_rand(<span class="number">1</span>,m);<span class="comment">//列坐标 </span></div><div class="line">    <span class="keyword">if</span>(row[x[i]]==<span class="literal">false</span>)<span class="comment">//该行没有放过的话，就放一个，并且标记为已放过 </span></div><div class="line">    &#123;</div><div class="line">    	numr++;</div><div class="line">    	row[x[i]]=<span class="literal">true</span>;  	</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(line[y[i]]==<span class="literal">false</span>)<span class="comment">//该列没有放过的话，就放一个，并且标记为已放过 </span></div><div class="line">    &#123;</div><div class="line">    	numl++;</div><div class="line">    	line[y[i]]=<span class="literal">true</span>;</div><div class="line">    	</div><div class="line">    &#125;</div><div class="line">  &#125; </div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> N;</div><div class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;N);</div><div class="line">	<span class="keyword">while</span>(N--)</div><div class="line">	&#123;</div><div class="line">	 Init();</div><div class="line">     <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>,n-numr,m-numl);</div><div class="line">	&#125; </div><div class="line"> <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-</=k;++i)></pre>
+
       
     </div>
     <div class="article-info article-info-index">
