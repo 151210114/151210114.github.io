@@ -6,15 +6,26 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cmmdc.top">
-  <title>梦</title>
+  <title>列车调度 | 梦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="梦">
+  <meta name="description" content="题目链接
+火车站的列车调度铁轨的结构如下图所示。
+Figure">
+<meta property="og:type" content="article">
+<meta property="og:title" content="列车调度">
 <meta property="og:url" content="http://cmmdc.top/2017/03/19/列车调度/index.html">
 <meta property="og:site_name" content="梦">
-<meta property="og:updated_time" content="2017-03-19T06:21:29.539Z">
+<meta property="og:description" content="题目链接
+火车站的列车调度铁轨的结构如下图所示。
+Figure">
+<meta property="og:image" content="https://www.patest.cn/upload/lp_o9wf01q8p76.jpg">
+<meta property="og:updated_time" content="2017-03-19T06:45:47.340Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="梦">
+<meta name="twitter:title" content="列车调度">
+<meta name="twitter:description" content="题目链接
+火车站的列车调度铁轨的结构如下图所示。
+Figure">
+<meta name="twitter:image" content="https://www.patest.cn/upload/lp_o9wf01q8p76.jpg">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -128,9 +139,37 @@
       <input type="hidden" class="isFancy" />
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      列车调度
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p><a href="https://www.patest.cn/contests/gplt/L2-014" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>火车站的列车调度铁轨的结构如下图所示。</p>
+<p><img src="https://www.patest.cn/upload/lp_o9wf01q8p76.jpg" alt="img"><br>Figure</p>
+<a id="more"></a>
+<p>两端分别是一条入口（Entrance）轨道和一条出口（Exit）轨道，它们之间有N条平行的轨道。每趟列车从入口可以选择任意一条轨道进入，最后从出口离开。在图中有9趟列车，在入口处按照{8，4，2，5，3，9，1，6，7}的顺序排队等待进入。如果要求它们必须按序号递减的顺序从出口离开，则至少需要多少条平行铁轨用于调度？</p>
+<p><strong>输入格式：</strong></p>
+<p>输入第一行给出一个整数N (2 &lt;= N &lt;= 105)，下一行给出从1到N的整数序号的一个重排列。数字间以空格分隔。</p>
+<p><strong>输出格式：</strong></p>
+<p>在一行中输出可以将输入的列车按序号递减的顺序调离所需要的最少的铁轨条数。</p>
+<p>输入样例：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">9</span></div><div class="line"><span class="symbol">8 </span><span class="number">4</span> <span class="number">2</span> <span class="number">5</span> <span class="number">3</span> <span class="number">9</span> <span class="number">1</span> <span class="number">6</span> <span class="number">7</span></div></pre></td></tr></table></figure>
+<p>输出样例：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">4</span></div></pre></td></tr></table></figure>
+<p><strong>分析：</strong></p>
+<p>用一个数组保存每条铁轨中的最小值，如果新加入的一个值比当前铁轨中的任何一个都大的话，也就意味着我们不能够把这个数加入到已有的铁轨中，需要新加一条铁轨来保存这个值，这也就是说明这个数组是递增的。如果新加入的值不比最后一个已有的大，我们就要在数组中找到第一个比它大的，然后把它替换了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;	 </div><div class="line">    <span class="keyword">int</span> N;</div><div class="line">    <span class="keyword">int</span> a[<span class="number">100009</span>];<span class="comment">//a数组中保存的就是每个平行轨道中的最小值，而且a本身是一个递增的数组 </span></div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;N);</div><div class="line">    <span class="keyword">int</span> k=<span class="number">1</span>,b,i;</div><div class="line">    a[<span class="number">0</span>]=<span class="number">-1</span>;</div><div class="line">    <span class="keyword">while</span>(N--)</div><div class="line">    &#123;  	 </div><div class="line">    	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b);</div><div class="line">    	 <span class="keyword">if</span>(b&gt;a[k<span class="number">-1</span>])</div><div class="line">		 a[k++]=b;<span class="comment">//因为数组递增，要是比当前数组中的最后一个还要大的话，就肯定要新加一条轨道了 </span></div><div class="line">		 <span class="keyword">else</span></div><div class="line">		 	<span class="keyword">for</span>( i=<span class="number">0</span>;i&lt;k;i++)</div><div class="line">    		<span class="keyword">if</span>(b&lt;a[i])<span class="comment">//在前面已有的里面找到第一个比b大的，肯定就是最合适的插入位置 </span></div><div class="line">    		  &#123;  			</div><div class="line">    			a[i]=b; </div><div class="line">    			<span class="keyword">break</span>; </div><div class="line">    		  &#125;  		</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,k<span class="number">-1</span>);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>上面的是正确的代码，然后下面的超时，然而实在看不出来为什么超了。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;set&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;	 </div><div class="line">    <span class="keyword">int</span> N;</div><div class="line">    <span class="keyword">int</span> a[<span class="number">100009</span>];</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;N);</div><div class="line">    <span class="keyword">int</span> k=<span class="number">0</span>,b,i;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b);</div><div class="line">    a[k++]=b;</div><div class="line">    N--;</div><div class="line">    <span class="keyword">while</span>(N--)</div><div class="line">    &#123;  	 </div><div class="line">    	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;b);</div><div class="line">    	 <span class="keyword">if</span>(b&gt;a[k<span class="number">-1</span>])</div><div class="line">		 a[k++]=b;</div><div class="line">		 <span class="keyword">else</span></div><div class="line">		 	<span class="keyword">for</span>( i=<span class="number">0</span>;i&lt;k;i++)</div><div class="line">    		<span class="keyword">if</span>(b&lt;a[i])</div><div class="line">    		  &#123;  			</div><div class="line">    			a[i]=b; </div><div class="line">    			<span class="keyword">break</span>; </div><div class="line">    		  &#125;  		</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,k);</div><div class="line">	<span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
       
     </div>
     <div class="article-info article-info-index">
@@ -185,7 +224,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="列车调度" data-title="" data-url="http://cmmdc.top/2017/03/19/列车调度/"></div>
+	<div class="ds-thread" data-thread-key="列车调度" data-title="列车调度" data-url="http://cmmdc.top/2017/03/19/列车调度/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
