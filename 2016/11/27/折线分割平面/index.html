@@ -9,23 +9,21 @@
   <title>折线分割平面 杭电 2050 | 梦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="题目链接
-题目分析：
-用折线来分割平面，看n条折线最多能够将平面分割成几部分，一条折线能够将平面分成两部分，两条折线能够将平面分割成7部分。具体分割情况如下所示：">
+Problem Description我们看到过很多直线分割平面的题目，今天的这个题目稍微有些变化，我们要求的是n条折线分割平面的最大数目。比如，一条折线可以将平面分成两部分，两条折线最多可以将平面分成7部分，具体如下所示。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="折线分割平面 杭电 2050">
 <meta property="og:url" content="http://cmmdc.top/2016/11/27/折线分割平面/index.html">
 <meta property="og:site_name" content="梦">
 <meta property="og:description" content="题目链接
-题目分析：
-用折线来分割平面，看n条折线最多能够将平面分割成几部分，一条折线能够将平面分成两部分，两条折线能够将平面分割成7部分。具体分割情况如下所示：">
+Problem Description我们看到过很多直线分割平面的题目，今天的这个题目稍微有些变化，我们要求的是n条折线分割平面的最大数目。比如，一条折线可以将平面分成两部分，两条折线最多可以将平面分成7部分，具体如下所示。">
+<meta property="og:image" content="http://acm.hdu.edu.cn/data/images/C40-1008-1.jpg">
 <meta property="og:image" content="http://ogbkru1bq.bkt.clouddn.com/hhh.png">
-<meta property="og:updated_time" content="2016-11-27T03:19:19.783Z">
+<meta property="og:updated_time" content="2017-03-21T13:47:36.851Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="折线分割平面 杭电 2050">
 <meta name="twitter:description" content="题目链接
-题目分析：
-用折线来分割平面，看n条折线最多能够将平面分割成几部分，一条折线能够将平面分成两部分，两条折线能够将平面分割成7部分。具体分割情况如下所示：">
-<meta name="twitter:image" content="http://ogbkru1bq.bkt.clouddn.com/hhh.png">
+Problem Description我们看到过很多直线分割平面的题目，今天的这个题目稍微有些变化，我们要求的是n条折线分割平面的最大数目。比如，一条折线可以将平面分成两部分，两条折线最多可以将平面分成7部分，具体如下所示。">
+<meta name="twitter:image" content="http://acm.hdu.edu.cn/data/images/C40-1008-1.jpg">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -152,10 +150,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2050" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>Problem Description我们看到过很多直线分割平面的题目，今天的这个题目稍微有些变化，我们要求的是n条折线分割平面的最大数目。比如，一条折线可以将平面分成两部分，两条折线最多可以将平面分成7部分，具体如下所示。<br><img src="http://acm.hdu.edu.cn/data/images/C40-1008-1.jpg" alt="img"> </p>
+<a id="more"></a>
+<p>Input输入数据的第一行是一个整数C,表示测试实例的个数，然后是C 行数据，每行包含一个整数n(0&lt;n&lt;=10000),表示折线的数量。</p>
+<p>Output对于每个测试实例，请输出平面的最大分割数，每个实例的输出占一行。</p>
+<p>Sample Input<code>2
+1
+2</code><br>Sample Output<code>2
+7</code></p>
 <p><strong>题目分析：</strong></p>
 <p>用折线来分割平面，看n条折线最多能够将平面分割成几部分，一条折线能够将平面分成两部分，两条折线能够将平面分割成7部分。具体分割情况如下所示：</p>
 <p><img src="http://ogbkru1bq.bkt.clouddn.com/hhh.png" alt=""></p>
-<a id="more"></a>
 <p>首先我们来考虑一下这个问题：</p>
 <p>1.当N条直线相交时最多把平面分割成几部分</p>
 <p>​     当添加第N条直线时，为了使分割成的平面尽可能的多，则第N条直线要与前面的N-1条直线都相交，并且没有任何的三条直线交与一点。</p>

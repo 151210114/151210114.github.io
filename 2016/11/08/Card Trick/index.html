@@ -9,27 +9,24 @@
   <title>Card Trick 杭电 2319 | 梦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="题目链接
-题意：
-你的手中有1~n这n张扑克牌，但是这些牌的顺序是不确定的，你需要在这些牌上进行一些操作
-1.第一次你从最上面拿出一张牌放到最下面，然后把当前的第一张牌上面的数字记下来并把这张牌拿出   去
-2.第二次你要先从最上面取出一张牌放到最下面，再从最上面取出一张牌放到最下面，然后把当前的第一张牌上面的数字记下来并把这张牌拿出去">
+Problem Description
+The magician shuffles a small pack of cards, holds it face down and performs the following procedure:
+1.The top card is moved to the bottom of the pack. The new top card is de">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Card Trick 杭电 2319">
 <meta property="og:url" content="http://cmmdc.top/2016/11/08/Card Trick/index.html">
 <meta property="og:site_name" content="梦">
 <meta property="og:description" content="题目链接
-题意：
-你的手中有1~n这n张扑克牌，但是这些牌的顺序是不确定的，你需要在这些牌上进行一些操作
-1.第一次你从最上面拿出一张牌放到最下面，然后把当前的第一张牌上面的数字记下来并把这张牌拿出   去
-2.第二次你要先从最上面取出一张牌放到最下面，再从最上面取出一张牌放到最下面，然后把当前的第一张牌上面的数字记下来并把这张牌拿出去">
-<meta property="og:updated_time" content="2016-11-08T13:26:49.227Z">
+Problem Description
+The magician shuffles a small pack of cards, holds it face down and performs the following procedure:
+1.The top card is moved to the bottom of the pack. The new top card is de">
+<meta property="og:updated_time" content="2017-03-21T13:22:17.754Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Card Trick 杭电 2319">
 <meta name="twitter:description" content="题目链接
-题意：
-你的手中有1~n这n张扑克牌，但是这些牌的顺序是不确定的，你需要在这些牌上进行一些操作
-1.第一次你从最上面拿出一张牌放到最下面，然后把当前的第一张牌上面的数字记下来并把这张牌拿出   去
-2.第二次你要先从最上面取出一张牌放到最下面，再从最上面取出一张牌放到最下面，然后把当前的第一张牌上面的数字记下来并把这张牌拿出去">
+Problem Description
+The magician shuffles a small pack of cards, holds it face down and performs the following procedure:
+1.The top card is moved to the bottom of the pack. The new top card is de">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -156,11 +153,21 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/search.php?action=listproblem" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>Problem Description</p>
+<p>The magician shuffles a small pack of cards, holds it face down and performs the following procedure:</p>
+<p>1.The top card is moved to the bottom of the pack. The new top card is dealt face up onto the table. It is the Ace of Spades.<br>2.Two cards are moved one at a time from the top to the bottom. The next card is dealt face up onto the table. It is the Two of Spades.</p>
+<a id="more"></a>
+<p>3.Three cards are moved one at a time…<br>4.This goes on until the nth and last card turns out to be the n of Spades.<br>This impressive trick works if the magician knows how to arrange the cards beforehand (and knows how to give a false shuffle). Your program has to determine the initial order of the cards for a given number of cards, 1 ≤ n ≤ 13.</p>
+<p>Input</p>
+<p>On the first line of the input is a single positive integer, telling the number of test cases to follow. Each case consists of one line containing the integer n.<br>Output</p>
+<p>For each test case, output a line with the correct permutation of the values 1 to n, space separated. The first number showing the top card of the pack, etc…<br>Sample Input<code>2
+4
+5</code><br>Sample Output`</p>
+<p>2 1 4 3<br>3 1 4 5 2`</p>
 <p><strong>题意：</strong></p>
 <p>你的手中有1~n这n张扑克牌，但是这些牌的顺序是不确定的，你需要在这些牌上进行一些操作</p>
 <p>1.第一次你从最上面拿出一张牌放到最下面，然后把当前的第一张牌上面的数字记下来并把这张牌拿出   去</p>
 <p>2.第二次你要先从最上面取出一张牌放到最下面，再从最上面取出一张牌放到最下面，然后把当前的第一张牌上面的数字记下来并把这张牌拿出去</p>
-<a id="more"></a>
 <p>3.依次进行n次，不同之处在于第i次取最上面牌再放到最下面的操作要进行i次</p>
 <p>最后要求你一次记下的这些牌的序列为1到n，让求手中牌的原始序列。</p>
 <p><strong>方法一</strong></p>

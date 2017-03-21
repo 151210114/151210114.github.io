@@ -9,24 +9,21 @@
   <title>找单词 杭电 2082 (普通母函数) | 梦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="题目链接
-题目分析：
-   默认从A到Z这26个英文字母的权重为1到26，依次输入26个数字，分别代表从A到Z这26个字母的个数。从这些子母中找出一些组成单词，一个单词的权重为其中每个单词的权重之和，但是组成的单词与排列顺序无关，要求组成单词的权重不大于50.
-   这就是一个普通的母函数的应用，关于母函数的知识可以具体见上一篇博客。">
+Problem Description
+假设有x1个字母A， x2个字母B,….. x26个字母Z，同时假设字母A的价值为1，字母B的价值为2,….. 字母Z的价值为26。那么，对于给定的字母，可以找到多少价值&amp;lt;=50的单词呢？单词的价值就是组成一个单词的所有字母的价值之和，比如，单词ACM的价值是1+3+14=18，单词HDU的价值是8+4+21=33。(组成的单词与排列顺序无关">
 <meta property="og:type" content="article">
 <meta property="og:title" content="找单词 杭电 2082 (普通母函数)">
 <meta property="og:url" content="http://cmmdc.top/2016/12/07/找单词/index.html">
 <meta property="og:site_name" content="梦">
 <meta property="og:description" content="题目链接
-题目分析：
-   默认从A到Z这26个英文字母的权重为1到26，依次输入26个数字，分别代表从A到Z这26个字母的个数。从这些子母中找出一些组成单词，一个单词的权重为其中每个单词的权重之和，但是组成的单词与排列顺序无关，要求组成单词的权重不大于50.
-   这就是一个普通的母函数的应用，关于母函数的知识可以具体见上一篇博客。">
-<meta property="og:updated_time" content="2016-12-07T13:41:19.378Z">
+Problem Description
+假设有x1个字母A， x2个字母B,….. x26个字母Z，同时假设字母A的价值为1，字母B的价值为2,….. 字母Z的价值为26。那么，对于给定的字母，可以找到多少价值&amp;lt;=50的单词呢？单词的价值就是组成一个单词的所有字母的价值之和，比如，单词ACM的价值是1+3+14=18，单词HDU的价值是8+4+21=33。(组成的单词与排列顺序无关">
+<meta property="og:updated_time" content="2017-03-21T13:46:34.313Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="找单词 杭电 2082 (普通母函数)">
 <meta name="twitter:description" content="题目链接
-题目分析：
-   默认从A到Z这26个英文字母的权重为1到26，依次输入26个数字，分别代表从A到Z这26个字母的个数。从这些子母中找出一些组成单词，一个单词的权重为其中每个单词的权重之和，但是组成的单词与排列顺序无关，要求组成单词的权重不大于50.
-   这就是一个普通的母函数的应用，关于母函数的知识可以具体见上一篇博客。">
+Problem Description
+假设有x1个字母A， x2个字母B,….. x26个字母Z，同时假设字母A的价值为1，字母B的价值为2,….. 字母Z的价值为26。那么，对于给定的字母，可以找到多少价值&amp;lt;=50的单词呢？单词的价值就是组成一个单词的所有字母的价值之和，比如，单词ACM的价值是1+3+14=18，单词HDU的价值是8+4+21=33。(组成的单词与排列顺序无关">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -153,10 +150,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2082" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>Problem Description</p>
+<p>假设有x1个字母A， x2个字母B,….. x26个字母Z，同时假设字母A的价值为1，字母B的价值为2,….. 字母Z的价值为26。那么，对于给定的字母，可以找到多少价值&lt;=50的单词呢？单词的价值就是组成一个单词的所有字母的价值之和，比如，单词ACM的价值是1+3+14=18，单词HDU的价值是8+4+21=33。(组成的单词与排列顺序无关，比如ACM与CMA认为是同一个单词）。</p>
+<a id="more"></a>
+<p>Input</p>
+<p>输入首先是一个整数N，代表测试实例的个数。<br>然后包括N行数据，每行包括26个&lt;=20的整数x1,x2,…..x26.</p>
+<p>Output</p>
+<p>对于每个测试实例，请输出能找到的总价值&lt;=50的单词数,每个实例的输出占一行。<br>Sample Input`</p>
+<p>2<br>1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0<br>9 2 6 2 10 2 2 5 6 1 0 2 7 0 2 2 7 5 10 6 10 2 10 6 1 9<code>Sample Output</code></p>
+<p>7<br>379297` </p>
 <p><strong>题目分析：</strong></p>
 <p>   默认从A到Z这26个英文字母的权重为1到26，依次输入26个数字，分别代表从A到Z这26个字母的个数。从这些子母中找出一些组成单词，一个单词的权重为其中每个单词的权重之和，但是组成的单词与排列顺序无关，要求组成单词的权重不大于50.</p>
 <p>   这就是一个普通的母函数的应用，关于母函数的知识可以具体见上一篇博客。</p>
-<a id="more"></a>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> c1[<span class="number">100</span>],c2[<span class="number">100</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; num;</div><div class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; qz;</div><div class="line">    <span class="keyword">int</span> T;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;T);</div><div class="line">    <span class="keyword">while</span>(T--)</div><div class="line">    &#123;</div><div class="line">        num.clear();</div><div class="line">        qz.clear();</div><div class="line">        <span class="built_in">memset</span>(c1,<span class="number">0</span>,<span class="keyword">sizeof</span>(c1));</div><div class="line">        <span class="built_in">memset</span>(c2,<span class="number">0</span>,<span class="keyword">sizeof</span>(c2));</div><div class="line">        <span class="keyword">int</span> temp;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=<span class="number">26</span>; i++)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;temp);</div><div class="line">            <span class="keyword">if</span>(temp!=<span class="number">0</span>)</div><div class="line">            &#123;</div><div class="line">                num.push_back(temp);<span class="comment">///当前的个数不为0时，就把当前这个字母对应的权重和个数分别存下</span></div><div class="line">                qz.push_back(i);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> n=num.size();</div><div class="line">        <span class="keyword">if</span>(n==<span class="number">0</span>)          <span class="comment">///当前所有的字母个数都为0的话，就没有计算的必要了，直接输出0</span></div><div class="line">            <span class="built_in">printf</span>(<span class="string">"0\n"</span>);</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;=<span class="number">50</span>&amp;&amp;i&lt;=num[<span class="number">0</span>]*qz[<span class="number">0</span>]; i+=qz[<span class="number">0</span>])<span class="comment">/*第一个字母，关键在于i的控制，i表示的是权重的累加和</span></div><div class="line">                                                            不仅要小于要求50，还得小于当前字母个数的总权重</div><div class="line">                                                        */</div><div class="line">                c1[i]=<span class="number">1</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;n; i++)      <span class="comment">///从第二个字母开始循环</span></div><div class="line">            &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;=<span class="number">50</span>; j++)  <span class="comment">///表示当前已经拥有的权重</span></div><div class="line">                &#123;</div><div class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>; k&lt;=<span class="number">50</span>&amp;&amp;k&lt;=num[i]*qz[i]; k+=qz[i])<span class="comment">///在该字母上可以取得的权重，满足条件和第一个字母一样</span></div><div class="line">                        c2[k+j]+=c1[j];     <span class="comment">///该权重下的个数刷新</span></div><div class="line">                &#125;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> p=<span class="number">0</span>; p&lt;=<span class="number">50</span>; p++)<span class="comment">///每一个字母找玩后都要保存并c2初始化</span></div><div class="line">                &#123;</div><div class="line">                    c1[p]=c2[p];</div><div class="line">                    c2[p]=<span class="number">0</span>;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">int</span> sum1=<span class="number">0</span>;</div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=<span class="number">50</span>; i++)</div><div class="line">                sum1+=c1[i];</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,sum1);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       

@@ -9,21 +9,21 @@
   <title>产生冠军 杭电 2094 | 梦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="题目链接
-题意：
-两两之间进行比赛，最后要选择出最终胜利的人。这个最终胜利的人的选择也有一定的要求。就是说这个人必须为胜利次数最多的，并且满足这个最多次数的人有且仅能有一个。">
+Problem Description
+有一群人，打乒乓球比赛，两两捉对撕杀，每两个人之间最多打一场比赛。球赛的规则如下：如果A打败了B，B又打败了C，而A与C之间没有进行过比赛，那么就认定，A一定能打败C。如果A打败了B，B又打败了C，而且，C又打败了A，那么A、B、C三者都不可能成为冠军。根据这个规则，无需循环较量，或许就能确定冠军。你的任务就是面对一群比赛选手，在经过了若干场撕杀之">
 <meta property="og:type" content="article">
 <meta property="og:title" content="产生冠军 杭电 2094">
 <meta property="og:url" content="http://cmmdc.top/2016/11/05/产生冠军/index.html">
 <meta property="og:site_name" content="梦">
 <meta property="og:description" content="题目链接
-题意：
-两两之间进行比赛，最后要选择出最终胜利的人。这个最终胜利的人的选择也有一定的要求。就是说这个人必须为胜利次数最多的，并且满足这个最多次数的人有且仅能有一个。">
-<meta property="og:updated_time" content="2016-11-05T12:30:20.093Z">
+Problem Description
+有一群人，打乒乓球比赛，两两捉对撕杀，每两个人之间最多打一场比赛。球赛的规则如下：如果A打败了B，B又打败了C，而A与C之间没有进行过比赛，那么就认定，A一定能打败C。如果A打败了B，B又打败了C，而且，C又打败了A，那么A、B、C三者都不可能成为冠军。根据这个规则，无需循环较量，或许就能确定冠军。你的任务就是面对一群比赛选手，在经过了若干场撕杀之">
+<meta property="og:updated_time" content="2017-03-21T13:33:59.767Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="产生冠军 杭电 2094">
 <meta name="twitter:description" content="题目链接
-题意：
-两两之间进行比赛，最后要选择出最终胜利的人。这个最终胜利的人的选择也有一定的要求。就是说这个人必须为胜利次数最多的，并且满足这个最多次数的人有且仅能有一个。">
+Problem Description
+有一群人，打乒乓球比赛，两两捉对撕杀，每两个人之间最多打一场比赛。球赛的规则如下：如果A打败了B，B又打败了C，而A与C之间没有进行过比赛，那么就认定，A一定能打败C。如果A打败了B，B又打败了C，而且，C又打败了A，那么A、B、C三者都不可能成为冠军。根据这个规则，无需循环较量，或许就能确定冠军。你的任务就是面对一群比赛选手，在经过了若干场撕杀之">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -150,9 +150,16 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2094" target="_blank" rel="external"><strong>题目链接</strong></a></p>
+<p>Problem Description</p>
+<p>有一群人，打乒乓球比赛，两两捉对撕杀，每两个人之间最多打一场比赛。<br>球赛的规则如下：<br>如果A打败了B，B又打败了C，而A与C之间没有进行过比赛，那么就认定，A一定能打败C。<br>如果A打败了B，B又打败了C，而且，C又打败了A，那么A、B、C三者都不可能成为冠军。<br>根据这个规则，无需循环较量，或许就能确定冠军。你的任务就是面对一群比赛选手，在经过了若干场撕杀之后，确定是否已经实际上产生了冠军。</p>
+<a id="more"></a>
+<p>Input输入含有一些选手群，每群选手都以一个整数n(n&lt;1000)开头，后跟n对选手的比赛结果，比赛结果以一对选手名字（中间隔一空格）表示，前者战胜后者。如果n为0，则表示输入结束。</p>
+<p>Output对于每个选手群，若你判断出产生了冠军，则在一行中输出“Yes”，否则在一行中输出“No”。</p>
+<p>Sample Input`</p>
+<p>3<br>Alice Bob<br>Smith John<br>Alice Smith<br>5<br>a c<br>c d<br>d e<br>b e<br>a d<br>0<code>Sample Output</code></p>
+<p>Yes<br>No`</p>
 <p><strong>题意：</strong></p>
 <p>两两之间进行比赛，最后要选择出最终胜利的人。这个最终胜利的人的选择也有一定的要求。就是说这个人必须为胜利次数最多的，并且满足这个最多次数的人有且仅能有一个。</p>
-<a id="more"></a>
 <p><strong>分析</strong></p>
 <p>因为涉及到一个人可能参与多场比赛且胜负情况不定，因此先给每一个参与比赛的人一个特定的编号，用map容器实现人与编号的意义对应，然后用一个整型的数组来存放这些人的失败的次数，最后做判断，要求数组的值为0（他有参与比赛但是没有输过）的有且仅有一个即为所得。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> c[<span class="number">1003</span>]= &#123;<span class="number">0</span>&#125;;<span class="comment">// 计算每个人失败的次数</span></div><div class="line"><span class="function"><span class="keyword">bool</span> <span class="title">panduan</span><span class="params">(<span class="keyword">int</span> n)</span><span class="comment">//值为1的有且仅能有一个</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span>(c[i]==<span class="number">0</span>)</div><div class="line">            sum++;</div><div class="line">        <span class="keyword">if</span>(sum&gt;=<span class="number">2</span>)</div><div class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span>(sum==<span class="number">1</span>)</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> n;</div><div class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)&amp;&amp;n)</div><div class="line">    &#123;</div><div class="line"></div><div class="line">        <span class="built_in">map</span>&lt;<span class="built_in">string</span>,<span class="keyword">int</span>&gt;m;</div><div class="line">        <span class="keyword">char</span> a[<span class="number">20</span>],b[<span class="number">20</span>];</div><div class="line">        <span class="keyword">int</span> k=<span class="number">0</span>;</div><div class="line">        <span class="built_in">memset</span>(c,<span class="number">0</span>,<span class="keyword">sizeof</span>(c));</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; i&lt;n; i++)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">" %s%s"</span>,a,b);</div><div class="line">            <span class="keyword">if</span>(m[a]==<span class="number">0</span>)</div><div class="line">                m[a]=++k; <span class="comment">///k的值不能够从0 开始</span></div><div class="line">            <span class="keyword">if</span>(m[b]==<span class="number">0</span>) <span class="comment">///表示这个人以前没有出现过</span></div><div class="line">                m[b]=++k;<span class="comment">///每一个人根据名字给他们编号。确保每一个人拥有唯一 不同的编号</span></div><div class="line">            c[m[b]]++;<span class="comment">//失败人的次数加加</span></div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(panduan(k))</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"Yes\n"</span>);</div><div class="line">        <span class="keyword">else</span></div><div class="line">            <span class="built_in">printf</span>(<span class="string">"No\n"</span>);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>

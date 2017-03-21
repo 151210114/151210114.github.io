@@ -9,15 +9,19 @@
   <title>排列组合 杭电 1521 | 梦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="题目链接
-首先补充一下母函数的基本知识：
-​      对于某个数列的母函数是一种形式幂级数，其每一项的系数可以提供关于这个序列的信息。母函数主要应用于求解组合数、排列数、递推关系通项公式等。">
+Problem Description
+有n种物品，并且知道每种物品的数量。要求从中选出m件物品的排列数。例如有两种物品A,B，并且数量都是1，从中选2件物品，则排列有”AB”,”BA”两种。
+Input
+每组输入数据有两行，第一行是二个数n,m(1&amp;lt;=m,n&amp;lt;=10)，表示物品数，第二行有n个数，分别表示这n件物品的数量。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="排列组合 杭电 1521">
 <meta property="og:url" content="http://cmmdc.top/2016/12/07/排列组合/index.html">
 <meta property="og:site_name" content="梦">
 <meta property="og:description" content="题目链接
-首先补充一下母函数的基本知识：
-​      对于某个数列的母函数是一种形式幂级数，其每一项的系数可以提供关于这个序列的信息。母函数主要应用于求解组合数、排列数、递推关系通项公式等。">
+Problem Description
+有n种物品，并且知道每种物品的数量。要求从中选出m件物品的排列数。例如有两种物品A,B，并且数量都是1，从中选2件物品，则排列有”AB”,”BA”两种。
+Input
+每组输入数据有两行，第一行是二个数n,m(1&amp;lt;=m,n&amp;lt;=10)，表示物品数，第二行有n个数，分别表示这n件物品的数量。">
 <meta property="og:image" content="http://ogbkru1bq.bkt.clouddn.com/mmpai_lie_zu_he2.png">
 <meta property="og:image" content="http://ogbkru1bq.bkt.clouddn.com/mmpai_lie_zu_he1.png">
 <meta property="og:image" content="http://ogbkru1bq.bkt.clouddn.com/mmpai_lie_zu_he3.png">
@@ -25,12 +29,14 @@
 <meta property="og:image" content="http://wutianqi-blog.b0.upaiyun.com/2011/06/zhishumuhanshu2.png">
 <meta property="og:image" content="http://wutianqi-blog.b0.upaiyun.com/2011/06/zhishumuhanshu3.png">
 <meta property="og:image" content="http://wutianqi-blog.b0.upaiyun.com/2011/06/zhishumuhanshu4.png">
-<meta property="og:updated_time" content="2017-03-12T08:41:25.190Z">
+<meta property="og:updated_time" content="2017-03-21T13:41:33.975Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="排列组合 杭电 1521">
 <meta name="twitter:description" content="题目链接
-首先补充一下母函数的基本知识：
-​      对于某个数列的母函数是一种形式幂级数，其每一项的系数可以提供关于这个序列的信息。母函数主要应用于求解组合数、排列数、递推关系通项公式等。">
+Problem Description
+有n种物品，并且知道每种物品的数量。要求从中选出m件物品的排列数。例如有两种物品A,B，并且数量都是1，从中选2件物品，则排列有”AB”,”BA”两种。
+Input
+每组输入数据有两行，第一行是二个数n,m(1&amp;lt;=m,n&amp;lt;=10)，表示物品数，第二行有n个数，分别表示这n件物品的数量。">
 <meta name="twitter:image" content="http://ogbkru1bq.bkt.clouddn.com/mmpai_lie_zu_he2.png">
   
   
@@ -158,9 +164,17 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1521" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>Problem Description</p>
+<p>有n种物品，并且知道每种物品的数量。要求从中选出m件物品的排列数。例如有两种物品A,B，并且数量都是1，从中选2件物品，则排列有”AB”,”BA”两种。</p>
+<p>Input</p>
+<p>每组输入数据有两行，第一行是二个数n,m(1&lt;=m,n&lt;=10)，表示物品数，第二行有n个数，分别表示这n件物品的数量。 </p>
+<a id="more"></a>
+<p>Output</p>
+<p>对应每组数据输出排列数。(任何运算不会超出2^31的范围)<br>Sample Input`</p>
+<p>2 2<br>1 1`<br>Sample Output</p>
+<p><code>2</code></p>
 <p><em>首先补充一下母函数的基本知识：</em></p>
 <p>​      对于某个数列的母函数是一种形式幂级数，其每一项的系数可以提供关于这个序列的信息。母函数主要应用于求解组合数、排列数、递推关系通项公式等。</p>
-<a id="more"></a>
 <p>​      对于这个多项式乘法：</p>
 <p><img src="http://ogbkru1bq.bkt.clouddn.com/mmpai_lie_zu_he2.png" alt=""></p>
 <p>​       可以得出的结论有：</p>

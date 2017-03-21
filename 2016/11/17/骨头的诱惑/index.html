@@ -6,27 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://cmmdc.top">
-  <title>骨头的诱惑 杭电1010 | 梦</title>
+  <title>Tempter of the Bone 杭电1010 | 梦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="题目链接
-分析：
-迷宫中有一个出口，但是这个出口的门在最开始的时候是关着的，要求小狗必须在题目要求的第T秒到达这个出口的位置，此时这个门刚好打开且时间小于一秒，小狗刚好能出去。小狗只能够在上下左右移动，每当小狗到达一个位置的时候，这个地方地面就开始下沉并在下一秒消失，
-值得注意的是题目上对于出去迷宫的时间的要求，必须在第T秒而不是在T秒内">
+Problem Description
+The doggie found a bone in an ancient maze, which fascinated him a lot. However, when he picked it up, the maze began to shake, and the doggie could feel the ground sinking. H">
 <meta property="og:type" content="article">
-<meta property="og:title" content="骨头的诱惑 杭电1010">
+<meta property="og:title" content="Tempter of the Bone 杭电1010">
 <meta property="og:url" content="http://cmmdc.top/2016/11/17/骨头的诱惑/index.html">
 <meta property="og:site_name" content="梦">
 <meta property="og:description" content="题目链接
-分析：
-迷宫中有一个出口，但是这个出口的门在最开始的时候是关着的，要求小狗必须在题目要求的第T秒到达这个出口的位置，此时这个门刚好打开且时间小于一秒，小狗刚好能出去。小狗只能够在上下左右移动，每当小狗到达一个位置的时候，这个地方地面就开始下沉并在下一秒消失，
-值得注意的是题目上对于出去迷宫的时间的要求，必须在第T秒而不是在T秒内">
-<meta property="og:updated_time" content="2016-11-27T09:37:07.392Z">
+Problem Description
+The doggie found a bone in an ancient maze, which fascinated him a lot. However, when he picked it up, the maze began to shake, and the doggie could feel the ground sinking. H">
+<meta property="og:updated_time" content="2017-03-21T13:36:37.848Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="骨头的诱惑 杭电1010">
+<meta name="twitter:title" content="Tempter of the Bone 杭电1010">
 <meta name="twitter:description" content="题目链接
-分析：
-迷宫中有一个出口，但是这个出口的门在最开始的时候是关着的，要求小狗必须在题目要求的第T秒到达这个出口的位置，此时这个门刚好打开且时间小于一秒，小狗刚好能出去。小狗只能够在上下左右移动，每当小狗到达一个位置的时候，这个地方地面就开始下沉并在下一秒消失，
-值得注意的是题目上对于出去迷宫的时间的要求，必须在第T秒而不是在T秒内">
+Problem Description
+The doggie found a bone in an ancient maze, which fascinated him a lot. However, when he picked it up, the maze began to shake, and the doggie could feel the ground sinking. H">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -144,7 +141,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      骨头的诱惑 杭电1010
+      Tempter of the Bone 杭电1010
     </h1>
   
 
@@ -153,10 +150,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1010" target="_blank" rel="external"><strong>题目链接</strong></a></p>
+<p>Problem Description</p>
+<p>The doggie found a bone in an ancient maze, which fascinated him a lot. However, when he picked it up, the maze began to shake, and the doggie could feel the ground sinking. He realized that the bone was a trap, and he tried desperately to get out of this maze.</p>
+<a id="more"></a>
+<p>The maze was a rectangle with sizes N by M. There was a door in the maze. At the beginning, the door was closed and it would open at the T-th second for a short period of time (less than 1 second). Therefore the doggie had to arrive at the door on exactly the T-th second. In every second, he could move one block to one of the upper, lower, left and right neighboring blocks. Once he entered a block, the ground of this block would start to sink and disappear in the next second. He could not stay at one block for more than one second, nor could he move into a visited block. Can the poor doggie survive? Please help him.</p>
+<p>Input</p>
+<p>The input consists of multiple test cases. The first line of each test case contains three integers N, M, and T (1 &lt; N, M &lt; 7; 0 &lt; T &lt; 50), which denote the sizes of the maze and the time at which the door will open, respectively. The next N lines give the maze layout, with each line containing M characters. A character is one of the following:</p>
+<p>‘X’: a block of wall, which the doggie cannot enter;<br>‘S’: the start point of the doggie;<br>‘D’: the Door; or<br>‘.’: an empty block.</p>
+<p>The input is terminated with three 0’s. This test case is not to be processed.</p>
+<p>Output</p>
+<p>For each test case, print in one line “YES” if the doggie can survive, or “NO” otherwise.</p>
+<p>Sample Input`</p>
+<p>4 4 5<br>S.X.<br>..X.<br>..XD<br>….<br>3 4 5<br>S.X.<br>..X.<br>…D<br>0 0 0<code>Sample Output</code></p>
+<p>NO<br>YES`</p>
 <p><strong>分析：</strong></p>
 <p>迷宫中有一个出口，但是这个出口的门在最开始的时候是关着的，要求小狗必须在题目要求的第T秒到达这个出口的位置，此时这个门刚好打开且时间小于一秒，小狗刚好能出去。小狗只能够在上下左右移动，每当小狗到达一个位置的时候，这个地方地面就开始下沉并在下一秒消失，</p>
 <p><em>值得注意的是题目上对于出去迷宫的时间的要求，必须在第T秒而不是在T秒内</em></p>
-<a id="more"></a>
 <p>然后就是这道题除了运用普通的广搜的思想外还应用到剪枝的方法。</p>
 <p>补充下奇偶剪枝<br>把矩阵看成如下形式：<br>0 1 0 1 0 1<br>1 0 1 0 1 0<br>0 1 0 1 0 1<br>1 0 1 0 1 0<br>0 1 0 1 0 1<br>从为 0 的格子走一步，必然走向为 1 的格子 。<br>从为 1 的格子走一步，必然走向为 0 的格子 。<br>即：<br>从 0 走向 1 必然是奇数步，从 0 走向 0 必然是偶数步。<br>所以当遇到从 0 走向 0 但是要求时间是奇数的或者 从 1 走向 0 但是要求时间是偶数的，都可以直接判断不可达！<br>比如有一地图：<br>[c-sharp] view plaincopy<br>S…<br>….<br>….<br>….<br>…D<br>要求从S点到达D点，此时，从S到D的最短距离为s = abs ( dx - sx ) + abs ( dy - sy )。<br>如果地图中出现了不能经过的障碍物：<br>[c-sharp] view plaincopy<br>S..X<br>XX.X<br>…X<br>.XXX<br>…D<br>此时的最短距离s’ = s + 4，为了绕开障碍，不管偏移几个点，偏移的距离都是最短距离s加上一个偶数距离。<br>就如同上面说的矩阵，要求你从0走到0，无论你怎么绕，永远都是最短距离(偶数步)加上某个偶数步；要求你从1走到0，永远只能是最短距离(奇数步)加上某个偶数步。</p>
 <p>也就是说所要求的时间为t的话，起始点（sx，sy），终点（ex，ey）如果</p>
@@ -232,7 +241,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="骨头的诱惑" data-title="骨头的诱惑 杭电1010" data-url="http://cmmdc.top/2016/11/17/骨头的诱惑/"></div>
+	<div class="ds-thread" data-thread-key="骨头的诱惑" data-title="Tempter of the Bone 杭电1010" data-url="http://cmmdc.top/2016/11/17/骨头的诱惑/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

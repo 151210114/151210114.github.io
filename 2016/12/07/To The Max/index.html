@@ -9,24 +9,21 @@
   <title>To The Max 杭电 1081 | 梦</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="题目链接
-题目分析：
-​    一个N*N的矩阵中的，寻找最大的子矩阵。
-​    主要应用到矩阵压缩的思想，如果某个子矩阵的和最大，我们可以把他们的和压缩为一行，则此时的连续子序列和胃最大的。检查所有的压缩组合，从第一行开始，检查所有的包含此行的往下的行的子矩阵，找出包含此行的子矩阵的最大值，接着检查包含下一行的往下的所有的子矩阵。">
+Problem Description
+Given a two-dimensional array of positive and negative integers, a sub-rectangle is any contiguous sub-array of size 1 x 1 or greater located within the whole array. The sum o">
 <meta property="og:type" content="article">
 <meta property="og:title" content="To The Max 杭电 1081">
 <meta property="og:url" content="http://cmmdc.top/2016/12/07/To The Max/index.html">
 <meta property="og:site_name" content="梦">
 <meta property="og:description" content="题目链接
-题目分析：
-​    一个N*N的矩阵中的，寻找最大的子矩阵。
-​    主要应用到矩阵压缩的思想，如果某个子矩阵的和最大，我们可以把他们的和压缩为一行，则此时的连续子序列和胃最大的。检查所有的压缩组合，从第一行开始，检查所有的包含此行的往下的行的子矩阵，找出包含此行的子矩阵的最大值，接着检查包含下一行的往下的所有的子矩阵。">
-<meta property="og:updated_time" content="2016-12-07T09:19:30.147Z">
+Problem Description
+Given a two-dimensional array of positive and negative integers, a sub-rectangle is any contiguous sub-array of size 1 x 1 or greater located within the whole array. The sum o">
+<meta property="og:updated_time" content="2017-03-21T13:30:33.832Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="To The Max 杭电 1081">
 <meta name="twitter:description" content="题目链接
-题目分析：
-​    一个N*N的矩阵中的，寻找最大的子矩阵。
-​    主要应用到矩阵压缩的思想，如果某个子矩阵的和最大，我们可以把他们的和压缩为一行，则此时的连续子序列和胃最大的。检查所有的压缩组合，从第一行开始，检查所有的包含此行的往下的行的子矩阵，找出包含此行的子矩阵的最大值，接着检查包含下一行的往下的所有的子矩阵。">
+Problem Description
+Given a two-dimensional array of positive and negative integers, a sub-rectangle is any contiguous sub-array of size 1 x 1 or greater located within the whole array. The sum o">
   
   
     <link rel="icon" href="photos/favicon.ico">
@@ -153,10 +150,24 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1081" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>Problem Description</p>
+<p>Given a two-dimensional array of positive and negative integers, a sub-rectangle is any contiguous sub-array of size 1 x 1 or greater located within the whole array. The sum of a rectangle is the sum of all the elements in that rectangle. In this problem the sub-rectangle with the largest sum is referred to as the maximal sub-rectangle.</p>
+<a id="more"></a>
+<p>As an example, the maximal sub-rectangle of the array:</p>
+<p>0 -2 -7 0<br>9 2 -6 2<br>-4 1 -4 1<br>-1 8 0 -2</p>
+<p>is in the lower left corner:</p>
+<p>9 2<br>-4 1<br>-1 8</p>
+<p>and has a sum of 15.</p>
+<p>Input</p>
+<p>The input consists of an N x N array of integers. The input begins with a single positive integer N on a line by itself, indicating the size of the square two-dimensional array. This is followed by N 2 integers separated by whitespace (spaces and newlines). These are the N 2 integers of the array, presented in row-major order. That is, all numbers in the first row, left to right, then all numbers in the second row, left to right, etc. N may be as large as 100. The numbers in the array will be in the range [-127,127].</p>
+<p>Output</p>
+<p>Output the sum of the maximal sub-rectangle.</p>
+<p>Sample Input`</p>
+<p>4<br>0 -2 -7 0 9 2 -6 2<br>-4 1 -4 1 -1<br>8 0 -2`<br>Sample Output</p>
+<p><code>15</code></p>
 <p><strong>题目分析：</strong></p>
 <p>​    一个N*N的矩阵中的，寻找最大的子矩阵。</p>
 <p>​    主要应用到矩阵压缩的思想，如果某个子矩阵的和最大，我们可以把他们的和压缩为一行，则此时的连续子序列和胃最大的。检查所有的压缩组合，从第一行开始，检查所有的包含此行的往下的行的子矩阵，找出包含此行的子矩阵的最大值，接着检查包含下一行的往下的所有的子矩阵。</p>
-<a id="more"></a>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream &gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> jz[<span class="number">141</span>][<span class="number">141</span>],dp[<span class="number">141</span>],sum[<span class="number">141</span>],Max;</div><div class="line">    <span class="keyword">int</span> N,i,j;</div><div class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;N))</div><div class="line">    &#123;</div><div class="line">        Max=<span class="number">-1333</span>;      <span class="comment">///Max的值每次都要刷新</span></div><div class="line">        <span class="keyword">for</span>( i=<span class="number">0</span>; i&lt;N; i++)</div><div class="line">            <span class="keyword">for</span>( j=<span class="number">0</span>; j&lt;N; j++)</div><div class="line">                <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;jz[i][j]);<span class="comment">///给矩阵赋值</span></div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>; k&lt;N; k++)<span class="comment">///循环每行都要作为一个起始行</span></div><div class="line">        &#123;</div><div class="line">            <span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="keyword">sizeof</span>(dp));<span class="comment">///dp数组刷新</span></div><div class="line">            <span class="built_in">memset</span>(sum,<span class="number">0</span>,<span class="keyword">sizeof</span>(sum));<span class="comment">///sum数组刷新</span></div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=k; i&lt;N; i++)<span class="comment">///从当前行开始循环</span></div><div class="line">            &#123;</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>; j&lt;N; j++)<span class="comment">///每一列都要考虑</span></div><div class="line">                    sum[j]+=jz[i][j];<span class="comment">///以前到该列的子矩阵加上该列的</span></div><div class="line">                dp[<span class="number">0</span>]=sum[<span class="number">0</span>];</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> h=<span class="number">1</span>; h&lt;N; h++)</div><div class="line">                &#123;</div><div class="line">                    dp[h]=max(dp[h<span class="number">-1</span>]+sum[h],sum[h]);<span class="comment">///以前的和现在的取大值</span></div><div class="line">                    <span class="keyword">if</span>(dp[h]&gt;Max)</div><div class="line">                        Max=dp[h];</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,Max);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
       

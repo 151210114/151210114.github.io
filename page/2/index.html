@@ -133,7 +133,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/03/17/最长对称子串/">最长对称子串</a>
+      <a class="article-title" href="/2017/03/17/最长对称子串/">最长对称子串 天梯赛L2-008</a>
     </h1>
   
 
@@ -360,9 +360,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2082"><em>题目链接</em></a></p>
-<p><strong>题目分析：</strong></p>
-<p>   默认从A到Z这26个英文字母的权重为1到26，依次输入26个数字，分别代表从A到Z这26个字母的个数。从这些子母中找出一些组成单词，一个单词的权重为其中每个单词的权重之和，但是组成的单词与排列顺序无关，要求组成单词的权重不大于50.</p>
-<p>   这就是一个普通的母函数的应用，关于母函数的知识可以具体见上一篇博客。</p>
+<p>Problem Description</p>
+<p>假设有x1个字母A， x2个字母B,….. x26个字母Z，同时假设字母A的价值为1，字母B的价值为2,….. 字母Z的价值为26。那么，对于给定的字母，可以找到多少价值&lt;=50的单词呢？单词的价值就是组成一个单词的所有字母的价值之和，比如，单词ACM的价值是1+3+14=18，单词HDU的价值是8+4+21=33。(组成的单词与排列顺序无关，比如ACM与CMA认为是同一个单词）。</p>
         <p class="article-more-link">
           <a class="article-more-a"  href="/2016/12/07/找单词/#more">more >></a>
         </p>
@@ -415,8 +414,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1521"><em>题目链接</em></a></p>
-<p><em>首先补充一下母函数的基本知识：</em></p>
-<p>​      对于某个数列的母函数是一种形式幂级数，其每一项的系数可以提供关于这个序列的信息。母函数主要应用于求解组合数、排列数、递推关系通项公式等。</p>
+<p>Problem Description</p>
+<p>有n种物品，并且知道每种物品的数量。要求从中选出m件物品的排列数。例如有两种物品A,B，并且数量都是1，从中选2件物品，则排列有”AB”,”BA”两种。</p>
+<p>Input</p>
+<p>每组输入数据有两行，第一行是二个数n,m(1&lt;=m,n&lt;=10)，表示物品数，第二行有n个数，分别表示这n件物品的数量。 </p>
         <p class="article-more-link">
           <a class="article-more-a"  href="/2016/12/07/排列组合/#more">more >></a>
         </p>
@@ -469,9 +470,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1081"><em>题目链接</em></a></p>
-<p><strong>题目分析：</strong></p>
-<p>​    一个N*N的矩阵中的，寻找最大的子矩阵。</p>
-<p>​    主要应用到矩阵压缩的思想，如果某个子矩阵的和最大，我们可以把他们的和压缩为一行，则此时的连续子序列和胃最大的。检查所有的压缩组合，从第一行开始，检查所有的包含此行的往下的行的子矩阵，找出包含此行的子矩阵的最大值，接着检查包含下一行的往下的所有的子矩阵。</p>
+<p>Problem Description</p>
+<p>Given a two-dimensional array of positive and negative integers, a sub-rectangle is any contiguous sub-array of size 1 x 1 or greater located within the whole array. The sum of a rectangle is the sum of all the elements in that rectangle. In this problem the sub-rectangle with the largest sum is referred to as the maximal sub-rectangle.</p>
         <p class="article-more-link">
           <a class="article-more-a"  href="/2016/12/07/To The Max/#more">more >></a>
         </p>
@@ -524,8 +524,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1711"><em>题目链接</em></a></p>
-<p><strong>题目分析：</strong></p>
-<p>字符串匹配的问题，kmp算法的应用。定义主串s和字串t，定位字串t就是要在主串s中找到一个与字串t完全相等的子串，返回第一次找到的位置的下标。</p>
+<p>Problem Description</p>
+<p>Given two sequences of numbers : a[1], a[2], …… , a[N], and b[1], b[2], …… , b[M] (1 &lt;= M &lt;= 10000, 1 &lt;= N &lt;= 1000000). Your task is to find a number K which make a[K] = b[1], a[K + 1] = b[2], …… , a[K + M - 1] = b[M]. If there are more than one K exist, output the smallest one.</p>
         <p class="article-more-link">
           <a class="article-more-a"  href="/2016/11/30/Number Sequence/#more">more >></a>
         </p>
@@ -578,9 +578,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=2050"><em>题目链接</em></a></p>
-<p><strong>题目分析：</strong></p>
-<p>用折线来分割平面，看n条折线最多能够将平面分割成几部分，一条折线能够将平面分成两部分，两条折线能够将平面分割成7部分。具体分割情况如下所示：</p>
-<p><img src="http://ogbkru1bq.bkt.clouddn.com/hhh.png" alt=""></p>
+<p>Problem Description我们看到过很多直线分割平面的题目，今天的这个题目稍微有些变化，我们要求的是n条折线分割平面的最大数目。比如，一条折线可以将平面分成两部分，两条折线最多可以将平面分成7部分，具体如下所示。<br><img src="http://acm.hdu.edu.cn/data/images/C40-1008-1.jpg" alt="img"> </p>
         <p class="article-more-link">
           <a class="article-more-a"  href="/2016/11/27/折线分割平面/#more">more >></a>
         </p>
@@ -633,10 +631,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1999"><em>题目链接</em></a></p>
-<p><strong>题目分析：</strong></p>
-<p>首先要弄明白不可摸数的概念：任何数m，s(m)都不等于n,则称n为不可摸数</p>
-<p>​                                                      而s(m)表示的是数m的真因子之和</p>
-<p>然后还要烤炉到一点就是说即使当前的数m的值很大，但是m的真因子之和也有可能很小，所以求值时m的值要比实际要求大很多。</p>
+<p>Problem Description </p>
+<p>s(n)是正整数n的真因子之和，即小于n且整除n的因子和.例如s(12)=1+2+3+4+6=16.如果任何<br>数m，s(m)都不等于n,则称n为不可摸数.</p>
         <p class="article-more-link">
           <a class="article-more-a"  href="/2016/11/27/不可摸数/#more">more >></a>
         </p>
