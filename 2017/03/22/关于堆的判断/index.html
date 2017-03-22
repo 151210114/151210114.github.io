@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <link rel="dns-prefetch" href="http://cmmdc.top">
+  <title>关于堆的判断  天梯赛L2-012 | 梦</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="题目链接
+将一系列给定数字顺序插入一个初始为空的小顶堆H[]。随后判断一系列相关命题是否为真。命题分下列几种：
+
+“x is the root”：x是根结点；
+
+“x and y are siblings”：x和y是兄弟结点；
+
+“x is the parent of y”：x是y的父结点；
+
+“x is a child of y”：x是y的一个子结点。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于堆的判断  天梯赛L2-012">
+<meta property="og:url" content="http://cmmdc.top/2017/03/22/关于堆的判断/index.html">
+<meta property="og:site_name" content="梦">
+<meta property="og:description" content="题目链接
+将一系列给定数字顺序插入一个初始为空的小顶堆H[]。随后判断一系列相关命题是否为真。命题分下列几种：
+
+“x is the root”：x是根结点；
+
+“x and y are siblings”：x和y是兄弟结点；
+
+“x is the parent of y”：x是y的父结点；
+
+“x is a child of y”：x是y的一个子结点。">
+<meta property="og:updated_time" content="2017-03-22T11:23:47.863Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于堆的判断  天梯赛L2-012">
+<meta name="twitter:description" content="题目链接
+将一系列给定数字顺序插入一个初始为空的小顶堆H[]。随后判断一系列相关命题是否为真。命题分下列几种：
+
+“x is the root”：x是根结点；
+
+“x and y are siblings”：x和y是兄弟结点；
+
+“x is the parent of y”：x是y的父结点；
+
+“x is a child of y”：x是y的一个子结点。">
+  
+  
+    <link rel="icon" href="photos/favicon.ico">
+  
+  <link rel="stylesheet" href="/main.css">
+  
+
+  
+  
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+      <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img src="http://ogbkru1bq.bkt.clouddn.com/favicon.ico" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">梦</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">不努力,永远不知道自己可以做的更好。</p>
+		
+
+		<nav class="header-menu">
+			<ul>
+			
+				<li><a href="/">主页</a></li>
+	        
+			</ul>
+		</nav>
+		<nav class="header-smart-menu">
+	        
+    		
+    			
+    			<a class="js-smart-menu" data-idx="0" href="javascript:void(0)">所有文章</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="1" href="javascript:void(0)">标签</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="2" href="javascript:void(0)">dc</a>
+    			
+    			
+            
+    			
+    			<a class="js-smart-menu" data-idx="3" href="javascript:void(0)">关于我</a>
+    			
+    			
+            
+		</nav>
+		<nav class="header-nav">
+			<div class="social">
+				
+			</div>
+		</nav>
+	</header>		
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"><i class="icon-list"></i></div>
+  		<h1 class="header-author js-mobile-header hide">梦</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				
+					<img src="http://ogbkru1bq.bkt.clouddn.com/favicon.ico" class="js-avatar">
+				
+			</div>
+			<hgroup>
+			  <h1 class="header-author">梦</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">不努力,永远不知道自己可以做的更好。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap">
+        <article id="post-关于堆的判断" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于堆的判断  天梯赛L2-012
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://www.patest.cn/contests/gplt/L2-012" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>将一系列给定数字顺序插入一个初始为空的小顶堆H[]。随后判断一系列相关命题是否为真。命题分下列几种：</p>
+<ul>
+<li><p>“x is the root”：x是根结点；</p>
+</li>
+<li><p>“x and y are siblings”：x和y是兄弟结点；</p>
+</li>
+<li><p>“x is the parent of y”：x是y的父结点；</p>
+</li>
+<li><p>“x is a child of y”：x是y的一个子结点。</p>
+<a id="more"></a>
+</li>
+</ul>
+<p><strong>输入格式：</strong></p>
+<p>每组测试第1行包含2个正整数N（&lt;= 1000）和M（&lt;= 20），分别是插入元素的个数、以及需要判断的命题数。下一行给出区间[-10000, 10000]内的N个要被插入一个初始为空的小顶堆的整数。之后M行，每行给出一个命题。题目保证命题中的结点键值都是存在的。</p>
+<p><strong>输出格式：</strong></p>
+<p>对输入的每个命题，如果其为真，则在一行中输出“T”，否则输出“F”。</p>
+<p>输入样例：</p>
+<p>5 4<br>46 23 26 24 10<br>24 is the root<br>26 and 23 are siblings<br>46 is the parent of 23<br>23 is a child of 10</p>
+<p>输出样例：</p>
+<p>F<br>T<br>F<br>T</p>
+<p><strong>分析：</strong></p>
+<p>所谓小顶堆就是要求对于树中的每一个根节点来说，即小于他的左子树又小于他的右子树。</p>
+<p>我们首先要将输入的序列构造成一个小顶堆，在这个构造的过程中应该注意的一点就是不能够在把树构造完成之后再进行调整，而是应该每当插入一个节点的时候就将树的结构调整好，这里应该注意调整的方法，因为如果你调整的方法不一样的话所构造出来的小顶堆的形式也是不一样的，这样对我们后期数据的判断会有很大的影响。</p>
+<p>如果是树的形态构造好之后再进行调整的话，我们应该明确一点就是对于叶子节点来书是不需要进行调整的，所以开始调整的点的下标就应该是n=N/2。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Tiao</span><span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="keyword">int</span> temp;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=n;i&gt;<span class="number">0</span>;i--)<span class="comment">//从第一个节点开始往前调整</span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span> t=i,op=<span class="number">0</span>;</div><div class="line">		<span class="keyword">while</span>( i*<span class="number">2</span>&lt;=N&amp;&amp;op==<span class="number">0</span>)<span class="comment">//有左孩子，并且这个节点没有达到平衡状态</span></div><div class="line">		&#123;</div><div class="line">			<span class="keyword">if</span>(i*<span class="number">2</span>&lt;=N)</div><div class="line">				<span class="keyword">if</span>(a[i]&gt;a[i*<span class="number">2</span>])<span class="comment">//有左节点且根节点小于左节点</span></div><div class="line">				&#123;</div><div class="line">					t=<span class="number">2</span>*i;</div><div class="line">				&#125;</div><div class="line">			<span class="keyword">if</span>(i*<span class="number">2</span>+<span class="number">1</span>&lt;=N)</div><div class="line">				<span class="keyword">if</span>(a[t]&gt;a[i*<span class="number">2</span>+<span class="number">1</span>])<span class="comment">//有右节点，且右节点小于左节点和根节点中的较小值</span></div><div class="line">				&#123;</div><div class="line">					t=<span class="number">2</span>*i+<span class="number">1</span>;</div><div class="line">				&#125;</div><div class="line">			<span class="keyword">if</span>(t!=i)<span class="comment">//相当于当前的树形式需要进行调整</span></div><div class="line">			&#123;</div><div class="line">				temp=a[i];</div><div class="line">				a[i]=a[t];</div><div class="line">				a[t]=temp;</div><div class="line">				i=t;</div><div class="line">			&#125;</div><div class="line">			<span class="keyword">else</span><span class="comment">//不用调整的话，就不用再往下了，</span></div><div class="line">			op=<span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>但是这种调整的方法并不适合我们的题目，题目要求我们每次插入一个节点之后就要进行调整</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> N,M;</div><div class="line"><span class="keyword">int</span> a[<span class="number">10000</span>];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">just</span><span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> i=n;</div><div class="line">    <span class="keyword">int</span> temp;</div><div class="line">    <span class="keyword">if</span>(i==<span class="number">1</span>)<span class="comment">//第一个相当于整个树的根节点，是不用进行调整的 </span></div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">while</span>(i!=<span class="number">1</span>)<span class="comment">//插入的当前结点要与他的根结点进行比较 </span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(a[i]&lt;a[i/<span class="number">2</span>])</div><div class="line">            &#123;</div><div class="line">                temp=a[i];</div><div class="line">                a[i]=a[i/<span class="number">2</span>];</div><div class="line">                a[i/<span class="number">2</span>]=temp;</div><div class="line">                i=i/<span class="number">2</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="keyword">break</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;N,&amp;M);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);<span class="comment">//每次加入一个节点都要进行调整 </span></div><div class="line">        just(i);</div><div class="line">    &#125;</div><div class="line">    getchar();</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> kk=<span class="number">1</span>; kk&lt;=M; kk++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">char</span> s[<span class="number">1000</span>];</div><div class="line">        <span class="built_in">string</span> ss;</div><div class="line">        gets(s);</div><div class="line">        ss=s;</div><div class="line">        <span class="keyword">int</span> op;</div><div class="line">        op=ss.find(<span class="string">"root"</span>);<span class="comment">//find()方法是string类型下的方法 ，返回的是找到的第一个字符的下标 </span></div><div class="line">        <span class="keyword">if</span>(op!=<span class="number">-1</span>)<span class="comment">//相当于找到了 </span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">int</span> mm;</div><div class="line">            <span class="built_in">sscanf</span>(s,<span class="string">"%d"</span>,&amp;mm);<span class="comment">//输入流，把s的第一个整形数据给mm </span></div><div class="line">            <span class="keyword">if</span>(a[<span class="number">1</span>]==mm)<span class="comment">//为根节点 </span></div><div class="line">                <span class="built_in">printf</span>(<span class="string">"T\n"</span>);</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="built_in">printf</span>(<span class="string">"F\n"</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span><span class="comment">//没有找到 </span></div><div class="line">        &#123;</div><div class="line">            op=ss.find(<span class="string">"siblings"</span>);</div><div class="line">            <span class="keyword">if</span>(op!=<span class="number">-1</span>)</div><div class="line">            &#123;</div><div class="line">                <span class="keyword">int</span> mm,nn,n,m;</div><div class="line">                <span class="keyword">char</span> ch1[<span class="number">10</span>];</div><div class="line">                <span class="built_in">sscanf</span>(s,<span class="string">"%d %s %d"</span>,&amp;nn,ch1,&amp;mm);</div><div class="line">                <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=N; i++)</div><div class="line">                &#123;</div><div class="line">                    <span class="keyword">if</span>(a[i]==nn)</div><div class="line">                        n=i;</div><div class="line">                    <span class="keyword">if</span>(a[i]==mm)</div><div class="line">                        m=i;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">if</span>(n/<span class="number">2</span>==m/<span class="number">2</span>)</div><div class="line">                    <span class="built_in">printf</span>(<span class="string">"T\n"</span>);</div><div class="line">                <span class="keyword">else</span></div><div class="line">                    <span class="built_in">printf</span>(<span class="string">"F\n"</span>);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span></div><div class="line">            &#123;</div><div class="line">                op=ss.find(<span class="string">"parent"</span>);</div><div class="line">                <span class="keyword">if</span>(op!=<span class="number">-1</span>)</div><div class="line">                &#123;</div><div class="line">                    <span class="keyword">int</span> mm,nn,m,n;</div><div class="line">                    <span class="keyword">char</span> ch1[<span class="number">10</span>];</div><div class="line">                    <span class="keyword">char</span> ch2[<span class="number">10</span>];</div><div class="line">                    <span class="keyword">char</span> ch3[<span class="number">10</span>];</div><div class="line">                    <span class="keyword">char</span> ch4[<span class="number">10</span>];</div><div class="line">                    <span class="built_in">sscanf</span>(s,<span class="string">"%d %s %s %s %s %d"</span>,&amp;nn,ch1,ch2,ch3,ch4,&amp;mm);</div><div class="line">                    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=N; i++)</div><div class="line">                    &#123;</div><div class="line">                        <span class="keyword">if</span>(a[i]==nn)</div><div class="line">                            n=i;</div><div class="line">                        <span class="keyword">if</span>(a[i]==mm)</div><div class="line">                            m=i;</div><div class="line">                    &#125;</div><div class="line">                    <span class="keyword">if</span>(n==m/<span class="number">2</span>)</div><div class="line">                        <span class="built_in">printf</span>(<span class="string">"T\n"</span>);</div><div class="line">                    <span class="keyword">else</span></div><div class="line">                        <span class="built_in">printf</span>(<span class="string">"F\n"</span>);</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span></div><div class="line">                &#123;</div><div class="line">                    op=ss.find(<span class="string">"child"</span>);</div><div class="line">                    <span class="keyword">if</span>(op!=<span class="number">-1</span>)</div><div class="line">                    &#123;</div><div class="line">                        <span class="keyword">int</span> mm,nn,n,m;</div><div class="line">                        <span class="keyword">char</span> ch1[<span class="number">10</span>];</div><div class="line">                        <span class="keyword">char</span> ch2[<span class="number">10</span>];</div><div class="line">                        <span class="keyword">char</span> ch3[<span class="number">10</span>];</div><div class="line">                        <span class="keyword">char</span> ch4[<span class="number">10</span>];</div><div class="line">                        <span class="built_in">sscanf</span>(s,<span class="string">"%d %s %s %s %s %d"</span>,&amp;nn,ch1,ch2,ch3,ch4,&amp;mm);</div><div class="line">                        <span class="comment">//这里虽然中间的字符串没有用到，也要获取出来，不然没法取到最后一个整形数据 </span></div><div class="line">						<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=N; i++)</div><div class="line">                        &#123;</div><div class="line">                            <span class="keyword">if</span>(a[i]==nn)</div><div class="line">                                n=i;</div><div class="line">                            <span class="keyword">if</span>(a[i]==mm)</div><div class="line">                                m=i;</div><div class="line">                        &#125;</div><div class="line">                        <span class="keyword">if</span>( n/<span class="number">2</span>==m)</div><div class="line">                            <span class="built_in">printf</span>(<span class="string">"T\n"</span>);</div><div class="line">                        <span class="keyword">else</span></div><div class="line">                            <span class="built_in">printf</span>(<span class="string">"F\n"</span>);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2017/03/22/关于堆的判断/" class="archive-article-date">
+  	<time datetime="2017-03-22T10:49:28.097Z" itemprop="datePublished"><i class="icon-clock"></i>2017-03-22</time>
+</a>
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags"></i>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/acm/">acm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/二叉树/">二叉树</a></li></ul>
+	</div>
+
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/03/20/连续因子/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">连续因子  天梯赛L1-006</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">Share to: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+	    <a class="jiathis_button_twitter"></a>
+	    <a class="jiathis_button_plus"></a> 
+	    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="//v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="关于堆的判断" data-title="关于堆的判断  天梯赛L2-012" data-url="http://cmmdc.top/2017/03/22/关于堆的判断/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"151210114"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2017 梦
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+
+<!--给网站加上人次数以及访问人数-->
+ <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+
+<span id="busuanzi_container_site_pv">
+    <br>本站总访问量<span id="busuanzi_value_site_pv"></span>次
+</span>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+    </div>
+    <script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: false,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: true,
+		root: "/",
+		innerArchive: true
+	}
+</script>
+
+<script src="/./main.js"></script>
+
+
+    
+<div class="tools-col">
+  <ul class="btn-wrap">
+    
+      <li class="chose" data-hook="tools-section-all"><span class="text">全部</span><i class="icon-book"></i></li>
+    
+    
+      <li data-hook="tools-section-tag"><span class="text">标签</span><i class="icon-price-tags"></i></li>
+    
+    
+      <li data-hook="tools-section-friends"><span class="text">友链</span><i class="icon-link"></i></li>
+    
+    
+      <li data-hook="tools-section-me"><span class="text">我</span><i class="icon-smile"></i></li>
+    
+  </ul>
+  <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all chose">
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-tag">
+    			<div class="widget tagcloud" id="js-tagcloud">
+    				<a href="/tags/acm/" style="font-size: 20px;">acm</a> <a href="/tags/dp/" style="font-size: 10px;">dp</a> <a href="/tags/kmp/" style="font-size: 10px;">kmp</a> <a href="/tags/map/" style="font-size: 10px;">map</a> <a href="/tags/queue/" style="font-size: 10px;">queue</a> <a href="/tags/set/" style="font-size: 10px;">set</a> <a href="/tags/stl/" style="font-size: 10px;">stl</a> <a href="/tags/二叉树/" style="font-size: 13.33px;">二叉树</a> <a href="/tags/剪枝/" style="font-size: 10px;">剪枝</a> <a href="/tags/天梯赛/" style="font-size: 16.67px;">天梯赛</a> <a href="/tags/好玩/" style="font-size: 10px;">好玩</a> <a href="/tags/并查集/" style="font-size: 10px;">并查集</a> <a href="/tags/广搜/" style="font-size: 13.33px;">广搜</a> <a href="/tags/数学/" style="font-size: 10px;">数学</a> <a href="/tags/暴力/" style="font-size: 10px;">暴力</a> <a href="/tags/母函数/" style="font-size: 13.33px;">母函数</a> <a href="/tags/深搜/" style="font-size: 13.33px;">深搜</a> <a href="/tags/算法/" style="font-size: 13.33px;">算法</a> <a href="/tags/结构体排序/" style="font-size: 10px;">结构体排序</a> <a href="/tags/蓝桥杯/" style="font-size: 10px;">蓝桥杯</a>
+    			</div>
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-friends">
+  		
+  			<div class="friends-wrap" id="js-friends">
+  			
+  	          <a target="_blank" class="main-nav-link switch-friends-link" href="http://dccmm.top">dc</a>
+  	        
+  	        </div>
+  		
+    	</section>
+    
+
+    
+    	<section class="tools-section tools-section-me">
+  	  	
+    	</section>
+    
+  </div>
+  
+</div>
+    <!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe. 
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides. 
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" style="display:none" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div> 
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+  </div>
+  
+   <script type="text/javascript" src="/js/src/particle.js"></script>
+
+</body>
+</html>
