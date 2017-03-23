@@ -1,0 +1,628 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="acm,Dijkstra," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="梦" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="题目链接
+作为一个城市的应急救援队伍的负责人，你有一张特殊的全国地图。在地图上显示有多个分散的城市和一些连接城市的快速道路。每个城市的救援队数量和每一条连接两个城市的快速道路长度都标在地图上。当其他城市有紧急求助电话给你的时候，你的任务是带领你的救援队尽快赶往事发地，同时，一路上召集尽可能多的救援队。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="紧急救援 天梯赛L2-001">
+<meta property="og:url" content="http://cmmdc.top/2017/03/23/紧急救援/index.html">
+<meta property="og:site_name" content="梦">
+<meta property="og:description" content="题目链接
+作为一个城市的应急救援队伍的负责人，你有一张特殊的全国地图。在地图上显示有多个分散的城市和一些连接城市的快速道路。每个城市的救援队数量和每一条连接两个城市的快速道路长度都标在地图上。当其他城市有紧急求助电话给你的时候，你的任务是带领你的救援队尽快赶往事发地，同时，一路上召集尽可能多的救援队。">
+<meta property="og:image" content="http://ogbkru1bq.bkt.clouddn.com/dc_dij.png">
+<meta property="og:updated_time" content="2017-03-23T08:49:44.434Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="紧急救援 天梯赛L2-001">
+<meta name="twitter:description" content="题目链接
+作为一个城市的应急救援队伍的负责人，你有一张特殊的全国地图。在地图上显示有多个分散的城市和一些连接城市的快速道路。每个城市的救援队数量和每一条连接两个城市的快速道路长度都标在地图上。当其他城市有紧急求助电话给你的时候，你的任务是带领你的救援队尽快赶往事发地，同时，一路上召集尽可能多的救援队。">
+<meta name="twitter:image" content="http://ogbkru1bq.bkt.clouddn.com/dc_dij.png">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://cmmdc.top/2017/03/23/紧急救援/"/>
+
+  <title> 紧急救援 天梯赛L2-001 | 梦 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">梦</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                紧急救援 天梯赛L2-001
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-03-23T15:26:08+08:00" content="2017-03-23">
+              2017-03-23
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">阅读
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.patest.cn/contests/gplt/L2-001" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>作为一个城市的应急救援队伍的负责人，你有一张特殊的全国地图。在地图上显示有多个分散的城市和一些连接城市的快速道路。每个城市的救援队数量和每一条连接两个城市的快速道路长度都标在地图上。当其他城市有紧急求助电话给你的时候，你的任务是带领你的救援队尽快赶往事发地，同时，一路上召集尽可能多的救援队。</p>
+<a id="more"></a>
+<p><strong>输入格式：</strong></p>
+<p>输入第一行给出4个正整数N、M、S、D，其中N（2&lt;=N&lt;=500）是城市的个数，顺便假设城市的编号为0~(N-1)；M是快速道路的条数；S是出发地的城市编号；D是目的地的城市编号。第二行给出N个正整数，其中第i个数是第i个城市的救援队的数目，数字间以空格分隔。随后的M行中，每行给出一条快速道路的信息，分别是：城市1、城市2、快速道路的长度，中间用空格分开，数字均为整数且不超过500。输入保证救援可行且最优解唯一。</p>
+<p><strong>输出格式：</strong></p>
+<p>第一行输出不同的最短路径的条数和能够召集的最多的救援队数量。第二行输出从S到D的路径中经过的城市编号。数字间以空格分隔，输出首尾不能有多余空格。</p>
+<p>输入样例：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">4 </span><span class="number">5</span> <span class="number">0</span> <span class="number">3</span></div><div class="line"><span class="symbol">20 </span><span class="number">30</span> <span class="number">40</span> <span class="number">10</span></div><div class="line"><span class="symbol">0 </span><span class="number">1</span> <span class="number">1</span></div><div class="line"><span class="symbol">1 </span><span class="number">3</span> <span class="number">2</span></div><div class="line"><span class="symbol">0 </span><span class="number">3</span> <span class="number">3</span></div><div class="line"><span class="symbol">0 </span><span class="number">2</span> <span class="number">2</span></div><div class="line"><span class="symbol">2 </span><span class="number">3</span> <span class="number">2</span></div></pre></td></tr></table></figure>
+<p>输出样例：</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">2 </span><span class="number">60</span></div><div class="line"><span class="symbol">0 </span><span class="number">1</span> <span class="number">3</span></div></pre></td></tr></table></figure>
+<p><strong>分析：</strong></p>
+<p>这是单源点最短路径的题，但是与普通的单源点最短路径之间又有不同的地方，就是我们不仅要保存最短的路径，还要把这条路径上通过的每个点的军队数目的和保存下来，以及最短路径的条数，以及在这些最短路径中那条路能够获得最大的进队数目，还要把这天路径也保存下来。</p>
+<p>所以我们需要 保存的信息有很多：</p>
+<p>1.最短路径的条数</p>
+<p>2.最短路径的走法</p>
+<p>3.在这条路径上获得的军队数目和</p>
+<p><a href="http://ogbkru1bq.bkt.clouddn.com/dc_dij.png" target="_blank" rel="external"><img src="http://ogbkru1bq.bkt.clouddn.com/dc_dij.png" alt="img"></a></p>
+<p>如图：对于需要保存路径数目的最短路，如果dis[]的初始化为各个点到源点的距离的话，（源点是0 终点是3）那么3这个终点只会被松弛一次（即使从0到3距离 与 从0到1再到3 的距离相等，但是经过第二条线路所能召集的军队的数目多余0—-&gt;3，所以也要进行讨论），那么对于3来说，他的路线只有一条。</p>
+<p>所以要把dis[]初始化为上面的表所示，这样3这个点就会被松弛两次，每松弛一次，他的路径数目就会增加。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;math.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> N, M, S, D;</div><div class="line"><span class="keyword">int</span> NumArmy[<span class="number">505</span>];<span class="comment">//每个点的军队数目 </span></div><div class="line"><span class="keyword">int</span> SumArmy[<span class="number">505</span>];<span class="comment">//路径中通过当前点的进队数目和 </span></div><div class="line"><span class="keyword">int</span> <span class="built_in">map</span>[<span class="number">505</span>][<span class="number">505</span>]; </div><div class="line"><span class="keyword">int</span> dist[<span class="number">505</span>];<span class="comment">//源点到当前点的最短路径 </span></div><div class="line"><span class="keyword">int</span> parent[<span class="number">505</span>];<span class="comment">//路径中的前一个点 </span></div><div class="line"><span class="keyword">int</span> NumLoad[<span class="number">505</span>];<span class="comment">//路径数量 </span></div><div class="line"><span class="keyword">int</span> bj[<span class="number">505</span>];<span class="comment">//标记数组 </span></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">dij</span><span class="params">(<span class="keyword">int</span> s)</span></span></div><div class="line">&#123;</div><div class="line">	<span class="comment">//源点的相关变量进行初始化 </span></div><div class="line">    SumArmy[s] = NumArmy[s];</div><div class="line">    parent[s] = <span class="number">-1</span>;</div><div class="line">    NumLoad[s] = <span class="number">1</span>;</div><div class="line">    bj[s] = <span class="number">1</span>;</div><div class="line">    dist[s] = <span class="number">0</span>;</div><div class="line">    <span class="comment">//将源点到每个点的最短路径保存 </span></div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">if</span> (<span class="built_in">map</span>[s][i] != <span class="number">0</span> &amp;&amp; <span class="built_in">map</span>[s][i] != INF)<span class="comment">//之间有路径 </span></div><div class="line">        &#123;</div><div class="line">            dist[i] = <span class="built_in">map</span>[s][i];</div><div class="line">            SumArmy[i] = NumArmy[i] + NumArmy[s];</div><div class="line">            NumLoad[i] = <span class="number">1</span>;</div><div class="line">            parent[i] = s;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> num = N - <span class="number">1</span>;</div><div class="line">    <span class="keyword">int</span> op = S;</div><div class="line">    <span class="keyword">while</span> (num--)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> Min = INF;</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span> (bj[i] == <span class="number">0</span> &amp;&amp; dist[i] &lt; Min)</div><div class="line">            &#123;</div><div class="line">                Min = dist[i];</div><div class="line">                op = i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        bj[op] = <span class="number">1</span>;<span class="comment">//找到路径之外的最短距离 </span></div><div class="line"></div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span> (bj[i] == <span class="number">0</span>)</div><div class="line">            &#123;</div><div class="line">                <span class="keyword">if</span> (dist[i] &gt; dist[op] + <span class="built_in">map</span>[op][i])<span class="comment">//到i点的最短路径能通过op点变化 </span></div><div class="line">                &#123;</div><div class="line">                    dist[i] = dist[op] + <span class="built_in">map</span>[op][i];</div><div class="line">                    SumArmy[i] = SumArmy[op] + NumArmy[i];</div><div class="line">                    NumLoad[i] = NumLoad[op];</div><div class="line">                    parent[i] = op;</div><div class="line">                &#125;</div><div class="line">                <span class="keyword">else</span> <span class="comment">//else不能忘，找bug找了好久 </span></div><div class="line">				<span class="keyword">if</span> (dist[i] == dist[op] + <span class="built_in">map</span>[op][i])<span class="comment">//虽然路径长度不能变化，可以比较军队数目来改变路径 </span></div><div class="line">                &#123;</div><div class="line">                    NumLoad[i] = NumLoad[i] + NumLoad[op];</div><div class="line">                    <span class="keyword">if</span> (SumArmy[i] &lt; SumArmy[op] + NumArmy[i])</div><div class="line">                    &#123;</div><div class="line">                        SumArmy[i] = SumArmy[op] + NumArmy[i];</div><div class="line">                        parent[i] = op;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Shuchu</span><span class="params">(<span class="keyword">int</span> D)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">if</span> (parent[D] == <span class="number">-1</span>)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, D);</div><div class="line">        <span class="keyword">return</span> ;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        Shuchu(parent[D]);</div><div class="line">        <span class="built_in">printf</span>(<span class="string">" %d"</span>, D);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>, &amp;N, &amp;M, &amp;S, &amp;D);</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;NumArmy[i]);</div><div class="line">        <span class="comment">//初始化 </span></div><div class="line">        dist[i] = INF;</div><div class="line">        bj[i] = <span class="number">0</span>;</div><div class="line">        NumLoad[i] = <span class="number">0</span>;</div><div class="line">        SumArmy[i] = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; N; i++)</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; N; j++)</div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span> (i == j)</div><div class="line">                <span class="built_in">map</span>[i][j] = <span class="number">0</span>;</div><div class="line">            <span class="keyword">else</span></div><div class="line">                <span class="built_in">map</span>[i][j] = INF;</div><div class="line">        &#125;</div><div class="line">    <span class="keyword">int</span> n1, n2, n3;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d%d"</span>, &amp;n1, &amp;n2, &amp;n3);</div><div class="line">        <span class="built_in">map</span>[n1][n2] = <span class="built_in">map</span>[n2][n1] = min(n3, <span class="built_in">map</span>[n1][n2]);</div><div class="line">    &#125;</div><div class="line">    dij(S);</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%d %d\n"</span>, NumLoad[D], SumArmy[D]);</div><div class="line">    Shuchu( D);</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/acm/" rel="tag">#acm</a>
+          
+            <a href="/tags/Dijkstra/" rel="tag">#Dijkstra</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/22/关于堆的判断/" rel="next" title="关于堆的判断  天梯赛L2-012">
+                <i class="fa fa-chevron-left"></i> 关于堆的判断  天梯赛L2-012
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="梦" />
+          <p class="site-author-name" itemprop="name">梦</p>
+          <p class="site-description motion-element" itemprop="description">不努力,永远不知道自己可以做的更好。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">30</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">梦</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">你已经是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个访问者了！</span>
+  
+
+  
+    <span class="site-pv">总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+  <!-- 博客背景 粒子效果 -->
+ <script type="text/javascript" src="/js/src/particle.js"></script>
+
+  
+</body>
+</html>
