@@ -96,7 +96,7 @@ Problem Description
 <meta property="og:description" content="题目链接
 Problem Description
 假设有x1个字母A， x2个字母B,….. x26个字母Z，同时假设字母A的价值为1，字母B的价值为2,….. 字母Z的价值为26。那么，对于给定的字母，可以找到多少价值&amp;lt;=50的单词呢？单词的价值就是组成一个单词的所有字母的价值之和，比如，单词ACM的价值是1+3+14=18，单词HDU的价值是8+4+21=33。(组成的单词与排列顺序无关">
-<meta property="og:updated_time" content="2017-03-21T13:46:34.313Z">
+<meta property="og:updated_time" content="2017-03-31T12:40:01.949Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="找单词 杭电 2082 (普通母函数)">
 <meta name="twitter:description" content="题目链接
@@ -307,7 +307,8 @@ Problem Description
 <p>输入首先是一个整数N，代表测试实例的个数。<br>然后包括N行数据，每行包括26个&lt;=20的整数x1,x2,…..x26.</p>
 <p>Output</p>
 <p>对于每个测试实例，请输出能找到的总价值&lt;=50的单词数,每个实例的输出占一行。<br>Sample Input`</p>
-<p>2<br>1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0<br>9 2 6 2 10 2 2 5 6 1 0 2 7 0 2 2 7 5 10 6 10 2 10 6 1 9<code>Sample Output</code></p>
+<p>2<br>1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0<br>9 2 6 2 10 2 2 5 6 1 0 2 7 0 2 2 7 5 10 6 10 2 10 6 1 9` </p>
+<p>Sample Output`</p>
 <p>7<br>379297` </p>
 <p><strong>题目分析：</strong></p>
 <p>   默认从A到Z这26个英文字母的权重为1到26，依次输入26个数字，分别代表从A到Z这26个字母的个数。从这些子母中找出一些组成单词，一个单词的权重为其中每个单词的权重之和，但是组成的单词与排列顺序无关，要求组成单词的权重不大于50.</p>
