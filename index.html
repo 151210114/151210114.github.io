@@ -250,6 +250,352 @@
             
               
                 
+                <a class="post-title-link" href="/2017/04/11/杭电1166 敌兵布阵/" itemprop="url">
+                  敌兵布阵
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-11T07:08:01+08:00" content="2017-04-11">
+              2017-04-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1166" target="_blank" rel="external">题目链接</a></p>
+<p>Problem Description</p>
+<p>C国的死对头A国这段时间正在进行军事演习，所以C国间谍头子Derek和他手下Tidy又开始忙乎了。A国在海岸线沿直线布置了N个工兵营地,Derek和Tidy的任务就是要监视这些工兵营地的活动情况。由于采取了某种先进的监测手段，所以每个工兵营地的人数C国都掌握的一清二楚,每个工兵营地的人数都有可能发生变动，可能增加或减少若干人手,但这些都逃不过C国的监视。<br>中央情报局要研究敌人究竟演习什么战术,所以Tidy要随时向Derek汇报某一段连续的工兵营地一共有多少人,例如Derek问:“Tidy,马上汇报第3个营地到第10个营地共有多少人!”Tidy就要马上开始计算这一段的总人数并汇报。但敌兵营地的人数经常变动，而Derek每次询问的段都不一样，所以Tidy不得不每次都一个一个营地的去数，很快就精疲力尽了，Derek对Tidy的计算速度越来越不满:”你个死肥仔，算得这么慢，我炒你鱿鱼!”Tidy想：“你自己来算算看，这可真是一项累人的工作!我恨不得你炒我鱿鱼呢!”无奈之下，Tidy只好打电话向计算机专家Windbreaker求救,Windbreaker说：“死肥仔，叫你平时做多点acm题和看多点算法书，现在尝到苦果了吧!”Tidy说：”我知错了。。。”但Windbreaker已经挂掉电话了。Tidy很苦恼，这么算他真的会崩溃的，聪明的读者，你能写个程序帮他完成这项工作吗？不过如果你的程序效率不够高的话，Tidy还是会受到Derek的责骂的.</p>
+<p>Input</p>
+<p>第一行一个整数T，表示有T组数据。<br>每组数据第一行一个正整数N（N&lt;=50000）,表示敌人有N个工兵营地，接下来有N个正整数,第i个正整数ai代表第i个工兵营地里开始时有ai个人（1&lt;=ai&lt;=50）。<br>接下来每行有一条命令，命令有4种形式：<br>(1) Add i j,i和j为正整数,表示第i个营地增加j个人（j不超过30）<br>(2)Sub i j ,i和j为正整数,表示第i个营地减少j个人（j不超过30）;<br>(3)Query i j ,i和j为正整数,i&lt;=j，表示询问第i到第j个营地的总人数;<br>(4)End 表示结束，这条命令在每组数据最后出现;<br>每组数据最多有40000条命令</p>
+<p>Output</p>
+<p>对第i组数据,首先输出“Case i:”和回车,<br>对于每个Query询问，输出一个整数并回车,表示询问的段中的总人数,这个数保持在int以内。</p>
+<p>Sample Input</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span></div><div class="line"><span class="number">10</span></div><div class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> <span class="number">10</span></div><div class="line">Query <span class="number">1</span> <span class="number">3</span></div><div class="line">Add <span class="number">3</span> <span class="number">6</span></div><div class="line">Query <span class="number">2</span> <span class="number">7</span></div><div class="line">Sub <span class="number">10</span> <span class="number">2</span></div><div class="line">Add <span class="number">6</span> <span class="number">3</span></div><div class="line">Query <span class="number">3</span> <span class="number">10</span></div><div class="line">End</div></pre></td></tr></table></figure>
+<p>Sample Output</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">Case</span> <span class="number">1</span>:</div><div class="line"><span class="number">6</span></div><div class="line"><span class="number">33</span></div><div class="line"><span class="number">59</span></div></pre></td></tr></table></figure>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>这道题可以用线段树来解，只需把区间求最大值得那个代码稍加改动就行。这里主要讲树状数组的写法，</p>
+<p>树状数组的经典应用：区间求和,</p>
+<p>有如下数组：a []= [ 1, 2, 3, 4, 5, 6, 7, 8, 9,10];  </p>
+<p>现在用一个sum[]来保存如下的信息，至于为什要这样保存，请继续往下看</p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">sum<span class="string">[1]</span> = a<span class="string">[1]</span>;</div><div class="line">sum<span class="string">[2]</span> = a<span class="string">[1]</span> + a<span class="string">[2]</span>;</div><div class="line">sum<span class="string">[3]</span> = a<span class="string">[3]</span>;</div><div class="line">sum<span class="string">[4]</span> = a<span class="string">[1]</span> + a<span class="string">[2]</span> + a<span class="string">[3]</span> + a<span class="string">[4]</span>;</div><div class="line">sum<span class="string">[5]</span> = a<span class="string">[5]</span>;</div><div class="line">sum<span class="string">[6]</span> = a<span class="string">[5]</span> + a<span class="string">[6]</span>;</div><div class="line">sum<span class="string">[7]</span> = a<span class="string">[7]</span>;</div><div class="line">sum<span class="string">[8]</span> = a<span class="string">[1]</span> + a<span class="string">[2]</span> + a<span class="string">[3]</span> + a<span class="string">[4]</span> + a<span class="string">[5]</span> + a<span class="string">[6]</span> + a<span class="string">[7]</span> + a<span class="string">[8]</span>;</div><div class="line">sum<span class="string">[9]</span> = a<span class="string">[9]</span>;</div></pre></td></tr></table></figure>
+<p>此时sum数组就是这个树状数组了，sum[x]保存的是从下标x开始  a[x]+a[x-1]+a[x-2]+a[x-k] ，至于有几个a[]相加，这里有一个计算方法，把x化为二进制，从右向左找到第一个1的位置，这个位置所代表的十进制的数字k就意味着sum[x]=a[x]+a[x-1]+a[x-2]+…+a[x-k-1];</p>
+<p>假如x=6  把6化为二进制：110 ，从右向左找到第一个1的位置 就是 10 ，十进制就是2:   sum[6]=a[6]+a[5]</p>
+<p>假如x=8   的二进制是1000 ，从右向左找到第一个1的位置 就是 1000，十进制就是8   那么   sum[8]=a[8]+a[7]+a[6]+a[5]+a[4]+a[3]+a[2]+a[1];</p>
+<p>假如用一个函数lowbit(int x)来实现  lowbit(6)=2    lowbit(8)=8 的功能，那么对于sum[x] 他的求和</p>
+<p>区间是(x-lowbit(x),x];</p>
+<p><img src="http://images2015.cnblogs.com/blog/675542/201509/675542-20150914140031867-399947421.png" alt=""></p>
+<p>如图： c[4]的父节点是c[8]  c[8]=4+lowbit(4);</p>
+<p>lowbit(int x)函数可写成</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> x&amp;(-x);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> 建立树状数组</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Build</span><span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=i; j&gt;=i-lowbit(i)+<span class="number">1</span>; j--)</div><div class="line">            build[i]+=a[j];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>更新树状数组</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> id,<span class="keyword">int</span> value)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=id; i&lt;=MAX; i+=lowbit(i))<span class="comment">//i+=lowbit(i)得到的是i的父节点</span></div><div class="line">        build[i]+=value;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>求和（从1到n的和）</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">SUM</span><span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=n; i&gt;<span class="number">0</span>; i-=lowbit(i))<span class="comment">//i-=lowbit(i) 得到是i的子节点</span></div><div class="line">        sum+=build[i];</div><div class="line">    <span class="keyword">return</span> sum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> MAX=<span class="number">50000</span>+<span class="number">50</span>;</div><div class="line"><span class="keyword">int</span> a[MAX];</div><div class="line"><span class="keyword">int</span> build[MAX];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> x&amp;(-x);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Build</span><span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j=i; j&gt;=i-lowbit(i)+<span class="number">1</span>; j--)</div><div class="line">            build[i]+=a[j];</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">SUM</span><span class="params">(<span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> sum=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=n; i&gt;<span class="number">0</span>; i-=lowbit(i))</div><div class="line">        sum+=build[i];</div><div class="line">    <span class="keyword">return</span> sum;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> id,<span class="keyword">int</span> value,<span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=id; i&lt;=n; i+=lowbit(i))</div><div class="line">        build[i]+=value;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"></div><div class="line">    <span class="comment">//freopen("1.txt","r",stdin);</span></div><div class="line">    <span class="keyword">int</span> t,k=<span class="number">1</span>;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</div><div class="line">    <span class="keyword">while</span> (k&lt;=t)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</div><div class="line">        <span class="built_in">memset</span>(build,<span class="number">0</span>,<span class="keyword">sizeof</span>(build));</div><div class="line">        <span class="keyword">int</span> n;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</div><div class="line">        &#125;</div><div class="line">        Build(n);</div><div class="line">        <span class="keyword">char</span> c[<span class="number">10</span>];</div><div class="line">        <span class="keyword">int</span> a,b;</div><div class="line">        <span class="built_in">printf</span>(<span class="string">"Case %d:\n"</span>,k);</div><div class="line">        <span class="keyword">while</span> (<span class="number">1</span>)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">" %s"</span>,c);</div><div class="line">            <span class="keyword">if</span> (<span class="built_in">strcmp</span>(c,<span class="string">"End"</span>)==<span class="number">0</span>)</div><div class="line">                <span class="keyword">break</span>;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</div><div class="line">            <span class="keyword">if</span> (<span class="built_in">strcmp</span>(c,<span class="string">"Query"</span>)==<span class="number">0</span>)</div><div class="line">            &#123;</div><div class="line">                <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,SUM(b)-SUM(a<span class="number">-1</span>));</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>  <span class="keyword">if</span> (<span class="built_in">strcmp</span>(c,<span class="string">"Add"</span>)==<span class="number">0</span>)</div><div class="line">            &#123;</div><div class="line">                update(a,b,n);</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">else</span>  <span class="keyword">if</span> (<span class="built_in">strcmp</span>(c,<span class="string">"Sub"</span>)==<span class="number">0</span>)</div><div class="line">            &#123;</div><div class="line">                update(a,<span class="number">-1</span>*b,n);</div><div class="line">            &#125;</div><div class="line"></div><div class="line">        &#125;</div><div class="line">        k++;</div><div class="line"></div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/11/杭电1754 I Hate It/" itemprop="url">
+                  I Hate It
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-11T07:07:55+08:00" content="2017-04-11">
+              2017-04-11
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1754" target="_blank" rel="external">题目链接</a></p>
+<p>Problem Description</p>
+<p>很多学校流行一种比较的习惯。老师们很喜欢询问，从某某到某某当中，分数最高的是多少。<br>这让很多学生很反感。<br>不管你喜不喜欢，现在需要你做的是，就是按照老师的要求，写一个程序，模拟老师的询问。当然，老师有时候需要更新某位同学的成绩。</p>
+<p>Input</p>
+<p>本题目包含多组测试，请处理到文件结束。<br>在每个测试的第一行，有两个正整数 N 和 M ( 0&lt;N&lt;=200000,0&lt;M&lt;5000 )，分别代表学生的数目和操作的数目。<br>学生ID编号分别从1编到N。<br>第二行包含N个整数，代表这N个学生的初始成绩，其中第i个数代表ID为i的学生的成绩。<br>接下来有M行。每一行有一个字符 C (只取’Q’或’U’) ，和两个正整数A，B。<br>当C为’Q’的时候，表示这是一条询问操作，它询问ID从A到B(包括A,B)的学生当中，成绩最高的是多少。<br>当C为’U’的时候，表示这是一条更新操作，要求把ID为A的学生的成绩更改为B。</p>
+<p>Output</p>
+<p>对于每一次询问操作，在一行里面输出最高成绩。</p>
+<p>Sample Input</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="number">5</span> <span class="number">6</span></div><div class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span> <span class="number">5</span></div><div class="line">Q <span class="number">1</span> <span class="number">5</span></div><div class="line">U <span class="number">3</span> <span class="number">6</span></div><div class="line">Q <span class="number">3</span> <span class="number">4</span></div><div class="line">Q <span class="number">4</span> <span class="number">5</span></div><div class="line">U <span class="number">2</span> <span class="number">9</span></div><div class="line">Q <span class="number">1</span> <span class="number">5</span></div></pre></td></tr></table></figure>
+<p>Sample Output</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="number">5</span></div><div class="line"><span class="number">6</span></div><div class="line"><span class="number">5</span></div><div class="line"><span class="number">9</span></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">HintHuge input,the C function scanf() will work better than cin</div></pre></td></tr></table></figure>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>第一次做线段树的问题，这是一个最简单的线段树。既然是一棵树，那么他的每一个节点都要保存信息，至于保存什么信息就要依据题意来自己设定，这里要求的是每个区间的最大值，所以每个节点就用来保存最大值，但是这个最大值是哪个区间的呢，这就用到节点的位置了，我们给每个节点编号（1~n），此时就可以用编号来找到每个节点的左右孩子，节点编号为x，那么他的左孩子的编号就是2<em>x， 右孩子的编号是2 </em> x+1，下面要做的就是区间的划分了（做多能划分4 * n个区间），将一段大得区间不断的划分，直到这个区间只包含一个元素时，就不用再划分了（废话~~~），因为只包含一个元素的区间，他的最大值很显然就是这个元素了，具体看下面的图：</p>
+<p><img src="http://ogbkru1bq.bkt.clouddn.com/%E7%BA%BF%E6%AE%B5%E6%A0%91.png" alt=""></p>
+<p>接下来就是要更新某一个值了，更新值的时候要找到这个要更新的数字，然后把它的值更新了，理所当然，包含这个值得区间的最大值也应该更新，因为更新后的值可能比原来的大。（这里有一个问题：如果将原来最大区间的最大值更新为一个较小的值后，由于这个线段树已经建立完毕，并且线段树的每一个节点保存的是还是原来最大值，所以这个现在这个较小的值不会被更替，这样答案就不对了，但是呢这道题没有将一个元素的值更新之后变得比原来的小的数据）</p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">int</span> num[<span class="number">200001</span>];</div><div class="line"><span class="keyword">struct</span> node</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> value;<span class="comment">//此节点的值</span></div><div class="line">    <span class="keyword">int</span> left,right;<span class="comment">//此节点的所代表的的区间的左右端点</span></div><div class="line">&#125; tree[<span class="number">200001</span>*<span class="number">4</span>];</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> root,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">    tree[root].left=left;</div><div class="line">    tree[root].right=right;</div><div class="line">    <span class="keyword">if</span> (left==right)<span class="comment">//区间的左右端点相同</span></div><div class="line">    &#123;</div><div class="line">        tree[root].value=num[left];</div><div class="line">        <span class="keyword">return</span> ;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">int</span> mid=(left+right)/<span class="number">2</span>;</div><div class="line">    build(root*<span class="number">2</span>,left,mid);<span class="comment">//继续构建左子树</span></div><div class="line">    build(root*<span class="number">2</span>+<span class="number">1</span>,mid+<span class="number">1</span>,right);<span class="comment">//继续构建右子树</span></div><div class="line">    tree[root].value=max(tree[root*<span class="number">2</span>].value,tree[root*<span class="number">2</span>+<span class="number">1</span>].value);<span class="comment">//根节点的值去两孩子节点的最大值</span></div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">find1</span><span class="params">(<span class="keyword">int</span> root,<span class="keyword">int</span> left,<span class="keyword">int</span> right)</span></span></div><div class="line">&#123;</div><div class="line">   <span class="comment">// cout&lt;&lt;2*root+1&lt;&lt;endl;</span></div><div class="line">    <span class="keyword">if</span> (tree[root].left==left&amp;&amp;tree[root].right==right)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> tree[root].value;</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">if</span> (right&lt;=tree[<span class="number">2</span>*root].right)<span class="comment">//这个区间在根的左边</span></div><div class="line">    &#123;</div><div class="line">       <span class="comment">//cout&lt;&lt;2*root&lt;&lt;endl;</span></div><div class="line">       <span class="keyword">return</span> find1(root*<span class="number">2</span>,left,right);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span>  <span class="keyword">if</span> (left&gt;=tree[root*<span class="number">2</span>+<span class="number">1</span>].left)<span class="comment">//这个区间在根的右边</span></div><div class="line">    &#123;</div><div class="line">       <span class="keyword">return</span> find1(root*<span class="number">2</span>+<span class="number">1</span>,left,right);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span><span class="comment">//这个区间既在根的左边又在根的右边</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> mid=(tree[root].left+tree[root].right)/<span class="number">2</span>;</div><div class="line">        <span class="keyword">return</span> max(find1(root*<span class="number">2</span>,left,mid),find1(root*<span class="number">2</span>+<span class="number">1</span>,mid+<span class="number">1</span>,right));</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> stu,<span class="keyword">int</span> val,<span class="keyword">int</span> root)</span></span></div><div class="line">&#123;</div><div class="line">    tree[root].value=max(tree[root].value,val);</div><div class="line">    <span class="keyword">if</span> (tree[root].left==stu&amp;&amp;tree[root].right==stu)</div><div class="line">        <span class="keyword">return</span>;</div><div class="line">    <span class="keyword">if</span> (stu&lt;=tree[root*<span class="number">2</span>].right)</div><div class="line">        update(stu,val,root*<span class="number">2</span>);</div><div class="line">    <span class="keyword">if</span>(stu&gt;=tree[root*<span class="number">2</span>+<span class="number">1</span>].left)</div><div class="line">        update(stu,val,root*<span class="number">2</span>+<span class="number">1</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> n,m;</div><div class="line">    <span class="keyword">while</span>(~<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m))</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">memset</span>(num,<span class="number">0</span>,<span class="keyword">sizeof</span>(num));</div><div class="line">        <span class="built_in">memset</span>(tree,<span class="number">0</span>,<span class="keyword">sizeof</span>(tree));</div><div class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=n; i++ )</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num[i]);</div><div class="line">    build(<span class="number">1</span>,<span class="number">1</span>,n);</div><div class="line">    <span class="keyword">while</span> (m--)</div><div class="line">    &#123;</div><div class="line">        <span class="keyword">char</span> ch;</div><div class="line">        <span class="keyword">int</span> a,b;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">" %c"</span>,&amp;ch);</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;a,&amp;b);</div><div class="line">        <span class="keyword">if</span> (ch==<span class="string">'Q'</span>)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,find1(<span class="number">1</span>,a,b));</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span> (ch==<span class="string">'U'</span>)</div><div class="line">            update(a,b,<span class="number">1</span>);</div><div class="line">    &#125;</div><div class="line">   &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/10/杭电1394 Minimum Inversion Number/" itemprop="url">
+                  Minimum Inversion Number 杭电 1394
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-10T22:06:18+08:00" content="2017-04-10">
+              2017-04-10
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=1394" target="_blank" rel="external">题目链接</a></p>
+<p>Problem Description</p>
+<p>The inversion number of a given number sequence a1, a2, …, an is the number of pairs (ai, aj) that satisfy i &lt; j and ai &gt; aj.<br>For a given sequence of numbers a1, a2, …, an, if we move the first m &gt;= 0 numbers to the end of the seqence, we will obtain another sequence. There are totally n such sequences as the following:<br>a1, a2, …, an-1, an (where m = 0 - the initial seqence)<br>a2, a3, …, an, a1 (where m = 1)<br>a3, a4, …, an, a1, a2 (where m = 2)<br>…<br>an, a1, a2, …, an-1 (where m = n-1)<br>You are asked to write a program to find the minimum inversion number out of the above sequences.</p>
+<p>Input</p>
+<p>The input consists of a number of test cases. Each case consists of two lines: the first line contains a positive integer n (n &lt;= 5000); the next line contains a permutation of the n integers from 0 to n-1.</p>
+<p>Output</p>
+<p>For each case, output the minimum inversion number on a single line.</p>
+<p>Sample Input</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">10</span></div><div class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">6</span> <span class="number">9</span> <span class="number">0</span> <span class="number">8</span> <span class="number">5</span> <span class="number">7</span> <span class="number">4</span> <span class="number">2</span></div></pre></td></tr></table></figure>
+<p>Sample Output</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="number">16</span></div></pre></td></tr></table></figure>
+<h3 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h3><p>给你n个数字 这些数字都是从0到n-1的，每次把第一个位置的数字移到最后一位形成一个新的序列，然后求出这些序列的逆序数，最后输出最小的逆序数。</p>
+<h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>什么是逆序数：对于数x和y，若y的位置在x的前面并且y比x大，那么（x,y）就是一个逆序数对，</p>
+<p>普通方法解决：例子：  </p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">5</span>  <span class="number">4</span>  <span class="number">3</span>  <span class="number">6</span>  <span class="number">1</span>  <span class="number">2</span></div><div class="line">当输入<span class="number">5</span>时，就用一个标记数组a[<span class="number">5</span>]=<span class="number">1</span>,(a数组初始化全部为零)，然后从<span class="number">6</span>开始往后遍历，当遇到a[i]==<span class="number">1</span>时，说明i这个数在<span class="number">6</span>之前出现过，那么<span class="number">6</span>的逆序数对就增加一个。</div><div class="line">输入<span class="number">4</span>时同理。。。。</div></pre></td></tr></table></figure>
+<p>这种方法很容易想到，代码也很容易实现。两个for循环就行了，但是套路那么深，这道题怎么可能怎么简单，肯定会超时的，就得用树状数组来做了。</p>
+<p>设e[ ]就是这个树状数组，e数组是用来维护a数组的信息，e[i]代表是在当前情况下从1到i这个区间已经出现的数的个数，如 e[3]=2  代表的是在  [1,3]已经出现了两个数字   e[n]=k,代表的是在[1,n]已经出现的数的个数， e[n]-e[3]所代表的意思就很显然是此时大于3的已经出现的数的个数，这不就是3的逆序数嘛~~~<em>我等凡夫俗子老半天才看懂大神的代码</em></p>
+<p>由于这道题的数据时从0到n-1的，当求出一个序列的逆序数后，把这个序列的第一个数放到最后的位置形成的新的序列，这个新的序列的逆序数和原来的逆序数是由一定的关系的：</p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">假设num[]数组如下  个数n=6</div><div class="line">1 <span class="number"> 4 </span><span class="number"> 3 </span><span class="number"> 5 </span><span class="number"> 0 </span><span class="number"> 2 </span> 这个序列的逆序数为  x</div><div class="line">4 <span class="number"> 3 </span><span class="number"> 5 </span><span class="number"> 0 </span><span class="number"> 2 </span><span class="number"> 1 </span>  当把1放到后面时，0的逆序数就减少了一个   但是比1 大的2<span class="number"> 3 </span><span class="number"> 4 </span><span class="number"> 5 </span> 就成了1的逆序数</div><div class="line">3 <span class="number"> 5 </span><span class="number"> 0 </span><span class="number"> 2 </span><span class="number"> 1 </span><span class="number"> 4 </span>  当把4放到后面时，3,2,1,0的逆序数就各减少了一个   但是比4 大的5  就成了4的逆序数</div><div class="line">所以可推出如下规律： 新的逆序数t=x-num[1] + n-1-num[i]</div><div class="line">x-num[1]: 把第一个数字放到后面，比num[1]小的数字的逆序数减少了，</div><div class="line">+ n-1-num[i]：把第一个数字放到后面，比num[1]大的数字就构成num[1]的逆序数</div></pre></td></tr></table></figure>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">5010</span>;</div><div class="line"></div><div class="line"><span class="keyword">int</span> n,arr[N],num[N];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> x&amp;(-x);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> id,<span class="keyword">int</span> x)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">while</span> (id&lt;=N)</div><div class="line">    &#123;</div><div class="line">        arr[id]+=x;</div><div class="line">        id+=lowbit(id);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">Sum</span><span class="params">(<span class="keyword">int</span> id)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> ans=<span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span> (id&gt;<span class="number">0</span>)</div><div class="line">    &#123;</div><div class="line">        ans+=arr[id];</div><div class="line">        id-=lowbit(id);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> ans;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="comment">//freopen("1.txt","r",stdin);   </span></div><div class="line">    <span class="keyword">while</span> (<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n)!=EOF)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">memset</span>(arr,<span class="number">0</span>,<span class="keyword">sizeof</span>(arr));</div><div class="line">        <span class="keyword">int</span> i,ans=<span class="number">0</span>;</div><div class="line">        <span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=n; i++)</div><div class="line">        &#123;</div><div class="line">            <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;num[i]);</div><div class="line">            ans+=Sum(n+<span class="number">1</span>)-Sum(num[i]+<span class="number">1</span>);<span class="comment">//当前的逆序数个数</span></div><div class="line">            update(num[i]+<span class="number">1</span>,<span class="number">1</span>);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">int</span> tmp=ans;</div><div class="line">        <span class="keyword">for</span> (i=<span class="number">1</span>; i&lt;=n; i++)</div><div class="line">        &#123;</div><div class="line">            tmp+=n<span class="number">-1</span>-num[i]-num[i];</div><div class="line">            ans=min(ans,tmp);</div><div class="line">        &#125;</div><div class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,ans);</div><div class="line">         </div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2017/04/04/幸运数/" itemprop="url">
                   幸运数  蓝桥杯 1441
                 </a>
@@ -920,302 +1266,11 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/28/聪明的美食家/" itemprop="url">
-                  聪明的美食家  蓝桥杯1020
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-28T19:49:22+08:00" content="2017-03-28">
-              2017-03-28
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="http://115.159.67.147/problem.php?id=1020"><em>题目链接</em></a></p>
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>如果有人认为吃东西只需要嘴巴，那就错了。<br> 都知道舌头有这么一个特性，“由简入奢易，由奢如简难”（据好事者考究，此规律也适合许多其他情况）。具体而言，如果是甜食，当你吃的食物不如前面刚吃过的东西甜，就很不爽了。<br> 大宝是一个聪明的美食家，当然深谙此道。一次他来到某小吃一条街，准备从街的一头吃到另一头。为了吃得爽，他大费周章，得到了各种食物的“美味度”。他拒绝不爽的经历，不走回头路而且还要爽歪歪（爽的次数尽量多）。 </p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/28/聪明的美食家/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/28/功夫传人/" itemprop="url">
-                  功夫传人 天梯赛 L2-20
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-28T08:08:04+08:00" content="2017-03-28">
-              2017-03-28
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="https://www.patest.cn/contests/gplt/L2-020"><em>题目链接</em></a></p>
-<p>一门武功能否传承久远并被发扬光大，是要看缘分的。一般来说，师傅传授给徒弟的武功总要打个折扣，于是越往后传，弟子们的功夫就越弱…… 直到某一支的某一代突然出现一个天分特别高的弟子（或者是吃到了灵丹、挖到了特别的秘笈），会将功夫的威力一下子放大N倍 —— 我们称这种弟子为“得道者”。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/28/功夫传人/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/28/摆花/" itemprop="url">
-                  摆花 蓝桥杯 1011
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-03-28T07:54:25+08:00" content="2017-03-28">
-              2017-03-28
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p><a href="http://115.159.67.147/problem.php?id=1011"><em>题目链接</em></a></p>
-<p>小明的花店新开张，为了吸引顾客，他想在花店的门口摆上一排花，共m盆。通过调查顾客的喜好，小明列出了顾客最喜欢的n种花，从1到n标号。为了在门口展出更多种花，规定第i种花不能超过ai盆，摆花时同一种花放在一起，且不同种类的花需按标号的从小到大的顺序依次摆列。<br> 试编程计算，一共有多少种不同的摆花方案。 </p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2017/03/28/摆花/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1256,7 +1311,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">40</span>
+              <span class="site-state-item-count">43</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -1266,7 +1321,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">25</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
