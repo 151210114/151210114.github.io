@@ -1,0 +1,639 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="线段树," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="梦" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="题目链接
+描述
+南将军统率着N个士兵，士兵分别编号为1~N,南将军经常爱拿某一段编号内杀敌数最高的人与杀敌数最低的人进行比较，计算出两个人的杀敌数差值，用这种方法一方面能鼓舞杀敌数高的人，另一方面也算是批评杀敌数低的人，起到了很好的效果。
+所以，南将军经常问军师小工第i号士兵到第j号士兵中，杀敌数最高的人与杀敌数最低的人之间军功差值是多少。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="士兵杀敌（三） 南阳理工 119">
+<meta property="og:url" content="http://cmmdc.top/2017/04/18/士兵杀敌（三）/index.html">
+<meta property="og:site_name" content="梦">
+<meta property="og:description" content="题目链接
+描述
+南将军统率着N个士兵，士兵分别编号为1~N,南将军经常爱拿某一段编号内杀敌数最高的人与杀敌数最低的人进行比较，计算出两个人的杀敌数差值，用这种方法一方面能鼓舞杀敌数高的人，另一方面也算是批评杀敌数低的人，起到了很好的效果。
+所以，南将军经常问军师小工第i号士兵到第j号士兵中，杀敌数最高的人与杀敌数最低的人之间军功差值是多少。">
+<meta property="og:updated_time" content="2017-04-18T12:43:28.013Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="士兵杀敌（三） 南阳理工 119">
+<meta name="twitter:description" content="题目链接
+描述
+南将军统率着N个士兵，士兵分别编号为1~N,南将军经常爱拿某一段编号内杀敌数最高的人与杀敌数最低的人进行比较，计算出两个人的杀敌数差值，用这种方法一方面能鼓舞杀敌数高的人，另一方面也算是批评杀敌数低的人，起到了很好的效果。
+所以，南将军经常问军师小工第i号士兵到第j号士兵中，杀敌数最高的人与杀敌数最低的人之间军功差值是多少。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://cmmdc.top/2017/04/18/士兵杀敌（三）/"/>
+
+  <title> 士兵杀敌（三） 南阳理工 119 | 梦 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">梦</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                士兵杀敌（三） 南阳理工 119
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-18T16:59:08+08:00" content="2017-04-18">
+              2017-04-18
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">阅读
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://acm.nyist.net/JudgeOnline/problem.php?pid=119" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>描述</p>
+<p>南将军统率着N个士兵，士兵分别编号为1~N,南将军经常爱拿某一段编号内杀敌数最高的人与杀敌数最低的人进行比较，计算出两个人的杀敌数差值，用这种方法一方面能鼓舞杀敌数高的人，另一方面也算是批评杀敌数低的人，起到了很好的效果。</p>
+<p>所以，南将军经常问军师小工第i号士兵到第j号士兵中，杀敌数最高的人与杀敌数最低的人之间军功差值是多少。</p>
+<a id="more"></a>
+<p>现在，请你写一个程序，帮小工回答南将军每次的询问吧。</p>
+<p>注意，南将军可能询问很多次。</p>
+<ul>
+<li><p>输入</p>
+<p>只有一组测试数据第一行是两个整数N,Q，其中N表示士兵的总数。Q表示南将军询问的次数。(1&lt;N&lt;=100000,1&lt;Q&lt;=1000000)随后的一行有N个整数Vi(0&lt;=Vi&lt;100000000)，分别表示每个人的杀敌数。再之后的Q行，每行有两个正正数m,n，表示南将军询问的是第m号士兵到第n号士兵。</p>
+</li>
+<li><p>输出</p>
+<p>对于每次询问，输出第m号士兵到第n号士兵之间所有士兵杀敌数的最大值与最小值的差。</p>
+</li>
+<li><p>样例输入</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="symbol">5 </span><span class="number">2</span></div><div class="line"><span class="symbol">1 </span><span class="number">2</span> <span class="number">6</span> <span class="number">9</span> <span class="number">3</span></div><div class="line"><span class="symbol">1 </span><span class="number">2</span></div><div class="line"><span class="symbol">2 </span><span class="number">4</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>样例输出</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="number">1</span></div><div class="line"><span class="number">7</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>分析：</strong></p>
+<p>刚刚拿到题目的时候习惯性带入以为还是考查树状数组，然后突然意识到是考查的是线段树，还有一点就是因为要求这个区间中的最大值与最小值的差值，原先想的就是直接保存该根节点下的最大值与最小值，但是这样的话你在找到的时候没有办法同时返回这个区间的最大值与最小值，所以另外在结构体中定义一个结构体变量，来存储最大、最小值以及差值。</p>
+<p>这样的话找到后可以直接返回该结构体。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div></pre></td><td class="code"><pre><div class="line"> </div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">struct</span> Node</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> Max;<span class="comment">///最大值</span></div><div class="line">    <span class="keyword">int</span> Min;<span class="comment">///最小值</span></div><div class="line">    <span class="keyword">int</span> Cha;<span class="comment">///差值</span></div><div class="line">&#125;;</div><div class="line"><span class="keyword">struct</span> Node1</div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> left;<span class="comment">///左端点</span></div><div class="line">    <span class="keyword">int</span> right;<span class="comment">///右端点</span></div><div class="line">    <span class="keyword">struct</span> Node N;<span class="comment">///该区间内的最大值、最小值、以及差值</span></div><div class="line">&#125; node[<span class="number">400009</span>];<span class="comment">///线段树</span></div><div class="line"></div><div class="line"><span class="keyword">int</span> N,Q;</div><div class="line"><span class="keyword">int</span> a[<span class="number">100009</span>];</div><div class="line"><span class="function"><span class="keyword">struct</span> Node <span class="title">built</span><span class="params">(<span class="keyword">int</span> root,<span class="keyword">int</span> le,<span class="keyword">int</span> ri)</span><span class="comment">///root根节点，le左端点、ri右端点</span></span></div><div class="line">&#123;</div><div class="line">    node[root].left=le;<span class="comment">///首先确定该根结点的左右端点</span></div><div class="line">    node[root].right=ri;</div><div class="line">    <span class="keyword">if</span>(le==ri)<span class="comment">///如果左右端点相等的话，相当于找到了最后一层，这个区间只有一个点</span></div><div class="line">    &#123;</div><div class="line">        <span class="comment">///分别给该节点下的Node结构体赋值，当前的递归结束</span></div><div class="line">        node[root].N.Max=a[le];</div><div class="line">        node[root].N.Min=a[le];</div><div class="line">        node[root].N.Cha=<span class="number">0</span>;</div><div class="line">        <span class="keyword">return</span> node[root].N;</div><div class="line">    &#125;</div><div class="line">    <span class="comment">///然后递归构建根节点的左右子树</span></div><div class="line">    <span class="keyword">int</span> mid=(le+ri)/<span class="number">2</span>;</div><div class="line">    <span class="keyword">struct</span> Node N1,N2,N3;</div><div class="line">    N1=built(root*<span class="number">2</span>,le,mid);<span class="comment">///左子树</span></div><div class="line">    N2=built(root*<span class="number">2</span>+<span class="number">1</span>,mid+<span class="number">1</span>,ri);<span class="comment">///右子树</span></div><div class="line">    <span class="keyword">int</span> Min1=min(N1.Min,N2.Min);<span class="comment">///选取左右子树中的最值存储到根节点中</span></div><div class="line">    <span class="keyword">int</span> Max1=max(N1.Max,N2.Max);</div><div class="line">    N3.Max=Max1;</div><div class="line">    N3.Min=Min1;</div><div class="line">    N3.Cha=Max1-Min1;</div><div class="line">    node[root].N=N3;</div><div class="line">    <span class="keyword">return</span> N3;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">struct</span> Node <span class="title">Find</span><span class="params">(<span class="keyword">int</span> root,<span class="keyword">int</span> le,<span class="keyword">int</span> ri)</span></span></div><div class="line">&#123;</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(node[root].left==le&amp;&amp;node[root].right==ri)<span class="comment">///找到该确定的区间就返回，该区间必须左右端点分别满足才行</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">return</span> node[root].N;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(ri&lt;=node[root*<span class="number">2</span>].right)<span class="comment">///如果该右端点比其左子树的右端点还小，肯定在左子树中找</span></div><div class="line">        <span class="keyword">return</span> Find(root*<span class="number">2</span>,le,ri);</div><div class="line"></div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(le&gt;=node[root*<span class="number">2</span>+<span class="number">1</span>].left)<span class="comment">///如果该左端点比其右子树的左端点还小，肯定在右子树中找</span></div><div class="line">        <span class="keyword">return</span> Find(root*<span class="number">2</span>+<span class="number">1</span>,le,ri);</div><div class="line">    <span class="keyword">else</span></div><div class="line">    &#123;</div><div class="line">        <span class="keyword">int</span> mid=(node[root].left+node[root].right)/<span class="number">2</span>;<span class="comment">///也就是相当于有一部分区间在左子树，有一部分区间在右子树</span></div><div class="line">        <span class="keyword">struct</span> Node N1,N2,N3;</div><div class="line">        N1=Find(root*<span class="number">2</span>,le,mid);<span class="comment">///分别找左右子树中的最大、最小值</span></div><div class="line">        N2=Find(root*<span class="number">2</span>+<span class="number">1</span>,mid+<span class="number">1</span>,ri);</div><div class="line">        <span class="keyword">int</span> Min1=min(N1.Min,N2.Min);</div><div class="line">        <span class="keyword">int</span> Max1=max(N1.Max,N2.Max);</div><div class="line">        N3.Max=Max1;</div><div class="line">        N3.Min=Min1;</div><div class="line">        N3.Cha=Max1-Min1;</div><div class="line">        <span class="keyword">return</span> N3;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;N,&amp;Q);</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>; i&lt;=N; i++)</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;a[i]);</div><div class="line">    built(<span class="number">1</span>,<span class="number">1</span>,N);<span class="comment">///建树</span></div><div class="line">    <span class="keyword">int</span> f,t;</div><div class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;Q;i++)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;f,&amp;t);</div><div class="line">        <span class="keyword">struct</span> Node NN=Find(<span class="number">1</span>,f,t);<span class="comment">///查找</span></div><div class="line">        <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,NN.Cha);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/线段树/" rel="tag">#线段树</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/18/士兵杀敌（二）/" rel="next" title="士兵杀敌（二）  南阳理工116">
+                <i class="fa fa-chevron-left"></i> 士兵杀敌（二）  南阳理工116
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/18/汉诺塔/" rel="prev" title="汉诺塔  南阳理工 93">
+                汉诺塔  南阳理工 93 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/favicon.ico"
+               alt="梦" />
+          <p class="site-author-name" itemprop="name">梦</p>
+          <p class="site-description motion-element" itemprop="description">不努力,永远不知道自己可以做的更好。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">59</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">梦</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">你已经是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个访问者了！</span>
+  
+
+  
+    <span class="site-pv">总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+  <!-- 博客背景 粒子效果 -->
+ <script type="text/javascript" src="/js/src/particle.js"></script>
+
+  
+</body>
+</html>

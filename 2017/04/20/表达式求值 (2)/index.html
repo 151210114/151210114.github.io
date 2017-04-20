@@ -1,0 +1,644 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="数据结构,栈," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="梦" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="题目链接
+描述
+Dr.Kong设计的机器人卡多掌握了加减法运算以后，最近又学会了一些简单的函数求值，比如，它知道函数min(20,23)的值是20 ，add(10,98) 的值是108等等。经过训练，Dr.Kong设计的机器人卡多甚至会计算一种嵌套的更复杂的表达式。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="表达式求值 nyoj 305">
+<meta property="og:url" content="http://cmmdc.top/2017/04/20/表达式求值 (2)/index.html">
+<meta property="og:site_name" content="梦">
+<meta property="og:description" content="题目链接
+描述
+Dr.Kong设计的机器人卡多掌握了加减法运算以后，最近又学会了一些简单的函数求值，比如，它知道函数min(20,23)的值是20 ，add(10,98) 的值是108等等。经过训练，Dr.Kong设计的机器人卡多甚至会计算一种嵌套的更复杂的表达式。">
+<meta property="og:updated_time" content="2017-04-20T02:44:50.748Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="表达式求值 nyoj 305">
+<meta name="twitter:description" content="题目链接
+描述
+Dr.Kong设计的机器人卡多掌握了加减法运算以后，最近又学会了一些简单的函数求值，比如，它知道函数min(20,23)的值是20 ，add(10,98) 的值是108等等。经过训练，Dr.Kong设计的机器人卡多甚至会计算一种嵌套的更复杂的表达式。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://cmmdc.top/2017/04/20/表达式求值 (2)/"/>
+
+  <title> 表达式求值 nyoj 305 | 梦 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">梦</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                表达式求值 nyoj 305
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-04-20T10:23:14+08:00" content="2017-04-20">
+              2017-04-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+              &nbsp; | &nbsp;
+              <span class="page-pv">阅读
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>次
+              </span>
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="http://acm.nyist.net/JudgeOnline/problem.php?pid=305" target="_blank" rel="external"><em>题目链接</em></a></p>
+<p>描述</p>
+<p>Dr.Kong设计的机器人卡多掌握了加减法运算以后，最近又学会了一些简单的函数求值，比如，它知道函数min(20,23)的值是20 ，add(10,98) 的值是108等等。经过训练，Dr.Kong设计的机器人卡多甚至会计算一种嵌套的更复杂的表达式。</p>
+<a id="more"></a>
+<p>假设表达式可以简单定义为:</p>
+<ol>
+<li><p>一个正的十进制数 x 是一个表达式。</p>
+</li>
+<li><p>如果 x 和 y 是 表达式，则 函数min(x,y )也是表达式,其值为x,y 中的最小数。</p>
+</li>
+<li><p>如果 x 和 y 是 表达式，则 函数max(x,y )也是表达式,其值为x,y 中的最大数。</p>
+</li>
+</ol>
+<p>4．如果 x 和 y 是 表达式，则 函数add(x,y )也是表达式,其值为x,y 之和。</p>
+<p>例如， 表达式 max(add(1,2),7) 的值为 7。</p>
+<p>请你编写程序，对于给定的一组表达式，帮助 Dr.Kong 算出正确答案，以便校对卡多计算的正误。</p>
+<ul>
+<li><p>输入</p>
+<p>第一行： N 表示要计算的表达式个数 （1≤ N ≤ 10） 接下来有N行， 每行是一个字符串，表示待求值的表达式（表达式中不会有多余的空格，每行不超过300个字符，表达式中出现的十进制数都不超过1000。）</p>
+</li>
+<li><p>输出</p>
+<p>输出有N行，每一行对应一个表达式的值。</p>
+</li>
+<li><p>样例输入</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span></div><div class="line">add(<span class="number">1</span>,<span class="number">2</span>) </div><div class="line">max(<span class="number">1</span>,<span class="number">999</span>) </div><div class="line">add(min(<span class="number">1</span>,<span class="number">1000</span>),add(<span class="number">100</span>,<span class="number">99</span>))</div></pre></td></tr></table></figure>
+</li>
+<li><p>样例输出</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="number">3</span></div><div class="line"><span class="number">999</span></div><div class="line"><span class="number">200</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>分析：</strong></p>
+<p>其实这个表达式计算就只涉及到max、min、add三种计算方法，但是他们的操作符都是一个字符串，而不是一个单独的字符，这就给我们对于操作符的识别带来了难度，但是我们可以发现对于这三个操作符来说呢，最后一位都是不一样的，所以可以用最后一位来表示这个操作符。</p>
+<p>在计算的过程中呢定义一个操作数栈，一个操作符栈，每次遇见操作符的话就将最后一位进操作符栈，遇见操作数进操作数栈，遇见’)’的话，就取一个操作符与两个操作数进行运算，再将运算结果进操作数栈。</p>
+<p>但是有一种比较特殊的情况，就是说这个表达式只有一个单独的操作数，直接数出来就行了，因为这个错了半天。</p>
+<p><strong>代码：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stack&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="function"><span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> <span class="title">ji</span><span class="params">(<span class="keyword">char</span> sd,<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> m,<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> n)</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">char</span> x=<span class="string">'d'</span>,y=<span class="string">'x'</span>,z=<span class="string">'n'</span>;</div><div class="line">    <span class="keyword">if</span>(sd==x) <span class="keyword">return</span> (m+n);</div><div class="line">    <span class="keyword">if</span>(sd==y) <span class="keyword">return</span> m&gt;n?m:n;</div><div class="line">    <span class="keyword">if</span>(sd==z) <span class="keyword">return</span> m&lt;n?m:n;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">void</span> <span class="title">Trans</span><span class="params">(<span class="keyword">char</span> a[])</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span>&gt;st1;</div><div class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">char</span>&gt;st2;</div><div class="line">    <span class="keyword">char</span> b[<span class="number">100</span>];</div><div class="line">    <span class="keyword">int</span> k=<span class="number">0</span>;</div><div class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>; a[i]!=<span class="string">'\0'</span>; i++)</div><div class="line">    &#123;</div><div class="line">        <span class="comment">//cout&lt;&lt;"i==="&lt;&lt;i&lt;&lt;endl;</span></div><div class="line">        <span class="keyword">if</span>(a[i]&gt;=<span class="string">'0'</span>&amp;&amp;a[i]&lt;=<span class="string">'9'</span>)<span class="comment">///b数组用来暂存一个操作数</span></div><div class="line">        &#123;</div><div class="line">            b[k++]=a[i];</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        &#123;</div><div class="line">            <span class="keyword">if</span>(k!=<span class="number">0</span>)<span class="comment">///也就意味着当前操作数接收完毕</span></div><div class="line">            &#123;</div><div class="line">                b[k]=<span class="string">'\0'</span>;</div><div class="line">                st1.push(atof(b));</div><div class="line">                <span class="built_in">memset</span>(b,<span class="string">'\0'</span>,<span class="keyword">sizeof</span>(b));</div><div class="line">                k=<span class="number">0</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(a[i]&gt;=<span class="string">'a'</span>&amp;&amp;a[i]&lt;=<span class="string">'z'</span>)<span class="comment">///如果是操作符的话，就将操作符的最后一位进栈，然后后面的三位就不用管了</span></div><div class="line">            &#123;</div><div class="line">                st2.push(a[i+<span class="number">2</span>]);</div><div class="line">                i+=<span class="number">3</span>;</div><div class="line">            &#125;</div><div class="line">           <span class="keyword">else</span> <span class="keyword">if</span>(a[i]==<span class="string">')'</span>)<span class="comment">///取两个操作数，一个操作符进行计算，再将计算的结果进栈</span></div><div class="line">            &#123;</div><div class="line">                <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> n1=st1.top();</div><div class="line">                st1.pop();</div><div class="line">                <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> n2=st1.top();</div><div class="line">                st1.pop();</div><div class="line">                <span class="keyword">char</span> ch=st2.top();</div><div class="line">                st2.pop();</div><div class="line">                <span class="keyword">long</span> <span class="keyword">long</span> <span class="keyword">int</span> n3=ji(ch,n1,n2);</div><div class="line">                st1.push(n3);</div><div class="line">                <span class="comment">///cout&lt;&lt;"n1=="&lt;&lt;n1&lt;&lt;"  n2=="&lt;&lt;n2&lt;&lt;"   ch==="&lt;&lt;ch&lt;&lt;"  n3=="&lt;&lt;n3&lt;&lt;endl;</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">"%lld\n"</span>,st1.top());</div><div class="line">    <span class="comment">//st1.pop();</span></div><div class="line">    <span class="comment">//if(st1.empty()) </span></div><div class="line">    <span class="comment">//cout&lt;&lt;"hhhhhhh"&lt;&lt;endl;</span></div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">int</span> n;</div><div class="line">    <span class="keyword">char</span> a[<span class="number">1009</span>];</div><div class="line">    <span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;n);</div><div class="line">    <span class="keyword">while</span>(n--)</div><div class="line">    &#123;</div><div class="line">        <span class="built_in">memset</span>(a,<span class="string">'\0'</span>,<span class="keyword">sizeof</span>(a));</div><div class="line">        <span class="built_in">scanf</span>(<span class="string">" %s"</span>,a);</div><div class="line">        <span class="keyword">if</span>(a[<span class="number">0</span>]&gt;=<span class="string">'0'</span>&amp;&amp;a[<span class="number">0</span>]&lt;=<span class="string">'9'</span>)<span class="comment">///特殊情况，是有一个操作符，直接输出来就行</span></div><div class="line">            <span class="built_in">cout</span>&lt;&lt;a&lt;&lt;<span class="built_in">endl</span>;</div><div class="line">        <span class="keyword">else</span></div><div class="line">        Trans(a);</div><div class="line">    &#125;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/数据结构/" rel="tag">#数据结构</a>
+          
+            <a href="/tags/栈/" rel="tag">#栈</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/19/郁闷的C小加（一）/" rel="next" title="郁闷的C小加（一） nyoj 257">
+                <i class="fa fa-chevron-left"></i> 郁闷的C小加（一） nyoj 257
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/favicon.ico"
+               alt="梦" />
+          <p class="site-author-name" itemprop="name">梦</p>
+          <p class="site-description motion-element" itemprop="description">不努力,永远不知道自己可以做的更好。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">59</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">梦</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+        
+
+<div class="busuanzi-count">
+
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">你已经是第<span class="busuanzi-value" id="busuanzi_value_site_uv"></span>个访问者了！</span>
+  
+
+  
+    <span class="site-pv">总访问量<span class="busuanzi-value" id="busuanzi_value_site_pv"></span>次</span>
+  
+  
+</div>
+
+
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script type="text/javascript" async src="//push.zhanzhang.baidu.com/push.js">
+</script>
+
+  <!-- 博客背景 粒子效果 -->
+ <script type="text/javascript" src="/js/src/particle.js"></script>
+
+  
+</body>
+</html>
